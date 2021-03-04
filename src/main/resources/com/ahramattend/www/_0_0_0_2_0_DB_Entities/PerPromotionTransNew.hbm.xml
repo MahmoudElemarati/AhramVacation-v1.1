@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionTransNew" table="PER_PROMOTION_TRANS_NEW" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionTransNewId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="promotionType" type="string">
+                <column name="PROMOTION_TYPE" length="5" />
+            </key-property>
+            <key-property name="transId" type="long">
+                <column name="TRANS_ID" precision="10" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perFiscalDegreeCodeNewByFiscalDegreeCodeNew" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCodeNew" fetch="select">
+            <column name="FISCAL_DEGREE_CODE_NEW" length="3" />
+        </many-to-one>
+        <many-to-one name="perFiscalDegreeCodeNewByFiscalDegreeCodeNewNew" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCodeNew" fetch="select">
+            <column name="FISCAL_DEGREE_CODE_NEW_NEW" length="3" />
+        </many-to-one>
+        <many-to-one name="perFiscalDegreeCodeNewByFiscalDegreeCodeNewEndsal" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCodeNew" fetch="select">
+            <column name="FISCAL_DEGREE_CODE_NEW_ENDSAL" length="3" />
+        </many-to-one>
+        <many-to-one name="perGroupTypeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerGroupTypeCode" fetch="select">
+            <column name="GROUP_TYPE_CODE" length="3" />
+        </many-to-one>
+        <many-to-one name="perJobCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobCode" fetch="select">
+            <column name="JOB_CODE" length="5" />
+        </many-to-one>
+        <many-to-one name="perPromotionRule" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionRule" update="false" insert="false" fetch="select">
+            <column name="PROMOTION_TYPE" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="budLocation" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudLocation" update="false" insert="false" fetch="select">
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <property name="promotionDate" type="date">
+            <column name="PROMOTION_DATE" length="7" not-null="true" />
+        </property>
+        <property name="elawaCalc" type="boolean">
+            <column name="ELAWA_CALC" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="aprPromotion" type="boolean">
+            <column name="APR_PROMOTION" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="promotionRateMain" type="java.lang.Byte">
+            <column name="PROMOTION_RATE_MAIN" precision="2" scale="0" />
+        </property>
+        <property name="promotionRate" type="java.lang.Byte">
+            <column name="PROMOTION_RATE" precision="2" scale="0" />
+        </property>
+        <property name="commityNo" type="string">
+            <column name="COMMITY_NO" length="10" />
+        </property>
+        <property name="elawaRatio" type="big_decimal">
+            <column name="ELAWA_RATIO" precision="5" />
+        </property>
+        <property name="salaryMonth" type="date">
+            <column name="SALARY_MONTH" length="7" />
+        </property>
+        <property name="degreeEndSalaryFlg" type="java.lang.Boolean">
+            <column name="DEGREE_END_SALARY_FLG" precision="1" scale="0" />
+        </property>
+        <property name="decisionNo" type="string">
+            <column name="DECISION_NO" length="10" />
+        </property>
+        <property name="decisionDate" type="date">
+            <column name="DECISION_DATE" length="7" />
+        </property>
+        <property name="postDate" type="date">
+            <column name="POST_DATE" length="7" />
+        </property>
+        <property name="VBandCode" type="java.lang.Short">
+            <column name="V_BAND_CODE" precision="4" scale="0" />
+        </property>
+        <property name="VMethodType" type="java.lang.Byte">
+            <column name="V_METHOD_TYPE" precision="2" scale="0" />
+        </property>
+        <property name="addElawaType" type="java.lang.Byte">
+            <column name="ADD_ELAWA_TYPE" precision="2" scale="0" />
+        </property>
+        <set name="perPromotionPunishRuleNs" table="PER_PROMOTION_PUNISH_RULE_N" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="PROMOTION_TYPE" length="5" not-null="true" />
+                <column name="TRANS_ID" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionPunishRuleN" />
+        </set>
+        <set name="perEmpPromotionRejectNews" table="PER_EMP_PROMOTION_REJECT_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="PROMOTION_TYPE" length="5" not-null="true" />
+                <column name="TRANS_ID" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotionRejectNew" />
+        </set>
+        <set name="perPromotionVacationRuleNs" table="PER_PROMOTION_VACATION_RULE_N" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="PROMOTION_TYPE" length="5" not-null="true" />
+                <column name="TRANS_ID" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionVacationRuleN" />
+        </set>
+        <set name="perPromotionTrainRuleNs" table="PER_PROMOTION_TRAIN_RULE_N" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="PROMOTION_TYPE" length="5" not-null="true" />
+                <column name="TRANS_ID" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionTrainRuleN" />
+        </set>
+        <set name="perEmpPromotionNews" table="PER_EMP_PROMOTION_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="PROMOTION_TYPE" length="5" not-null="true" />
+                <column name="TRANS_ID" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotionNew" />
+        </set>
+        <set name="perPromotionGradeRuleNs" table="PER_PROMOTION_GRADE_RULE_N" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="PROMOTION_TYPE" length="5" not-null="true" />
+                <column name="TRANS_ID" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionGradeRuleN" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobCode" table="PER_JOB_CODE" schema="SHAMS" optimistic-lock="version">
+        <id name="jobCode" type="string">
+            <column name="JOB_CODE" length="5" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="perFiscalDegreeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCode" fetch="select">
+            <column name="FISCAL_DEGREE_CODE" length="3" />
+        </many-to-one>
+        <many-to-one name="perFiscalDegreeCodeNew" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCodeNew" fetch="select">
+            <column name="FISCAL_DEGREE_CODE_NEW" length="3" />
+        </many-to-one>
+        <many-to-one name="perGroupDegree" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerGroupDegree" update="false" insert="false" fetch="select">
+            <column name="GROUP_TYPE_CODE" length="3" />
+            <column name="FISCAL_DEGREE_CODE" length="3" />
+        </many-to-one>
+        <many-to-one name="perGroupTypeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerGroupTypeCode" update="false" insert="false" fetch="select">
+            <column name="GROUP_TYPE_CODE" length="3" />
+        </many-to-one>
+        <many-to-one name="perJobTypeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobTypeCode" fetch="select">
+            <column name="JOB_TYPE_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <property name="fiscalYear" type="date">
+            <column name="FISCAL_YEAR" length="7" not-null="true" />
+        </property>
+        <property name="jobName" type="string">
+            <column name="JOB_NAME" length="100" not-null="true" />
+        </property>
+        <property name="jobDesc" type="string">
+            <column name="JOB_DESC" length="750" />
+        </property>
+        <property name="jobExperiance" type="string">
+            <column name="JOB_EXPERIANCE" length="750" />
+        </property>
+        <property name="jobTask" type="string">
+            <column name="JOB_TASK" length="2000" />
+        </property>
+        <property name="recordCreateUser" type="string">
+            <column name="RECORD_CREATE_USER" length="15" />
+        </property>
+        <property name="recordCreateDate" type="date">
+            <column name="RECORD_CREATE_DATE" length="7" />
+        </property>
+        <property name="recordUpdateUser" type="string">
+            <column name="RECORD_UPDATE_USER" length="15" />
+        </property>
+        <property name="recordUpdateDate" type="date">
+            <column name="RECORD_UPDATE_DATE" length="7" />
+        </property>
+        <property name="jobCodeReal" type="string">
+            <column name="JOB_CODE_REAL" length="10" />
+        </property>
+        <property name="chkJoin" type="java.lang.Boolean">
+            <column name="CHK_JOIN" precision="1" scale="0" />
+        </property>
+        <property name="agz" type="java.lang.Integer">
+            <column name="AGZ" precision="5" scale="0" />
+        </property>
+        <set name="perEmpPromotionRejectNews" table="PER_EMP_PROMOTION_REJECT_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotionRejectNew" />
+        </set>
+        <set name="perJobDetails" table="PER_JOB_DETAIL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobDetail" />
+        </set>
+        <set name="perHumanBalJobDistributes" table="PER_HUMAN_BAL_JOB_DISTRIBUTE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJobDistribute" />
+        </set>
+        <set name="perPromotionTranses" table="PER_PROMOTION_TRANS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionTrans" />
+        </set>
+        <set name="perAnnualEvalEmps" table="PER_ANNUAL_EVAL_EMP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalEmp" />
+        </set>
+        <set name="perAnnualEvalModelEmps" table="PER_ANNUAL_EVAL_MODEL_EMP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalModelEmp" />
+        </set>
+        <set name="perHumanBalJobNews" table="PER_HUMAN_BAL_JOB_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJobNew" />
+        </set>
+        <set name="perEmpHistoriesForJobCode" table="PER_EMP_HISTORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpHistory" />
+        </set>
+        <set name="perPromotionTransNews" table="PER_PROMOTION_TRANS_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionTransNew" />
+        </set>
+        <set name="perHumanBalJobDistributeNs" table="PER_HUMAN_BAL_JOB_DISTRIBUTE_N" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJobDistributeN" />
+        </set>
+        <set name="perEmploymentMastersesForJobCodeTransfer" table="PER_EMPLOYMENT_MASTERS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE_TRANSFER" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" />
+        </set>
+        <set name="perElawaTransactions" table="PER_ELAWA_TRANSACTION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerElawaTransaction" />
+        </set>
+        <set name="perEmpPromotionsForJobCodeNew" table="PER_EMP_PROMOTION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE_NEW" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotion" />
+        </set>
+        <set name="perHumanBalJobs" table="PER_HUMAN_BAL_JOB" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJob" />
+        </set>
+        <set name="perEmpPromotionNewsForJobCodeNew" table="PER_EMP_PROMOTION_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE_NEW" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotionNew" />
+        </set>
+        <set name="perEmploymentMastersesForJobCode" table="PER_EMPLOYMENT_MASTERS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" />
+        </set>
+        <set name="perEmpPromotionsForJobCode" table="PER_EMP_PROMOTION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotion" />
+        </set>
+        <set name="perEmpPromotionNewsForJobCode" table="PER_EMP_PROMOTION_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotionNew" />
+        </set>
+        <set name="perElawaTransactionRejects" table="PER_ELAWA_TRANSACTION_REJECT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerElawaTransactionReject" />
+        </set>
+        <set name="perAnnualEvalModEmpTots" table="PER_ANNUAL_EVAL_MOD_EMP_TOT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalModEmpTot" />
+        </set>
+        <set name="perEmpHistoriesForJobCodeTransfer" table="PER_EMP_HISTORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="JOB_CODE_TRANSFER" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpHistory" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalOrgNew" table="PER_HUMAN_BAL_ORG_NEW" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalOrgNewId">
+            <key-property name="humanBalId" type="string">
+                <column name="HUMAN_BAL_ID" length="5" />
+            </key-property>
+            <key-property name="groupTypeCode" type="string">
+                <column name="GROUP_TYPE_CODE" length="3" />
+            </key-property>
+            <key-property name="jobCode" type="string">
+                <column name="JOB_CODE" length="5" />
+            </key-property>
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="fiscalDegreeCodeNew" type="string">
+                <column name="FISCAL_DEGREE_CODE_NEW" length="3" />
+            </key-property>
+            <key-property name="orgId" type="string">
+                <column name="ORG_ID" length="5" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perOrganizationStructure" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrganizationStructure" update="false" insert="false" fetch="select">
+            <column name="ORG_ID" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perOrgunitCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrgunitCode" fetch="select">
+            <column name="ORGUNIT_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perHumanBalJobNew" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJobNew" update="false" insert="false" fetch="select">
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+            <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+            <column name="GROUP_TYPE_CODE" length="3" not-null="true" />
+            <column name="FISCAL_DEGREE_CODE_NEW" length="3" not-null="true" />
+            <column name="JOB_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <property name="jobFund" type="int">
+            <column name="JOB_FUND" precision="5" scale="0" not-null="true" />
+        </property>
+        <property name="jobExist" type="int">
+            <column name="JOB_EXIST" precision="5" scale="0" not-null="true" />
+        </property>
+        <property name="jobEmpty" type="int">
+            <column name="JOB_EMPTY" precision="5" scale="0" not-null="true" />
+        </property>
+        <property name="jobNewRequired" type="int">
+            <column name="JOB_NEW_REQUIRED" precision="5" scale="0" not-null="true" />
+        </property>
+        <property name="jobTotalBalance" type="int">
+            <column name="JOB_TOTAL_BALANCE" precision="5" scale="0" not-null="true" />
+        </property>
+        <property name="jobAdded" type="int">
+            <column name="JOB_ADDED" precision="5" scale="0" not-null="true" />
+        </property>
+        <property name="jobTerminations" type="int">
+            <column name="JOB_TERMINATIONS" precision="5" scale="0" not-null="true" />
+        </property>
+        <property name="jobPlaned" type="java.lang.Integer">
+            <column name="JOB_PLANED" precision="5" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

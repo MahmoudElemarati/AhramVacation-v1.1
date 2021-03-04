@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerExternalSideCode" table="PER_EXTERNAL_SIDE_CODE" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerExternalSideCodeId">
+            <key-property name="countryCode" type="string">
+                <column name="COUNTRY_CODE" length="5" />
+            </key-property>
+            <key-property name="externalSideCode" type="string">
+                <column name="EXTERNAL_SIDE_CODE" length="5" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perCountryCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerCountryCode" update="false" insert="false" fetch="select">
+            <column name="COUNTRY_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <property name="externalSideName" type="string">
+            <column name="EXTERNAL_SIDE_NAME" length="50" not-null="true" />
+        </property>
+        <property name="externalSideType" type="byte">
+            <column name="EXTERNAL_SIDE_TYPE" precision="2" scale="0" not-null="true" />
+        </property>
+        <property name="recordCreateUser" type="string">
+            <column name="RECORD_CREATE_USER" length="15" />
+        </property>
+        <property name="recordCreateDate" type="date">
+            <column name="RECORD_CREATE_DATE" length="7" />
+        </property>
+        <property name="recordUpdateUser" type="string">
+            <column name="RECORD_UPDATE_USER" length="15" />
+        </property>
+        <property name="recordUpdateDate" type="date">
+            <column name="RECORD_UPDATE_DATE" length="7" />
+        </property>
+        <set name="perEmpHistoriesForPerehPerescFk" table="PER_EMP_HISTORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="COUNTRY_CODE" length="5" />
+                <column name="EXTERNAL_SIDE_CODE" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpHistory" />
+        </set>
+        <set name="perEmpHistoriesForPerehPerescFromFk" table="PER_EMP_HISTORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="COUNTRY_CODE_FROM" length="5" />
+                <column name="EXTERNAL_SIDE_CODE_FROM" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpHistory" />
+        </set>
+        <set name="perEmploymentMastersesForPeremPerescFromFk" table="PER_EMPLOYMENT_MASTERS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="COUNTRY_CODE_FROM" length="5" />
+                <column name="EXTERNAL_SIDE_CODE_FROM" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" />
+        </set>
+        <set name="perEmploymentMastersesForPeremPerescFk" table="PER_EMPLOYMENT_MASTERS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="COUNTRY_CODE" length="5" />
+                <column name="EXTERNAL_SIDE_CODE" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" />
+        </set>
+    </class>
+</hibernate-mapping>

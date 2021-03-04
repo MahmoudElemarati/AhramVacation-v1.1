@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerLocationCodeDepartment" table="PER_LOCATION_CODE_DEPARTMENT" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerLocationCodeDepartmentId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="locCode" type="string">
+                <column name="LOC_CODE" length="3" />
+            </key-property>
+            <key-property name="departmentSeq" type="string">
+                <column name="DEPARTMENT_SEQ" length="3" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perLocationCodes" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerLocationCodes" update="false" insert="false" fetch="select">
+            <column name="LOC_CODE" length="3" not-null="true" />
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <property name="departmentCode" type="string">
+            <column name="DEPARTMENT_CODE" length="3" not-null="true" />
+        </property>
+        <property name="departmentName" type="string">
+            <column name="DEPARTMENT_NAME" length="75" not-null="true" />
+        </property>
+        <set name="perMosqueCodes" table="PER_MOSQUE_CODE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="LOC_CODE" length="3" not-null="true" />
+                <column name="DEPARTMENT_SEQ" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerMosqueCode" />
+        </set>
+    </class>
+</hibernate-mapping>

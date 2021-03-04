@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpVacationBalance" table="PER_EMP_VACATION_BALANCE" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpVacationBalanceId">
+            <key-property name="employeeId" type="string">
+                <column name="EMPLOYEE_ID" length="10" />
+            </key-property>
+            <key-property name="vacationCode" type="string">
+                <column name="VACATION_CODE" length="2" />
+            </key-property>
+            <key-property name="balStartDate" type="date">
+                <column name="BAL_START_DATE" length="7" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perVacationCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerVacationCode" update="false" insert="false" fetch="select">
+            <column name="VACATION_CODE" length="2" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perEmploymentMasters" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" update="false" insert="false" fetch="select">
+            <column name="EMPLOYEE_ID" length="10" not-null="true" />
+        </many-to-one>
+        <property name="balEndDate" type="date">
+            <column name="BAL_END_DATE" length="7" not-null="true" />
+        </property>
+        <property name="deserveDate" type="date">
+            <column name="DESERVE_DATE" length="7" not-null="true" />
+        </property>
+        <property name="decisionNo" type="string">
+            <column name="DECISION_NO" length="10" />
+        </property>
+        <property name="decisionDate" type="date">
+            <column name="DECISION_DATE" length="7" />
+        </property>
+        <property name="currentBalance" type="big_decimal">
+            <column name="CURRENT_BALANCE" precision="7" />
+        </property>
+        <property name="lossBalance" type="big_decimal">
+            <column name="LOSS_BALANCE" precision="7" />
+        </property>
+        <property name="previousYearBalance" type="big_decimal">
+            <column name="PREVIOUS_YEAR_BALANCE" precision="7" />
+        </property>
+        <property name="workStartDate" type="date">
+            <column name="WORK_START_DATE" length="7" />
+        </property>
+        <property name="contractDate" type="date">
+            <column name="CONTRACT_DATE" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

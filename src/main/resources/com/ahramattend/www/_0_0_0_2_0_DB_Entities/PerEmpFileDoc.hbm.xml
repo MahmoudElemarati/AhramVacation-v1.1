@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpFileDoc" table="PER_EMP_FILE_DOC" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpFileDocId">
+            <key-property name="employeeId" type="string">
+                <column name="EMPLOYEE_ID" length="10" />
+            </key-property>
+            <key-property name="fileSerial" type="string">
+                <column name="FILE_SERIAL" length="2" />
+            </key-property>
+            <key-property name="fileDocSerial" type="string">
+                <column name="FILE_DOC_SERIAL" length="5" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perEmpFile" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpFile" update="false" insert="false" fetch="select">
+            <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            <column name="FILE_SERIAL" length="2" not-null="true" />
+        </many-to-one>
+        <property name="docTitle" type="string">
+            <column name="DOC_TITLE" length="150" />
+        </property>
+        <property name="docImage" type="blob">
+            <column name="DOC_IMAGE" />
+        </property>
+        <property name="docSaveDt" type="date">
+            <column name="DOC_SAVE_DT" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

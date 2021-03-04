@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudProject" table="BUD_PROJECT" schema="SHAMS" optimistic-lock="version">
+        <id name="projectCode" type="string">
+            <column name="PROJECT_CODE" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="projectName" type="string">
+            <column name="PROJECT_NAME" length="150" />
+        </property>
+        <property name="filterProjectName" type="string">
+            <column name="FILTER_PROJECT_NAME" length="150" />
+        </property>
+        <property name="projectStartDate" type="date">
+            <column name="PROJECT_START_DATE" length="7" />
+        </property>
+        <property name="projectPeriod" type="big_decimal">
+            <column name="PROJECT_PERIOD" precision="5" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="100" />
+        </property>
+        <property name="recordCreationUser" type="string">
+            <column name="RECORD_CREATION_USER" length="10" />
+        </property>
+        <property name="recordCreationDate" type="date">
+            <column name="RECORD_CREATION_DATE" length="7" />
+        </property>
+        <property name="lastUpdateUser" type="string">
+            <column name="LAST_UPDATE_USER" length="10" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="LAST_UPDATE_DATE" length="7" />
+        </property>
+        <property name="lastUpdateTransaction" type="string">
+            <column name="LAST_UPDATE_TRANSACTION" length="1" />
+        </property>
+        <property name="planningCode" type="string">
+            <column name="PLANNING_CODE" length="15" />
+        </property>
+        <property name="parentProjectCode" type="string">
+            <column name="PARENT_PROJECT_CODE" length="10" />
+        </property>
+        <property name="mainProj" type="java.lang.Boolean">
+            <column name="MAIN_PROJ" precision="1" scale="0" />
+        </property>
+        <set name="budProjectSubs" table="BUD_PROJECT_SUB" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PROJECT_CODE" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudProjectSub" />
+        </set>
+    </class>
+</hibernate-mapping>

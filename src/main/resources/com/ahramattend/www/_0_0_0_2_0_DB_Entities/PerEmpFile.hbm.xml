@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpFile" table="PER_EMP_FILE" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpFileId">
+            <key-property name="employeeId" type="string">
+                <column name="EMPLOYEE_ID" length="10" />
+            </key-property>
+            <key-property name="fileSerial" type="string">
+                <column name="FILE_SERIAL" length="2" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perFileDocType" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFileDocType" fetch="select">
+            <column name="DOC_TYPE_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perFileType" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFileType" fetch="select">
+            <column name="FILE_TYPE_CODE" length="2" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perEmploymentMasters" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" update="false" insert="false" fetch="select">
+            <column name="EMPLOYEE_ID" length="10" not-null="true" />
+        </many-to-one>
+        <set name="perEmpFileDocs" table="PER_EMP_FILE_DOC" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+                <column name="FILE_SERIAL" length="2" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpFileDoc" />
+        </set>
+    </class>
+</hibernate-mapping>

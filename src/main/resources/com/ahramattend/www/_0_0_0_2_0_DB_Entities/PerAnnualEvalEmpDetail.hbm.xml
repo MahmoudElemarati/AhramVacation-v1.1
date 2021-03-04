@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalEmpDetail" table="PER_ANNUAL_EVAL_EMP_DETAIL" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalEmpDetailId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="annualId" type="string">
+                <column name="ANNUAL_ID" length="5" />
+            </key-property>
+            <key-property name="serialNo" type="string">
+                <column name="SERIAL_NO" length="5" />
+            </key-property>
+            <key-property name="employeeId" type="string">
+                <column name="EMPLOYEE_ID" length="10" />
+            </key-property>
+            <key-property name="serialNoDetail" type="string">
+                <column name="SERIAL_NO_DETAIL" length="5" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perEvalAttributeDetail" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEvalAttributeDetail" fetch="select">
+            <column name="SERIAL_NO_ATTRIBUTE" length="5" />
+        </many-to-one>
+        <many-to-one name="perEvalAttributeSpecialDtl" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEvalAttributeSpecialDtl" fetch="select">
+            <column name="SERIAL" length="5" />
+        </many-to-one>
+        <many-to-one name="perEvalPercentageByGradeCodeComm" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEvalPercentage" fetch="select">
+            <column name="GRADE_CODE_COMM" length="2" />
+        </many-to-one>
+        <many-to-one name="perEvalPercentageByGradeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEvalPercentage" fetch="select">
+            <column name="GRADE_CODE" length="2" />
+        </many-to-one>
+        <many-to-one name="perEvalPercentageByGradeCodeBigboss" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEvalPercentage" fetch="select">
+            <column name="GRADE_CODE_BIGBOSS" length="2" />
+        </many-to-one>
+        <many-to-one name="perAnnualEvalEmp" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalEmp" update="false" insert="false" fetch="select">
+            <column name="SERIAL_NO" length="5" not-null="true" />
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+            <column name="ANNUAL_ID" length="5" not-null="true" />
+            <column name="EMPLOYEE_ID" length="10" not-null="true" />
+        </many-to-one>
+        <property name="attributeNo" type="string">
+            <column name="ATTRIBUTE_NO" length="5" />
+        </property>
+        <property name="directBossDegree" type="int">
+            <column name="DIRECT_BOSS_DEGREE" precision="5" scale="0" not-null="true" />
+        </property>
+        <property name="directBossOpinion" type="string">
+            <column name="DIRECT_BOSS_OPINION" length="50" />
+        </property>
+        <property name="bigBossDegree" type="java.lang.Integer">
+            <column name="BIG_BOSS_DEGREE" precision="5" scale="0" />
+        </property>
+        <property name="bigBossOpinion" type="string">
+            <column name="BIG_BOSS_OPINION" length="50" />
+        </property>
+        <property name="commityDegree" type="java.lang.Integer">
+            <column name="COMMITY_DEGREE" precision="5" scale="0" />
+        </property>
+        <property name="commityOpinion" type="string">
+            <column name="COMMITY_OPINION" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

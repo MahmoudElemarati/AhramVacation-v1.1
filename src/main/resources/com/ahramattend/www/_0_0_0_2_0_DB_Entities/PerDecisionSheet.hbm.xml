@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerDecisionSheet" table="PER_DECISION_SHEET" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerDecisionSheetId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="decisionId" type="string">
+                <column name="DECISION_ID" length="10" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="budLocation" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudLocation" update="false" insert="false" fetch="select">
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perDecisionTypeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerDecisionTypeCode" fetch="select">
+            <column name="DECISION_TYPE_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perDesicionSideCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerDesicionSideCode" fetch="select">
+            <column name="DESICION_SIDE_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <property name="decisionNo" type="string">
+            <column name="DECISION_NO" length="10" not-null="true" />
+        </property>
+        <property name="decisionDate" type="date">
+            <column name="DECISION_DATE" length="7" not-null="true" />
+        </property>
+        <property name="decisionSubject" type="string">
+            <column name="DECISION_SUBJECT" length="4000" />
+        </property>
+        <property name="decisionSummary" type="string">
+            <column name="DECISION_SUMMARY" length="2000" />
+        </property>
+        <set name="perEmpDecisionSheets" table="PER_EMP_DECISION_SHEET" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="DECISION_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpDecisionSheet" />
+        </set>
+        <set name="perDecisionSheetImageDtls" table="PER_DECISION_SHEET_IMAGE_DTL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="DECISION_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerDecisionSheetImageDtl" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayMethodType" table="PAY_METHOD_TYPE" schema="SHAMS" optimistic-lock="version">
+        <id name="methodType" type="byte">
+            <column name="METHOD_TYPE" precision="2" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="methodName" type="string">
+            <column name="METHOD_NAME" length="50" />
+        </property>
+        <property name="reqFlag" type="java.lang.Boolean">
+            <column name="REQ_FLAG" precision="1" scale="0" />
+        </property>
+        <property name="annualFlag" type="java.lang.Boolean">
+            <column name="ANNUAL_FLAG" precision="1" scale="0" />
+        </property>
+        <property name="monthFlag" type="java.lang.Boolean">
+            <column name="MONTH_FLAG" precision="1" scale="0" />
+        </property>
+        <set name="payFinancialGroupBands" table="PAY_FINANCIAL_GROUP_BAND" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="METHOD_TYPE" precision="2" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayFinancialGroupBand" />
+        </set>
+        <set name="payDeserveEmps" table="PAY_DESERVE_EMP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="METHOD_TYPE" precision="2" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayDeserveEmp" />
+        </set>
+        <set name="payMethodFileDtls" table="PAY_METHOD_FILE_DTL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="METHOD_TYPE" precision="2" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayMethodFileDtl" />
+        </set>
+        <set name="payLocationBandFiles" table="PAY_LOCATION_BAND_FILE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="METHOD_TYPE" precision="2" scale="0" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayLocationBandFile" />
+        </set>
+        <set name="payExecutionDates" table="PAY_EXECUTION_DATE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="METHOD_TYPE" precision="2" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayExecutionDate" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerUsers" table="PER_USERS" schema="SHAMS" optimistic-lock="version">
+        <id name="employeeId" type="string">
+            <column name="EMPLOYEE_ID" length="10" />
+            <generator class="foreign">
+                <param name="property">perEmploymentMasters</param>
+            </generator>
+        </id>
+        <one-to-one name="perEmploymentMasters" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" constrained="true"></one-to-one>
+        <property name="employeeNo" type="string">
+            <column name="EMPLOYEE_NO" length="10" not-null="true" />
+        </property>
+        <property name="userPwd" type="string">
+            <column name="USER_PWD" length="15" not-null="true" />
+        </property>
+        <property name="onStatus" type="java.lang.Boolean">
+            <column name="ON_STATUS" precision="1" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerSetup" table="PER_SETUP" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerSetupId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="setupDate" type="date">
+                <column name="SETUP_DATE" length="7" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="budLocation" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudLocation" update="false" insert="false" fetch="select">
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <property name="perOrgMan" type="string">
+            <column name="PER_ORG_MAN" length="75" />
+        </property>
+        <property name="attendanceFlg" type="boolean">
+            <column name="ATTENDANCE_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="historyFlg" type="boolean">
+            <column name="HISTORY_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="perOrgManTitle" type="string">
+            <column name="PER_ORG_MAN_TITLE" length="100" />
+        </property>
+        <property name="signature1" type="string">
+            <column name="SIGNATURE_1" length="75" />
+        </property>
+        <property name="title1" type="string">
+            <column name="TITLE_1" length="50" />
+        </property>
+        <property name="signature2" type="string">
+            <column name="SIGNATURE_2" length="75" />
+        </property>
+        <property name="title2" type="string">
+            <column name="TITLE_2" length="50" />
+        </property>
+        <property name="signature3" type="string">
+            <column name="SIGNATURE_3" length="75" />
+        </property>
+        <property name="title3" type="string">
+            <column name="TITLE_3" length="50" />
+        </property>
+        <property name="signature4" type="string">
+            <column name="SIGNATURE_4" length="75" />
+        </property>
+        <property name="title4" type="string">
+            <column name="TITLE_4" length="50" />
+        </property>
+        <property name="signature5" type="string">
+            <column name="SIGNATURE_5" length="75" />
+        </property>
+        <property name="title5" type="string">
+            <column name="TITLE_5" length="50" />
+        </property>
+        <property name="signature6" type="string">
+            <column name="SIGNATURE_6" length="75" />
+        </property>
+        <property name="title6" type="string">
+            <column name="TITLE_6" length="50" />
+        </property>
+        <property name="notes" type="string">
+            <column name="NOTES" length="250" />
+        </property>
+        <property name="bhSignature1" type="string">
+            <column name="BH_SIGNATURE_1" length="75" />
+        </property>
+        <property name="bhTitle1" type="string">
+            <column name="BH_TITLE_1" length="50" />
+        </property>
+        <property name="bhSignature2" type="string">
+            <column name="BH_SIGNATURE_2" length="75" />
+        </property>
+        <property name="bhTitle2" type="string">
+            <column name="BH_TITLE_2" length="50" />
+        </property>
+        <property name="bhSignature3" type="string">
+            <column name="BH_SIGNATURE_3" length="75" />
+        </property>
+        <property name="bhTitle3" type="string">
+            <column name="BH_TITLE_3" length="50" />
+        </property>
+        <property name="bhNotes" type="string">
+            <column name="BH_NOTES" length="250" />
+        </property>
+        <property name="bhGehaName" type="string">
+            <column name="BH_GEHA_NAME" length="150" />
+        </property>
+        <property name="signature7" type="string">
+            <column name="SIGNATURE_7" length="75" />
+        </property>
+        <property name="title7" type="string">
+            <column name="TITLE_7" length="75" />
+        </property>
+        <property name="bhSignature4" type="string">
+            <column name="BH_SIGNATURE_4" length="75" />
+        </property>
+        <property name="bhTitle4" type="string">
+            <column name="BH_TITLE_4" length="50" />
+        </property>
+        <property name="bhSignature5" type="string">
+            <column name="BH_SIGNATURE_5" length="75" />
+        </property>
+        <property name="bhTitle5" type="string">
+            <column name="BH_TITLE_5" length="50" />
+        </property>
+        <property name="generalJob" type="string">
+            <column name="GENERAL_JOB" length="100" />
+        </property>
+        <property name="attendancePwd" type="string">
+            <column name="ATTENDANCE_PWD" length="15" />
+        </property>
+        <property name="chkTerm" type="java.lang.Boolean">
+            <column name="CHK_TERM" precision="1" scale="0" />
+        </property>
+        <property name="chk1" type="java.lang.Boolean">
+            <column name="CHK_1" precision="1" scale="0" />
+        </property>
+        <property name="chk2" type="java.lang.Boolean">
+            <column name="CHK_2" precision="1" scale="0" />
+        </property>
+        <property name="chk3" type="java.lang.Boolean">
+            <column name="CHK_3" precision="1" scale="0" />
+        </property>
+        <property name="chk4" type="java.lang.Boolean">
+            <column name="CHK_4" precision="1" scale="0" />
+        </property>
+        <property name="chk5" type="java.lang.Boolean">
+            <column name="CHK_5" precision="1" scale="0" />
+        </property>
+        <property name="chk6" type="java.lang.Boolean">
+            <column name="CHK_6" precision="1" scale="0" />
+        </property>
+        <property name="chk7" type="java.lang.Boolean">
+            <column name="CHK_7" precision="1" scale="0" />
+        </property>
+        <property name="chk8" type="java.lang.Boolean">
+            <column name="CHK_8" precision="1" scale="0" />
+        </property>
+        <property name="chk9" type="java.lang.Boolean">
+            <column name="CHK_9" precision="1" scale="0" />
+        </property>
+        <property name="chk10" type="java.lang.Boolean">
+            <column name="CHK_10" precision="1" scale="0" />
+        </property>
+        <property name="chk11" type="java.lang.Boolean">
+            <column name="CHK_11" precision="1" scale="0" />
+        </property>
+        <property name="chk12" type="java.lang.Boolean">
+            <column name="CHK_12" precision="1" scale="0" />
+        </property>
+        <property name="chk13" type="java.lang.Boolean">
+            <column name="CHK_13" precision="1" scale="0" />
+        </property>
+        <property name="chk14" type="java.lang.Boolean">
+            <column name="CHK_14" precision="1" scale="0" />
+        </property>
+        <property name="chk15" type="java.lang.Boolean">
+            <column name="CHK_15" precision="1" scale="0" />
+        </property>
+        <property name="chk16" type="java.lang.Boolean">
+            <column name="CHK_16" precision="1" scale="0" />
+        </property>
+        <property name="chk17" type="java.lang.Boolean">
+            <column name="CHK_17" precision="1" scale="0" />
+        </property>
+        <property name="chk18" type="java.lang.Boolean">
+            <column name="CHK_18" precision="1" scale="0" />
+        </property>
+        <property name="chk19" type="java.lang.Boolean">
+            <column name="CHK_19" precision="1" scale="0" />
+        </property>
+        <property name="chk20" type="java.lang.Boolean">
+            <column name="CHK_20" precision="1" scale="0" />
+        </property>
+        <property name="chk21" type="java.lang.Boolean">
+            <column name="CHK_21" precision="1" scale="0" />
+        </property>
+        <property name="chk22" type="java.lang.Boolean">
+            <column name="CHK_22" precision="1" scale="0" />
+        </property>
+        <property name="chk23" type="java.lang.Boolean">
+            <column name="CHK_23" precision="1" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

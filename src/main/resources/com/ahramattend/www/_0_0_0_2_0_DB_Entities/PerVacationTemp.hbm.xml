@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerVacationTemp" table="PER_VACATION_TEMP" schema="SHAMS" optimistic-lock="version">
+        <id name="serial" type="string">
+            <column name="SERIAL" length="5" />
+            <generator class="assigned" />
+        </id>
+        <property name="vacDate" type="date">
+            <column name="VAC_DATE" length="7" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

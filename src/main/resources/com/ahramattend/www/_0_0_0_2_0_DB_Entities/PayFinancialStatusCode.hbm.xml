@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayFinancialStatusCode" table="PAY_FINANCIAL_STATUS_CODE" schema="SHAMS" optimistic-lock="version">
+        <id name="statusCode" type="byte">
+            <column name="STATUS_CODE" precision="2" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="statusName" type="string">
+            <column name="STATUS_NAME" length="100" not-null="true" />
+        </property>
+        <property name="statusType" type="java.lang.Boolean">
+            <column name="STATUS_TYPE" precision="1" scale="0" />
+        </property>
+        <set name="perEmploymentMasterses" table="PER_EMPLOYMENT_MASTERS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="STATUS_CODE" precision="2" scale="0" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" />
+        </set>
+        <set name="payFinancialGroupTypes" table="PAY_FINANCIAL_GROUP_TYPE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="STATUS_CODE" precision="2" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayFinancialGroupType" />
+        </set>
+    </class>
+</hibernate-mapping>

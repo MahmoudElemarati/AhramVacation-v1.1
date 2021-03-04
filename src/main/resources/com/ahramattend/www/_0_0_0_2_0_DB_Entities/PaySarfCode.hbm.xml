@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PaySarfCode" table="PAY_SARF_CODE" schema="SHAMS" optimistic-lock="version">
+        <id name="sarfCode" type="long">
+            <column name="SARF_CODE" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="sarfName" type="string">
+            <column name="SARF_NAME" length="300" />
+        </property>
+        <set name="payExecutionSpecificEmps" table="PAY_EXECUTION_SPECIFIC_EMP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SARF_CODE" precision="10" scale="0" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayExecutionSpecificEmp" />
+        </set>
+        <set name="payBankCodes" table="PAY_SARF_CODE_BANK" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="SARF_CODE" precision="10" scale="0" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayBankCode">
+                <column name="BANK_CODE" precision="4" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="paySarfCodeEmps" table="PAY_SARF_CODE_EMP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SARF_CODE" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PaySarfCodeEmp" />
+        </set>
+    </class>
+</hibernate-mapping>

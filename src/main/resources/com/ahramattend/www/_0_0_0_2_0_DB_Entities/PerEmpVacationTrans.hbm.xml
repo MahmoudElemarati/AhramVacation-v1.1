@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpVacationTrans" table="PER_EMP_VACATION_TRANS" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpVacationTransId">
+            <key-property name="employeeId" type="string">
+                <column name="EMPLOYEE_ID" length="10" />
+            </key-property>
+            <key-property name="vacationCode" type="string">
+                <column name="VACATION_CODE" length="2" />
+            </key-property>
+            <key-property name="transSerialNo" type="string">
+                <column name="TRANS_SERIAL_NO" length="5" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perVacationCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerVacationCode" update="false" insert="false" fetch="select">
+            <column name="VACATION_CODE" length="2" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perEmploymentMasters" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" update="false" insert="false" fetch="select">
+            <column name="EMPLOYEE_ID" length="10" not-null="true" />
+        </many-to-one>
+        <property name="vacStartDate" type="date">
+            <column name="VAC_START_DATE" length="7" />
+        </property>
+        <property name="vacEndDate" type="date">
+            <column name="VAC_END_DATE" length="7" />
+        </property>
+        <property name="vacEndDateActual" type="date">
+            <column name="VAC_END_DATE_ACTUAL" length="7" />
+        </property>
+        <property name="directBossAprove" type="java.lang.Boolean">
+            <column name="DIRECT_BOSS_APROVE" precision="1" scale="0" />
+        </property>
+        <property name="bigBossAprove" type="java.lang.Boolean">
+            <column name="BIG_BOSS_APROVE" precision="1" scale="0" />
+        </property>
+        <property name="spcPeriodDay" type="java.lang.Byte">
+            <column name="SPC_PERIOD_DAY" precision="2" scale="0" />
+        </property>
+        <property name="spcPeriodMn" type="java.lang.Byte">
+            <column name="SPC_PERIOD_MN" precision="2" scale="0" />
+        </property>
+        <property name="spcPeriodYr" type="java.lang.Byte">
+            <column name="SPC_PERIOD_YR" precision="2" scale="0" />
+        </property>
+        <property name="vacBalType" type="java.lang.Boolean">
+            <column name="VAC_BAL_TYPE" precision="1" scale="0" />
+        </property>
+        <property name="decisionNo" type="string">
+            <column name="DECISION_NO" length="10" />
+        </property>
+        <property name="decisionDate" type="date">
+            <column name="DECISION_DATE" length="7" />
+        </property>
+        <property name="decisionNotes" type="string">
+            <column name="DECISION_NOTES" length="500" />
+        </property>
+        <property name="returnDate" type="date">
+            <column name="RETURN_DATE" length="7" />
+        </property>
+        <property name="postDate" type="date">
+            <column name="POST_DATE" length="7" />
+        </property>
+        <property name="vacNote" type="string">
+            <column name="VAC_NOTE" length="250" />
+        </property>
+        <property name="period" type="big_decimal">
+            <column name="PERIOD" precision="7" />
+        </property>
+        <property name="balBeforeVac" type="big_decimal">
+            <column name="BAL_BEFORE_VAC" precision="5" />
+        </property>
+        <property name="balRemaining" type="big_decimal">
+            <column name="BAL_REMAINING" precision="5" />
+        </property>
+        <property name="vacPunType" type="java.lang.Boolean">
+            <column name="VAC_PUN_TYPE" precision="1" scale="0" />
+        </property>
+        <property name="militaryCardNo" type="string">
+            <column name="MILITARY_CARD_NO" length="30" />
+        </property>
+        <property name="fridayFlg" type="java.lang.Boolean">
+            <column name="FRIDAY_FLG" precision="1" scale="0" />
+        </property>
+        <property name="saturdayFlg" type="java.lang.Boolean">
+            <column name="SATURDAY_FLG" precision="1" scale="0" />
+        </property>
+        <property name="sundayFlg" type="java.lang.Boolean">
+            <column name="SUNDAY_FLG" precision="1" scale="0" />
+        </property>
+        <property name="mondayFlg" type="java.lang.Boolean">
+            <column name="MONDAY_FLG" precision="1" scale="0" />
+        </property>
+        <property name="tuesdayFlg" type="java.lang.Boolean">
+            <column name="TUESDAY_FLG" precision="1" scale="0" />
+        </property>
+        <property name="wednesdayFlg" type="java.lang.Boolean">
+            <column name="WEDNESDAY_FLG" precision="1" scale="0" />
+        </property>
+        <property name="thursdayFlg" type="java.lang.Boolean">
+            <column name="THURSDAY_FLG" precision="1" scale="0" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="500" />
+        </property>
+        <property name="bigBossReason" type="string">
+            <column name="BIG_BOSS_REASON" length="50" />
+        </property>
+        <property name="bigBossDate" type="date">
+            <column name="BIG_BOSS_DATE" length="7" />
+        </property>
+        <property name="bigBossNo" type="string">
+            <column name="BIG_BOSS_NO" length="10" />
+        </property>
+        <property name="directBossReason" type="string">
+            <column name="DIRECT_BOSS_REASON" length="50" />
+        </property>
+        <property name="directBossDate" type="date">
+            <column name="DIRECT_BOSS_DATE" length="7" />
+        </property>
+        <property name="directBossNo" type="string">
+            <column name="DIRECT_BOSS_NO" length="10" />
+        </property>
+        <set name="perEmpVacationAdjstmnts" table="PER_EMP_VACATION_ADJSTMNT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+                <column name="VACATION_CODE" length="2" not-null="true" />
+                <column name="TRANS_SERIAL_NO" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpVacationAdjstmnt" />
+        </set>
+    </class>
+</hibernate-mapping>

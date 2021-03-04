@@ -1,0 +1,455 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" table="PER_EMPLOYMENT_MASTERS" schema="SHAMS" optimistic-lock="version">
+        <id name="employeeId" type="string">
+            <column name="EMPLOYEE_ID" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="perFiscalDegreeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCode" fetch="select">
+            <column name="FISCAL_DEGREE_CODE" length="3" />
+        </many-to-one>
+        <many-to-one name="perFiscalDegreeCodeNew" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCodeNew" fetch="select">
+            <column name="FISCAL_DEGREE_CODE_NEW" length="3" />
+        </many-to-one>
+        <many-to-one name="perGeneralCodeByGeneralCodeFirst" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerGeneralCode" fetch="select">
+            <column name="GENERAL_CODE_FIRST" length="3" />
+        </many-to-one>
+        <many-to-one name="perGeneralCodeByGeneralCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerGeneralCode" fetch="select">
+            <column name="GENERAL_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perGroupTypeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerGroupTypeCode" fetch="select">
+            <column name="GROUP_TYPE_CODE" length="3" />
+        </many-to-one>
+        <many-to-one name="perInsuranceSideCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerInsuranceSideCode" fetch="select">
+            <column name="INSURANCE_SIDE_CODE" length="5" />
+        </many-to-one>
+        <many-to-one name="perJobCodeByJobCodeTransfer" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobCode" fetch="select">
+            <column name="JOB_CODE_TRANSFER" length="5" />
+        </many-to-one>
+        <many-to-one name="perJobCodeByJobCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobCode" fetch="select">
+            <column name="JOB_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perJobLaw" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobLaw" fetch="select">
+            <column name="LAW_SEQ" length="3" />
+        </many-to-one>
+        <many-to-one name="perLocationCodes" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerLocationCodes" fetch="select">
+            <column name="LOC_CODE" length="3" not-null="true" />
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perMaritalCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerMaritalCode" fetch="select">
+            <column name="MARITAL_CODE" length="2" />
+        </many-to-one>
+        <many-to-one name="perMilitaryCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerMilitaryCode" fetch="select">
+            <column name="MILITARY_CODE" length="2" />
+        </many-to-one>
+        <many-to-one name="perMosqueCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerMosqueCode" fetch="select">
+            <column name="MOSQUE_CODE" length="10" />
+        </many-to-one>
+        <many-to-one name="perNationalCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerNationalCode" fetch="select">
+            <column name="NATIONAL_CODE" length="2" />
+        </many-to-one>
+        <many-to-one name="perOrganizationStructureByOrgIdFrom" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrganizationStructure" fetch="select">
+            <column name="ORG_ID_FROM" length="5" />
+        </many-to-one>
+        <many-to-one name="perOrganizationStructureByOrgId" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrganizationStructure" fetch="select">
+            <column name="ORG_ID" length="5" />
+        </many-to-one>
+        <many-to-one name="perOrgunitCodeByOrgunitCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrgunitCode" fetch="select">
+            <column name="ORGUNIT_CODE" length="3" />
+        </many-to-one>
+        <many-to-one name="perOrgunitCodeByOrgunitCodeFrom" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrgunitCode" fetch="select">
+            <column name="ORGUNIT_CODE_FROM" length="3" />
+        </many-to-one>
+        <many-to-one name="perQualCodeByQualCodeFirst" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerQualCode" fetch="select">
+            <column name="QUAL_CODE_FIRST" length="5" />
+        </many-to-one>
+        <many-to-one name="perQualCodeByQualCodeBegin" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerQualCode" fetch="select">
+            <column name="QUAL_CODE_BEGIN" length="5" />
+        </many-to-one>
+        <many-to-one name="perQualCodeByQualCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerQualCode" fetch="select">
+            <column name="QUAL_CODE" length="5" />
+        </many-to-one>
+        <many-to-one name="perReligonCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerReligonCode" fetch="select">
+            <column name="RELIGON_CODE" length="2" />
+        </many-to-one>
+        <many-to-one name="perSpecialistCodeBySpecialistCodeBegin" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerSpecialistCode" fetch="select">
+            <column name="SPECIALIST_CODE_BEGIN" length="5" />
+        </many-to-one>
+        <many-to-one name="perSpecialistCodeBySpecialistCodeFirst" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerSpecialistCode" fetch="select">
+            <column name="SPECIALIST_CODE_FIRST" length="5" />
+        </many-to-one>
+        <many-to-one name="perSpecialistCodeBySpecialistCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerSpecialistCode" fetch="select">
+            <column name="SPECIALIST_CODE" length="5" />
+        </many-to-one>
+        <many-to-one name="perExternalSideCodeByPeremPerescFromFk" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerExternalSideCode" fetch="select">
+            <column name="COUNTRY_CODE_FROM" length="5" />
+            <column name="EXTERNAL_SIDE_CODE_FROM" length="5" />
+        </many-to-one>
+        <many-to-one name="perExternalSideCodeByPeremPerescFk" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerExternalSideCode" fetch="select">
+            <column name="COUNTRY_CODE" length="5" />
+            <column name="EXTERNAL_SIDE_CODE" length="5" />
+        </many-to-one>
+        <many-to-one name="budProjectSubByPeremBudProjSFromFk" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudProjectSub" fetch="select">
+            <column name="PROJECT_CODE_FROM" length="10" />
+            <column name="PROJECT_SUB_CODE_FROM" length="6" />
+        </many-to-one>
+        <many-to-one name="budProjectSubByPeremBudProjSFk" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudProjectSub" fetch="select">
+            <column name="PROJECT_CODE" length="10" />
+            <column name="PROJECT_SUB_CODE" length="6" />
+        </many-to-one>
+        <many-to-one name="payFinancialStatusCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayFinancialStatusCode" fetch="select">
+            <column name="STATUS_CODE" precision="2" scale="0" />
+        </many-to-one>
+        <many-to-one name="perAttendanceWrkTypeDetail" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAttendanceWrkTypeDetail" fetch="select">
+            <column name="WORK_TYPE_CODE" length="3" />
+            <column name="WORK_TYPE_SEQ" length="3" />
+        </many-to-one>
+        <many-to-one name="perCityCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerCityCode" fetch="select">
+            <column name="COUNTRY_CODE_BIRTH" length="5" />
+            <column name="GOV_CODE" length="5" />
+            <column name="CITY_CODE" length="5" />
+        </many-to-one>
+        <many-to-one name="perEmploymentParameter" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentParameter" fetch="select">
+            <column name="EMPLOYMENT_SOURCE_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <property name="employeeNo" type="string">
+            <column name="EMPLOYEE_NO" length="10" not-null="true" />
+        </property>
+        <property name="nationalNo" type="string">
+            <column name="NATIONAL_NO" length="15" />
+        </property>
+        <property name="insuranceNo" type="string">
+            <column name="INSURANCE_NO" length="15" />
+        </property>
+        <property name="empAname" type="string">
+            <column name="EMP_ANAME" length="75" not-null="true" />
+        </property>
+        <property name="empEname" type="string">
+            <column name="EMP_ENAME" length="75" />
+        </property>
+        <property name="birthDate" type="date">
+            <column name="BIRTH_DATE" length="7" />
+        </property>
+        <property name="startContractDate" type="date">
+            <column name="START_CONTRACT_DATE" length="7" />
+        </property>
+        <property name="contractDate" type="date">
+            <column name="CONTRACT_DATE" length="7" not-null="true" />
+        </property>
+        <property name="workStartDate" type="date">
+            <column name="WORK_START_DATE" length="7" />
+        </property>
+        <property name="contractEnddate" type="date">
+            <column name="CONTRACT_ENDDATE" length="7" />
+        </property>
+        <property name="requestNo" type="string">
+            <column name="REQUEST_NO" length="10" />
+        </property>
+        <property name="decisionNo" type="string">
+            <column name="DECISION_NO" length="10" />
+        </property>
+        <property name="decisionDate" type="date">
+            <column name="DECISION_DATE" length="7" />
+        </property>
+        <property name="testPeriod" type="java.lang.Short">
+            <column name="TEST_PERIOD" precision="3" scale="0" />
+        </property>
+        <property name="worningPeriod" type="java.lang.Integer">
+            <column name="WORNING_PERIOD" precision="5" scale="0" />
+        </property>
+        <property name="degreeDate" type="date">
+            <column name="DEGREE_DATE" length="7" />
+        </property>
+        <property name="degreePriorityDate" type="date">
+            <column name="DEGREE_PRIORITY_DATE" length="7" />
+        </property>
+        <property name="degreePriority" type="java.lang.Integer">
+            <column name="DEGREE_PRIORITY" precision="5" scale="0" />
+        </property>
+        <property name="jobDate" type="date">
+            <column name="JOB_DATE" length="7" />
+        </property>
+        <property name="basicSalaryValue" type="big_decimal">
+            <column name="BASIC_SALARY_VALUE" precision="9" />
+        </property>
+        <property name="salaryValue" type="big_decimal">
+            <column name="SALARY_VALUE" precision="9" />
+        </property>
+        <property name="contractValue" type="big_decimal">
+            <column name="CONTRACT_VALUE" precision="9" />
+        </property>
+        <property name="deserveNo" type="java.lang.Byte">
+            <column name="DESERVE_NO" precision="2" scale="0" />
+        </property>
+        <property name="empFileno" type="string">
+            <column name="EMP_FILENO" length="10" />
+        </property>
+        <property name="empFilePosition" type="string">
+            <column name="EMP_FILE_POSITION" length="30" />
+        </property>
+        <property name="empJobFlag" type="java.lang.Boolean">
+            <column name="EMP_JOB_FLAG" precision="1" scale="0" />
+        </property>
+        <property name="empFlag" type="java.lang.Boolean">
+            <column name="EMP_FLAG" precision="1" scale="0" />
+        </property>
+        <property name="sexFlag" type="java.lang.Byte">
+            <column name="SEX_FLAG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="qualYear" type="date">
+            <column name="QUAL_YEAR" length="7" />
+        </property>
+        <property name="militaryDate" type="date">
+            <column name="MILITARY_DATE" length="7" />
+        </property>
+        <property name="militaryCardNo" type="string">
+            <column name="MILITARY_CARD_NO" length="30" />
+        </property>
+        <property name="noForConstantElawa" type="java.lang.Byte">
+            <column name="NO_FOR_CONSTANT_ELAWA" precision="2" scale="0" />
+        </property>
+        <property name="orgFlag" type="java.lang.Byte">
+            <column name="ORG_FLAG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="orgFlagFrom" type="java.lang.Boolean">
+            <column name="ORG_FLAG_FROM" precision="1" scale="0" />
+        </property>
+        <property name="classCode" type="string">
+            <column name="CLASS_CODE" length="10" />
+        </property>
+        <property name="categoryCode" type="string">
+            <column name="CATEGORY_CODE" length="10" />
+        </property>
+        <property name="foodCard" type="java.lang.Boolean">
+            <column name="FOOD_CARD" precision="1" scale="0" />
+        </property>
+        <property name="foodCardType" type="java.lang.Boolean">
+            <column name="FOOD_CARD_TYPE" precision="1" scale="0" />
+        </property>
+        <property name="emailWork" type="string">
+            <column name="EMAIL_WORK" length="50" />
+        </property>
+        <property name="qualYearFirst" type="date">
+            <column name="QUAL_YEAR_FIRST" length="7" />
+        </property>
+        <property name="wrkTypeDecisionNo" type="string">
+            <column name="WRK_TYPE_DECISION_NO" length="15" />
+        </property>
+        <property name="wrkTypeDecisionDate" type="date">
+            <column name="WRK_TYPE_DECISION_DATE" length="7" />
+        </property>
+        <property name="wrkTypeFromDate" type="date">
+            <column name="WRK_TYPE_FROM_DATE" length="7" />
+        </property>
+        <property name="wrkTypeToDate" type="date">
+            <column name="WRK_TYPE_TO_DATE" length="7" />
+        </property>
+        <property name="wrkTypeSalaryRatio" type="big_decimal">
+            <column name="WRK_TYPE_SALARY_RATIO" precision="5" />
+        </property>
+        <property name="wrkTypeNotes" type="string">
+            <column name="WRK_TYPE_NOTES" length="250" />
+        </property>
+        <property name="externalStartdate" type="date">
+            <column name="EXTERNAL_STARTDATE" length="7" />
+        </property>
+        <property name="externalEnddate" type="date">
+            <column name="EXTERNAL_ENDDATE" length="7" />
+        </property>
+        <property name="recordCreateUser" type="string">
+            <column name="RECORD_CREATE_USER" length="15" />
+        </property>
+        <property name="recordCreateDate" type="date">
+            <column name="RECORD_CREATE_DATE" length="7" />
+        </property>
+        <property name="recordUpdateUser" type="string">
+            <column name="RECORD_UPDATE_USER" length="15" />
+        </property>
+        <property name="recordUpdateDate" type="date">
+            <column name="RECORD_UPDATE_DATE" length="7" />
+        </property>
+        <property name="jobDateTransfer" type="date">
+            <column name="JOB_DATE_TRANSFER" length="7" />
+        </property>
+        <property name="qualYearBegin" type="date">
+            <column name="QUAL_YEAR_BEGIN" length="7" />
+        </property>
+        <property name="chkSpecialNeeds" type="java.lang.Boolean">
+            <column name="CHK_SPECIAL_NEEDS" precision="1" scale="0" />
+        </property>
+        <property name="cadreKind" type="java.lang.Boolean">
+            <column name="CADRE_KIND" precision="1" scale="0" />
+        </property>
+        <property name="jobSalaryValue" type="big_decimal">
+            <column name="JOB_SALARY_VALUE" precision="9" />
+        </property>
+        <property name="logUserId" type="string">
+            <column name="LOG_USER_ID" length="15" />
+        </property>
+        <property name="logFunctionName" type="string">
+            <column name="LOG_FUNCTION_NAME" length="25" />
+        </property>
+        <set name="appEmployeeReqJ2221s" table="APP_EMPLOYEE_REQ_J2221" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.AppEmployeeReqJ2221" />
+        </set>
+        <set name="perEmpVacationReqJavasForEmployeeIdBoss" table="PER_EMP_VACATION_REQ_JAVA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID_BOSS" length="10" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpVacationReqJava" />
+        </set>
+        <set name="perComplaintDatas" table="PER_COMPLAINT_DATA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerComplaintData" />
+        </set>
+        <set name="perAnnualEvalModelEmps" table="PER_ANNUAL_EVAL_MODEL_EMP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalModelEmp" />
+        </set>
+        <set name="perAnnualEvalModEmpTots" table="PER_ANNUAL_EVAL_MOD_EMP_TOT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalModEmpTot" />
+        </set>
+        <set name="perEmpFiles" table="PER_EMP_FILE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpFile" />
+        </set>
+        <set name="perEmpPromotions" table="PER_EMP_PROMOTION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotion" />
+        </set>
+        <set name="perElawaTransactionRejects" table="PER_ELAWA_TRANSACTION_REJECT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerElawaTransactionReject" />
+        </set>
+        <set name="perEmpVacationBalances" table="PER_EMP_VACATION_BALANCE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpVacationBalance" />
+        </set>
+        <set name="payEmployeeReqs" table="PAY_EMPLOYEE_REQ" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayEmployeeReq" />
+        </set>
+        <one-to-one name="payEmployeeMaster" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayEmployeeMaster"></one-to-one>
+        <set name="perEmpVacationTranses" table="PER_EMP_VACATION_TRANS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpVacationTrans" />
+        </set>
+        <set name="perEmpDecisionSheets" table="PER_EMP_DECISION_SHEET" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpDecisionSheet" />
+        </set>
+        <set name="appEmployeeReqJ222s" table="APP_EMPLOYEE_REQ_J222" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.AppEmployeeReqJ222" />
+        </set>
+        <set name="perEmpHistories" table="PER_EMP_HISTORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpHistory" />
+        </set>
+        <set name="appEmployeeReqJ444s" table="APP_EMPLOYEE_REQ_J444" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.AppEmployeeReqJ444" />
+        </set>
+        <one-to-one name="perUsers" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerUsers"></one-to-one>
+        <set name="perEmpPromotionNews" table="PER_EMP_PROMOTION_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotionNew" />
+        </set>
+        <set name="perEmpQualifications" table="PER_EMP_QUALIFICATION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpQualification" />
+        </set>
+        <set name="perElawaTransactions" table="PER_ELAWA_TRANSACTION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerElawaTransaction" />
+        </set>
+        <set name="perAnnualEvalEmps" table="PER_ANNUAL_EVAL_EMP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalEmp" />
+        </set>
+        <set name="perEmpPromotionRejectNews" table="PER_EMP_PROMOTION_REJECT_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotionRejectNew" />
+        </set>
+        <set name="appSubElemSpecAuthsForEmployeeId" table="APP_SUB_ELEM_SPEC_AUTH" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.AppSubElemSpecAuth" />
+        </set>
+        <set name="appSubElemSpecAuthsForEmployeeIdAction" table="APP_SUB_ELEM_SPEC_AUTH" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID_ACTION" length="10" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.AppSubElemSpecAuth" />
+        </set>
+        <set name="perAttendanceExistZks" table="PER_ATTENDANCE_EXIST_ZK" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAttendanceExistZk" />
+        </set>
+        <set name="perEmpVacationReqJavasForEmployeeId" table="PER_EMP_VACATION_REQ_JAVA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpVacationReqJava" />
+        </set>
+        <set name="appSubTabSpecAuthsForEmployeeId" table="APP_SUB_TAB_SPEC_AUTH" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.AppSubTabSpecAuth" />
+        </set>
+        <one-to-one name="perEmpPhoto" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPhoto"></one-to-one>
+        <set name="appSubTabSpecAuthsForEmployeeIdAction" table="APP_SUB_TAB_SPEC_AUTH" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID_ACTION" length="10" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.AppSubTabSpecAuth" />
+        </set>
+    </class>
+</hibernate-mapping>

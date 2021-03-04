@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudLocation" table="BUD_LOCATION" schema="SHAMS" optimistic-lock="version">
+        <id name="locationCode" type="string">
+            <column name="LOCATION_CODE" length="3" />
+            <generator class="assigned" />
+        </id>
+        <property name="locationName" type="string">
+            <column name="LOCATION_NAME" length="150" />
+        </property>
+        <property name="filterLocationName" type="string">
+            <column name="FILTER_LOCATION_NAME" length="150" />
+        </property>
+        <property name="recordCreationUser" type="string">
+            <column name="RECORD_CREATION_USER" length="30" />
+        </property>
+        <property name="recordCreationDate" type="date">
+            <column name="RECORD_CREATION_DATE" length="7" />
+        </property>
+        <property name="lastUpdateUser" type="string">
+            <column name="LAST_UPDATE_USER" length="30" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="LAST_UPDATE_DATE" length="7" />
+        </property>
+        <property name="lastUpdateTransaction" type="string">
+            <column name="LAST_UPDATE_TRANSACTION" length="1" />
+        </property>
+        <property name="locationDatabaseName" type="string">
+            <column name="LOCATION_DATABASE_NAME" length="30" />
+        </property>
+        <set name="perEmpHistoriesForLocationCodeFrom" table="PER_EMP_HISTORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE_FROM" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpHistory" />
+        </set>
+        <set name="perCommityMasters" table="PER_COMMITY_MASTER" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerCommityMaster" />
+        </set>
+        <set name="perHumanBalYears" table="PER_HUMAN_BAL_YEAR" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalYear" />
+        </set>
+        <set name="perLocationCodeses" table="PER_LOCATION_CODES" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerLocationCodes" />
+        </set>
+        <set name="perOrganizationStructures" table="PER_ORGANIZATION_STRUCTURE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrganizationStructure" />
+        </set>
+        <set name="perEmpHistoriesForLocationCode" table="PER_EMP_HISTORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpHistory" />
+        </set>
+        <set name="perSetups" table="PER_SETUP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerSetup" />
+        </set>
+        <set name="perPromotionTransNews" table="PER_PROMOTION_TRANS_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionTransNew" />
+        </set>
+        <set name="perEmpDecisionSheets" table="PER_EMP_DECISION_SHEET" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE_EMP" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpDecisionSheet" />
+        </set>
+        <set name="perAnnualEvalYears" table="PER_ANNUAL_EVAL_YEAR" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalYear" />
+        </set>
+        <set name="perComplaintDatas" table="PER_COMPLAINT_DATA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerComplaintData" />
+        </set>
+        <set name="perDecisionSheets" table="PER_DECISION_SHEET" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerDecisionSheet" />
+        </set>
+        <set name="perPromotionTranses" table="PER_PROMOTION_TRANS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionTrans" />
+        </set>
+    </class>
+</hibernate-mapping>

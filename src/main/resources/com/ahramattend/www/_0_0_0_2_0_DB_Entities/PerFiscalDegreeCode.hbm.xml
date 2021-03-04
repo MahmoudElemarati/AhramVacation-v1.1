@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCode" table="PER_FISCAL_DEGREE_CODE" schema="SHAMS" optimistic-lock="version">
+        <id name="fiscalDegreeCode" type="string">
+            <column name="FISCAL_DEGREE_CODE" length="3" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="perJobLaw" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobLaw" fetch="select">
+            <column name="LAW_SEQ" length="3" />
+        </many-to-one>
+        <many-to-one name="perCadreDegreeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerCadreDegreeCode" fetch="select">
+            <column name="CADRE_DEGREE_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <property name="fiscalDegreeName" type="string">
+            <column name="FISCAL_DEGREE_NAME" length="50" not-null="true" />
+        </property>
+        <property name="fiscalDegreeOrder" type="byte">
+            <column name="FISCAL_DEGREE_ORDER" precision="2" scale="0" not-null="true" />
+        </property>
+        <property name="financeFlag" type="boolean">
+            <column name="FINANCE_FLAG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="tempFlag" type="boolean">
+            <column name="TEMP_FLAG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="absentFg" type="boolean">
+            <column name="ABSENT_FG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="delayFg" type="boolean">
+            <column name="DELAY_FG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="recordCreateUser" type="string">
+            <column name="RECORD_CREATE_USER" length="15" />
+        </property>
+        <property name="recordCreateDate" type="date">
+            <column name="RECORD_CREATE_DATE" length="7" />
+        </property>
+        <property name="recordUpdateUser" type="string">
+            <column name="RECORD_UPDATE_USER" length="15" />
+        </property>
+        <property name="recordUpdateDate" type="date">
+            <column name="RECORD_UPDATE_DATE" length="7" />
+        </property>
+        <property name="financeRule" type="java.lang.Boolean">
+            <column name="FINANCE_RULE" precision="1" scale="0" />
+        </property>
+        <set name="perFiscalDegreePromotionsForHighDegreeCode" table="PER_FISCAL_DEGREE_PROMOTION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="HIGH_DEGREE_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreePromotion" />
+        </set>
+        <set name="perEmploymentMasterses" table="PER_EMPLOYMENT_MASTERS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" />
+        </set>
+        <set name="perEmpPromotionsForFiscalDegreeCode" table="PER_EMP_PROMOTION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotion" />
+        </set>
+        <set name="perPromotionTransesForFiscalDegreeCodeEndSalary" table="PER_PROMOTION_TRANS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE_END_SALARY" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionTrans" />
+        </set>
+        <set name="perElawaTransactions" table="PER_ELAWA_TRANSACTION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerElawaTransaction" />
+        </set>
+        <set name="perEmpPromotionsForFiscalDegreeCodeNew" table="PER_EMP_PROMOTION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE_NEW" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotion" />
+        </set>
+        <set name="perElawaTransactionRejects" table="PER_ELAWA_TRANSACTION_REJECT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerElawaTransactionReject" />
+        </set>
+        <one-to-one name="perFiscalDegreeDetailByFiscalDegreeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeDetail"></one-to-one>
+        <set name="perFiscalDegreeDetailsForDegreePeriodicElawa" table="PER_FISCAL_DEGREE_DETAIL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DEGREE_PERIODIC_ELAWA" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeDetail" />
+        </set>
+        <set name="perGroupDegrees" table="PER_GROUP_DEGREE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerGroupDegree" />
+        </set>
+        <set name="perFiscalDegreeDetailsForDegreeEncouragElawa" table="PER_FISCAL_DEGREE_DETAIL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DEGREE_ENCOURAG_ELAWA" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeDetail" />
+        </set>
+        <set name="perFiscalDegreeCodeNews" table="PER_FISCAL_DEGREE_CODE_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCodeNew" />
+        </set>
+        <set name="perEmpHistories" table="PER_EMP_HISTORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpHistory" />
+        </set>
+        <set name="payExecutionSpecificEmps" table="PAY_EXECUTION_SPECIFIC_EMP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayExecutionSpecificEmp" />
+        </set>
+        <set name="perEasementTranses" table="PER_EASEMENT_TRANS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEasementTrans" />
+        </set>
+        <set name="perElawaFiscalDegreeRules" table="PER_ELAWA_FISCAL_DEGREE_RULE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerElawaFiscalDegreeRule" />
+        </set>
+        <set name="perFiscalDegreePromotionsForFiscalDegreeCode" table="PER_FISCAL_DEGREE_PROMOTION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreePromotion" />
+        </set>
+        <set name="perJobCodes" table="PER_JOB_CODE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobCode" />
+        </set>
+        <set name="perPromotionTransesForFiscalDegreeCodeNew" table="PER_PROMOTION_TRANS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE_NEW" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionTrans" />
+        </set>
+        <set name="perEvalAttributeDetails" table="PER_EVAL_ATTRIBUTE_DETAIL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FISCAL_DEGREE_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEvalAttributeDetail" />
+        </set>
+    </class>
+</hibernate-mapping>

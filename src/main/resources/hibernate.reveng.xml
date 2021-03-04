@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+Copyright (c) 2008, 2016 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+The contents of this file are subject to the terms of either the GNU
+General Public License Version 2 only ("GPL") or the Common
+Development and Distribution License("CDDL") (collectively, the
+"License"). You may not use this file except in compliance with the
+License. You can obtain a copy of the License at
+http://www.netbeans.org/cddl-gplv2.html
+or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the
+specific language governing permissions and limitations under the
+License.  When distributing the software, include this License Header
+Notice in each file and include the License file at
+nbbuild/licenses/CDDL-GPL-2-CP.  Oracle designates this
+particular file as subject to the "Classpath" exception as provided
+by Oracle in the GPL Version 2 section of the License file that
+accompanied this code. If applicable, add the following below the
+License Header, with the fields enclosed by brackets [] replaced by
+your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+If you wish your version of this file to be governed by only the CDDL
+or only the GPL Version 2, indicate your decision by adding
+"[Contributor] elects to include this software in this distribution
+under the [CDDL or GPL Version 2] license." If you do not indicate a
+single choice of license, a recipient has the option to distribute
+your version of this file under either the CDDL, the GPL Version 2 or
+to extend the choice of license to its licensees as provided above.
+However, if you add GPL Version 2 code and therefore, elected the GPL
+Version 2 license, then the option applies only if the new code is
+made subject to such option by the copyright holder.
+
+Contributor(s):
+-->
+<hibernate-reverse-engineering>
+  <schema-selection match-schema="SHAMS"/>
+    <table-filter match-name="PER_FISCAL_DEGREE_DETAIL"/>
+    <table-filter match-name="PER_JOB_CODE"/>
+    <table-filter match-name="PER_QUAL_CODE"/>
+    <table-filter match-name="PER_EMP_VACATION_TRANS"/>
+    <table-filter match-name="PAY_FINANCIAL_CODE"/>
+    <table-filter match-name="PER_COUNTRY_CODE"/>
+    <table-filter match-name="PER_VACATION_RULE_SALARY"/>
+    <table-filter match-name="PER_CITY_CODE"/>
+    <table-filter match-name="PER_QUAL_FACULTY"/>
+    <table-filter match-name="NV_USERS"/>
+    <table-filter match-name="PER_EMP_FILE_DOC"/>
+    <table-filter match-name="PER_MOSQUE_GEHA_CODE"/>
+    <table-filter match-name="PER_VAC_DOC_CODE"/>
+    <table-filter match-name="PER_VACATION_TEMP"/>
+    <table-filter match-name="PER_MOSQUE_KIND_CODE"/>
+    <table-filter match-name="PER_VACATION_RULE_DOC"/>
+    <table-filter match-name="PER_ATTENDANCE_WRK_TYPE_DETAIL"/>
+    <table-filter match-name="BUD_LOCATION"/>
+    <table-filter match-name="PER_EXTERNAL_SIDE_CODE"/>
+    <table-filter match-name="PER_LOCATION_CODE_DEPARTMENT"/>
+    <table-filter match-name="PER_VACATION_RULE"/>
+    <table-filter match-name="PER_UNIVERSITY_CODE"/>
+    <table-filter match-name="PER_MARITAL_CODE"/>
+    <table-filter match-name="PER_JOB_GROUP"/>
+    <table-filter match-name="PER_FACULTY_UNIVERSITY"/>
+    <table-filter match-name="PER_FILE_TYPE"/>
+    <table-filter match-name="PER_JOB_DETAIL"/>
+    <table-filter match-name="PAY_BAND_CODE"/>
+    <table-filter match-name="PER_EMP_VACATION_REQ_JAVA"/>
+    <table-filter match-name="PER_EMPLOYMENT_PARAMETER"/>
+    <table-filter match-name="PER_MOSQUE_CODE"/>
+    <table-filter match-name="BUD_PROJECT"/>
+    <table-filter match-name="PER_FISCAL_DEGREE_PROMOTION"/>
+    <table-filter match-name="PER_GENERAL_CODE"/>
+    <table-filter match-name="PER_GROUP_TYPE_CODE"/>
+    <table-filter match-name="PER_EMP_VACATION_BALANCE"/>
+    <table-filter match-name="PER_FISCAL_DEGREE_DETAIL_NEW"/>
+    <table-filter match-name="PER_GOVERNORATE_CODE"/>
+    <table-filter match-name="PER_FISCAL_DEGREE_CODE"/>
+    <table-filter match-name="PER_USERS"/>
+    <table-filter match-name="PER_VACATION_CODE"/>
+    <table-filter match-name="PER_NATIONAL_CODE"/>
+    <table-filter match-name="PER_EMPLOYMENT_MASTERS_LOG"/>
+    <table-filter match-name="PER_RELIGON_CODE"/>
+    <table-filter match-name="PER_JOB_TYPE_CODE"/>
+    <table-filter match-name="PER_EMP_VACATION_ADJSTMNT"/>
+    <table-filter match-name="PER_SPECIALIST_CODE"/>
+    <table-filter match-name="BUD_PROJECT_SUB"/>
+    <table-filter match-name="PER_FISCAL_DEGREE_PROMOTION_N"/>
+    <table-filter match-name="PER_FACULTY_CODE"/>
+    <table-filter match-name="PER_GROUP_DEGREE"/>
+    <table-filter match-name="PER_VACATION_RULE_EMP"/>
+    <table-filter match-name="PAY_EMPLOYEE_REQ_DTL"/>
+    <table-filter match-name="PER_VACATION_RULE_AGE"/>
+    <table-filter match-name="PER_EMP_FILE"/>
+    <table-filter match-name="PER_EMPLOYMENT_MASTERS"/>
+    <table-filter match-name="PER_ORGANIZATION_STRUCTURE"/>
+    <table-filter match-name="PAY_EMPLOYEE_REQ"/>
+    <table-filter match-name="PER_LOCATION_CODES"/>
+    <table-filter match-name="PER_INSURANCE_SIDE_CODE"/>
+    <table-filter match-name="PER_CADRE_DEGREE_CODE"/>
+    <table-filter match-name="PER_EMP_PHOTO"/>
+    <table-filter match-name="PER_FILE_DOC_TYPE"/>
+    <table-filter match-name="PER_ATTENDANCE_WRK_TYPE_CODE"/>
+    <table-filter match-name="PER_QUAL_SPECIALIST"/>
+    <table-filter match-name="PER_QUAL_CLASS"/>
+    <table-filter match-name="PER_JOB_LAW"/>
+    <table-filter match-name="PER_FISCAL_DEGREE_CODE_NEW"/>
+    <table-filter match-name="PER_ORGUNIT_CODE"/>
+    <table-filter match-name="PAY_BAND_TYPE"/>
+    <table-filter match-name="PAY_BAND_CLASSIFICATION_FILE"/>
+    <table-filter match-name="PER_MILITARY_CODE"/>
+    <table-filter match-name="PER_EMP_HISTORY"/>
+    <table-filter match-name="PER_GRADE_PERCENTAGE"/>
+    <table-filter match-name="PER_EMP_QUALIFICATION"/>
+    <table-filter match-name="PER_COMM_MEM_TYPE_CODE"/>
+    <table-filter match-name="PER_ELAWA_GRADE_RULE"/>
+    <table-filter match-name="PER_ELAWA_HIRE_RULE"/>
+    <table-filter match-name="PER_COMM_MEM_TYPE"/>
+    <table-filter match-name="PER_SETUP"/>
+    <table-filter match-name="PER_EVAL_PERCENTAGE"/>
+    <table-filter match-name="PER_ANNUAL_EVAL_MODEL"/>
+    <table-filter match-name="PER_MILITARY_CODE"/>
+    <table-filter match-name="PER_ANNUAL_EVAL_TYPE"/>
+    <table-filter match-name="PER_JOB_LAW"/>
+    <table-filter match-name="PER_RELIGON_CODE"/>
+    <table-filter match-name="PER_COMM_OPINON_CODE"/>
+    <table-filter match-name="PER_EMP_DECISION_SHEET"/>
+    <table-filter match-name="PER_ELAWA_LOC_CODE_RULE"/>
+    <table-filter match-name="PER_ANNUAL_EVAL_EMP_DETAIL"/>
+    <table-filter match-name="PER_ANNUAL_EVAL_MOD_EMP_TOT"/>
+    <table-filter match-name="PER_GOVERNORATE_CODE"/>
+    <table-filter match-name="PER_GROUP_TYPE_CODE"/>
+    <table-filter match-name="PER_VACATION_CODE"/>
+    <table-filter match-name="PER_SETUP_GENERAL"/>
+    <table-filter match-name="PER_ELAWA_TRANSACTION_REJECT"/>
+    <table-filter match-name="PER_FISCAL_DEGREE_CODE_NEW"/>
+    <table-filter match-name="PER_ELAWA_FISCAL_DEGREE_RULE"/>
+    <table-filter match-name="PER_ANNUAL_EVAL_YEAR"/>
+    <table-filter match-name="PER_CITY_CODE"/>
+    <table-filter match-name="PER_COMPLAINT_CODE"/>
+    <table-filter match-name="PER_COMM_STATUS_CODE"/>
+    <table-filter match-name="PER_ANNUAL_EVAL_EMP"/>
+    <table-filter match-name="PER_ELAWA_VACATION_RULE"/>
+    <table-filter match-name="PER_COMM_TYPE_CODE"/>
+    <table-filter match-name="PER_ELAWA_GENERAL_RULE"/>
+    <table-filter match-name="PER_NATIONAL_CODE"/>
+    <!--<table-filter match-name="PER_ELAWA_RULE"/>-->
+    <table-filter match-name="PER_QUAL_CLASS"/>
+    <table-filter match-name="PER_ELAWA_GROUP_TYPE_RULE"/>
+    <table-filter match-name="PER_EVAL_ATTRIBUTE"/>
+    <table-filter match-name="PER_ELAWA_TYPE"/>
+    <table-filter match-name="NV_USERS"/>
+    <table-filter match-name="PER_MARITAL_CODE"/>
+    <table-filter match-name="PER_MOSQUE_CODE"/>
+    <table-filter match-name="PER_EVAL_MAIN_ATTRIBUTE"/>
+    <table-filter match-name="PER_EMPLOYMENT_MASTERS"/>
+    <table-filter match-name="PER_ATTENDANCE_WRK_TYPE_DETAIL"/>
+    <table-filter match-name="PER_ELAWA_TRANSACTION"/>
+    <table-filter match-name="PER_LOCATION_CODES"/>
+    <table-filter match-name="PER_ELAWA_FISCAL_DEGREE_RULE_N"/>
+    <table-filter match-name="PER_COUNTRY_CODE"/>
+    <table-filter match-name="PER_FISCAL_DEGREE_CODE"/>
+    <table-filter match-name="PER_LOCATION_CODE_DEPARTMENT"/>
+    <table-filter match-name="PER_EXTERNAL_SIDE_CODE"/>
+    <table-filter match-name="PER_DESICION_SIDE_CODE"/>
+    <table-filter match-name="PER_PUNISHMENT_CODE"/>
+    <table-filter match-name="PER_EASEMENT_TRANS"/>
+    <table-filter match-name="BUD_PROJECT_SUB"/>
+    <table-filter match-name="PER_ANNUAL_EVA_MOD_EMP_TOT_DTL"/>
+    <table-filter match-name="PER_GROUP_DEGREE_NEW"/>
+    <table-filter match-name="PER_ELAWA_PUNISH_RULE"/>
+    <table-filter match-name="PER_ANNUAL_EVAL"/>
+    <table-filter match-name="PER_ANNUAL_EVAL_MODEL_EMP_DTL"/>
+    <table-filter match-name="PER_EVAL_TYPE_ATTRIBUTE"/>
+    <table-filter match-name="PER_GROUP_DEGREE"/>
+    <table-filter match-name="PER_INSURANCE_SIDE_CODE"/>
+    <table-filter match-name="PER_QUAL_CODE"/>
+    <table-filter match-name="PER_JOB_TYPE_CODE"/>
+    <table-filter match-name="PER_JOB_CODE"/>
+    <table-filter match-name="PER_ORGANIZATION_STRUCTURE"/>
+    <table-filter match-name="BUD_PROJECT"/>
+    <table-filter match-name="PER_EVAL_ATTRIBUTE_SPECIAL_DTL"/>
+    <table-filter match-name="PER_DURATION_TYPE_CODE"/>
+    <table-filter match-name="PER_EMPLOYMENT_PARAMETER"/>
+    <table-filter match-name="PER_EVAL_ATTRIBUTE_DETAIL"/>
+    <table-filter match-name="PER_ANNUAL_EVAL_MODEL_EMP"/>
+    <table-filter match-name="BUD_LOCATION"/>
+    <table-filter match-name="PER_MOSQUE_GEHA_CODE"/>
+    <table-filter match-name="PER_MOSQUE_KIND_CODE"/>
+    <table-filter match-name="PER_COMPLAINT_DATA"/>
+    <table-filter match-name="PER_SPECIALIST_CODE"/>
+    <table-filter match-name="PER_DECISION_SHEET"/>
+    <table-filter match-name="PER_DECISION_SHEET_IMAGE_DTL"/>
+    <table-filter match-name="PER_GENERAL_CODE"/>
+    <table-filter match-name="PER_HUMAN_BAL_YEAR"/>
+    <table-filter match-name="PER_DECISION_TYPE_CODE"/>
+    <table-filter match-name="PER_ORGUNIT_CODE"/>
+    <table-filter match-name="PER_ATTENDANCE_WRK_TYPE_CODE"/>
+    <table-filter match-name="PER_CADRE_DEGREE_CODE"/>
+    <table-filter match-name="PER_GROUP_DEGREE_NEW"/>
+    <table-filter match-name="PER_PROMOTION_TRAIN_RULE_N"/>
+    <table-filter match-name="PER_PROMOTION_PUNISH_RULE_N"/>
+    <table-filter match-name="PER_FISCAL_DEGREE_DETAIL_NEW"/>
+    <table-filter match-name="PER_FISCAL_DEGREE_CODE_NEW"/>
+    <table-filter match-name="PER_HUMAN_BAL_JOB_DISTRIBUTE_N"/>
+    <!--<table-filter match-name="PER_PROMOTION_TRANS_GENERAL_N"/>-->
+    <table-filter match-name="PER_FISCAL_DEGREE_PROMOTION_N"/>
+    <table-filter match-name="PER_PROMOTION_GRADE_RULE_N"/>
+    <table-filter match-name="PER_EMP_PROMOTION_REJECT_NEW"/>
+    <!--<table-filter match-name="PER_PROMOTION_QUAL_RULE_N"/>-->
+    <table-filter match-name="PER_PROMOTION_VACATION_RULE_N"/>
+    <table-filter match-name="PER_ELAWA_FISCAL_DEGREE_RULE_N"/>
+    <table-filter match-name="PAY_SARF_CODE_EMP"/>
+    <table-filter match-name="PER_GROUP_DEGREE"/>
+    <table-filter match-name="PAY_FINANCIAL_GROUP_BAND"/>
+    <table-filter match-name="PAY_SARF_CODE"/>
+    <table-filter match-name="PAY_FINANCIAL_STATUS_CODE"/>
+    <table-filter match-name="PAY_BANK_CODE"/>
+    <table-filter match-name="PAY_FINANCIAL_GROUP_TYPE"/>  
+    <table-filter match-name="PAY_SARF_CODE_BANK"/>
+    <table-filter match-name="PER_FILE_JAVA"/>
+    <table-filter match-name="APP_NAME"/>  
+    <table-filter match-name="APP_SUB_TAB"/>  
+    <table-filter match-name="APP_TABS"/>
+    <table-filter match-name="APP_SUB_TAB_SPEC_AUTH"/>
+    <table-filter match-name="APP_SUB_TAB_AUTH_TYPE"/>    
+    <table-filter match-name="APP_SUB_ELEM"/>
+    <table-filter match-name="APP_SUB_ELEM_SPEC_AUTH"/>    
+    <table-filter match-name="PER_PROMOTION_RULE"/>
+    <table-filter match-name="PER_PROMOTION_TRANS"/>
+    <table-filter match-name="PER_PROMOTION_TRANS_NEW"/>
+    <table-filter match-name="PER_COMMITY_MASTER"/>
+    <table-filter match-name="PER_EMP_PROMOTION_NEW"/>
+    <table-filter match-name="PER_EMP_PROMOTION"/>
+    <table-filter match-name="PER_ATTENDANCE_EXIST_ZK"/>
+    <table-filter match-name="PER_SECTION_CODE"/>
+    <table-filter match-name="PER_DEPT_CODE"/>  
+    <table-filter match-name="PER_HUMAN_BAL_ORG"/>
+    <table-filter match-name="PER_HUMAN_ACTIVITY"/>
+    <table-filter match-name="PER_HUMAN_ACTIVITY_FOLLOW"/>
+    <table-filter match-name="PER_HUMAN_BAL_JOB"/>
+    <table-filter match-name="PER_HUMAN_BAL_ORG_NEW"/>    
+    <table-filter match-name="PER_HUMAN_BAL_JOB_NEW"/>
+    <table-filter match-name="PER_HUMAN_PLAN"/>
+    <table-filter match-name="PER_HUMAN_BAL_JOB_DISTRIBUTE"/>
+    <table-filter match-name="PAY_EMPLOYEE_MASTER"/>
+    <table-filter match-name="PAY_EXECUTION_DATE"/>
+    <table-filter match-name="PAY_EXECUTION_OPEN"/>
+    <table-filter match-name="PAY_EXECUTION_SPECIFIC_EMP"/>
+    <table-filter match-name="PAY_METHOD_TYPE"/>
+    <table-filter match-name="PAY_METHOD_FILE_DTL"/>    
+    <table-filter match-name="PAY_METHOD_FILE"/>
+    <table-filter match-name="PAY_METHOD_FILE_TYPE"/>    
+    <table-filter match-name="PAY_LOCATION_BAND_FILE"/>
+    <table-filter match-name="PAY_DESERVE_EMP"/>
+    <table-filter match-name="PAY_DESERVE_EMP_FILE"/>
+    <table-filter match-name="PAY_DESERVE_EMP_FILE_DTL"/>
+    <table-filter match-name="PAY_DESERVE_EMP_FILE_STOP"/>
+    <table-filter match-name="PAY_DESERVE_EMP_FILE_STOP_DTL"/>
+    <table-filter match-name="PAY_DESERVE_EMP_FILE_DTL_RUF"/>    
+    <table-filter match-name="APP_REQ_TYPE_J111"/>
+    <table-filter match-name="APP_EMPLOYEE_REQ_J222"/>
+    <table-filter match-name="APP_EMPLOYEE_REQ_J2221"/>
+    <table-filter match-name="APP_EMPLOYEE_REQ_J444"/>
+</hibernate-reverse-engineering>

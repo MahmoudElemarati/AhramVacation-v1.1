@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpVacationAdjstmnt" table="PER_EMP_VACATION_ADJSTMNT" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpVacationAdjstmntId">
+            <key-property name="employeeId" type="string">
+                <column name="EMPLOYEE_ID" length="10" />
+            </key-property>
+            <key-property name="vacationCode" type="string">
+                <column name="VACATION_CODE" length="2" />
+            </key-property>
+            <key-property name="transSerialNo" type="string">
+                <column name="TRANS_SERIAL_NO" length="5" />
+            </key-property>
+            <key-property name="adjDate" type="date">
+                <column name="ADJ_DATE" length="7" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perEmpVacationTrans" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpVacationTrans" update="false" insert="false" fetch="select">
+            <column name="EMPLOYEE_ID" length="10" not-null="true" />
+            <column name="VACATION_CODE" length="2" not-null="true" />
+            <column name="TRANS_SERIAL_NO" length="5" not-null="true" />
+        </many-to-one>
+        <property name="adjType" type="boolean">
+            <column name="ADJ_TYPE" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="adjStartDate" type="date">
+            <column name="ADJ_START_DATE" length="7" />
+        </property>
+        <property name="adjEndDate" type="date">
+            <column name="ADJ_END_DATE" length="7" />
+        </property>
+        <property name="directBossApprove" type="java.lang.Boolean">
+            <column name="DIRECT_BOSS_APPROVE" precision="1" scale="0" />
+        </property>
+        <property name="bigBossApprove" type="java.lang.Boolean">
+            <column name="BIG_BOSS_APPROVE" precision="1" scale="0" />
+        </property>
+        <property name="decisionNo" type="string">
+            <column name="DECISION_NO" length="10" />
+        </property>
+        <property name="decisionDate" type="date">
+            <column name="DECISION_DATE" length="7" />
+        </property>
+        <property name="adjPostDate" type="date">
+            <column name="ADJ_POST_DATE" length="7" />
+        </property>
+        <property name="period" type="big_decimal">
+            <column name="PERIOD" precision="7" />
+        </property>
+        <property name="spcPeriodDay" type="java.lang.Byte">
+            <column name="SPC_PERIOD_DAY" precision="2" scale="0" />
+        </property>
+        <property name="spcPeriodMn" type="java.lang.Byte">
+            <column name="SPC_PERIOD_MN" precision="2" scale="0" />
+        </property>
+        <property name="spcPeriodYr" type="java.lang.Byte">
+            <column name="SPC_PERIOD_YR" precision="2" scale="0" />
+        </property>
+        <property name="reportNotes" type="string">
+            <column name="REPORT_NOTES" length="250" />
+        </property>
+        <property name="chkRep" type="java.lang.Boolean">
+            <column name="CHK_REP" precision="1" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

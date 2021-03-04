@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.AppName" table="APP_NAME" schema="SHAMS" optimistic-lock="version">
+        <id name="applicationId" type="short">
+            <column name="APPLICATION_ID" precision="3" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="applicationName" type="string">
+            <column name="APPLICATION_NAME" length="50" not-null="true" />
+        </property>
+        <property name="applicationIndex" type="java.lang.Short">
+            <column name="APPLICATION_INDEX" precision="3" scale="0" />
+        </property>
+        <set name="appReqTypeJ111s" table="APP_REQ_TYPE_J111" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="APPLICATION_ID" precision="3" scale="0" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.AppReqTypeJ111" />
+        </set>
+        <set name="appTabses" table="APP_TABS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="APPLICATION_ID" precision="3" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.AppTabs" />
+        </set>
+    </class>
+</hibernate-mapping>

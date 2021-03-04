@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayDeserveEmp" table="PAY_DESERVE_EMP" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayDeserveEmpId">
+            <key-property name="bandType" type="byte">
+                <column name="BAND_TYPE" precision="2" scale="0" />
+            </key-property>
+            <key-property name="bandCode" type="short">
+                <column name="BAND_CODE" precision="4" scale="0" />
+            </key-property>
+            <key-property name="employeeId" type="string">
+                <column name="EMPLOYEE_ID" length="10" />
+            </key-property>
+            <key-property name="methodType" type="byte">
+                <column name="METHOD_TYPE" precision="2" scale="0" />
+            </key-property>
+            <key-property name="deserveSp" type="int">
+                <column name="DESERVE_SP" precision="7" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perLocationCodes" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerLocationCodes" fetch="select">
+            <column name="LOC_CODE" length="3" />
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="payBandCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayBandCode" update="false" insert="false" fetch="select">
+            <column name="BAND_TYPE" precision="2" scale="0" not-null="true" />
+            <column name="BAND_CODE" precision="4" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="payEmployeeMaster" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayEmployeeMaster" update="false" insert="false" fetch="select">
+            <column name="EMPLOYEE_ID" length="10" not-null="true" />
+        </many-to-one>
+        <many-to-one name="payExecutionOpen" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayExecutionOpen" fetch="select">
+            <column name="OPEN_MM" precision="2" scale="0" />
+            <column name="OPEN_YYYY" precision="4" scale="0" />
+        </many-to-one>
+        <many-to-one name="payMethodType" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayMethodType" update="false" insert="false" fetch="select">
+            <column name="METHOD_TYPE" precision="2" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="employeeNo" type="string">
+            <column name="EMPLOYEE_NO" length="10" not-null="true" />
+        </property>
+        <property name="bandStatus" type="boolean">
+            <column name="BAND_STATUS" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="val" type="big_decimal">
+            <column name="VAL" precision="11" />
+        </property>
+        <property name="startDate" type="date">
+            <column name="START_DATE" length="7" />
+        </property>
+        <property name="endDate" type="date">
+            <column name="END_DATE" length="7" />
+        </property>
+        <property name="rmrk" type="string">
+            <column name="RMRK" length="100" />
+        </property>
+        <property name="orgIdFrom" type="string">
+            <column name="ORG_ID_FROM" length="5" />
+        </property>
+        <property name="execMm" type="date">
+            <column name="EXEC_MM" length="7" />
+        </property>
+        <property name="statusCode" type="byte">
+            <column name="STATUS_CODE" precision="2" scale="0" not-null="true" />
+        </property>
+        <property name="statusGroup" type="short">
+            <column name="STATUS_GROUP" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="methodSeq" type="java.lang.Integer">
+            <column name="METHOD_SEQ" precision="5" scale="0" />
+        </property>
+        <property name="valFile" type="big_decimal">
+            <column name="VAL_FILE" precision="11" />
+        </property>
+    </class>
+</hibernate-mapping>

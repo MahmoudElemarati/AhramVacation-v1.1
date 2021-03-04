@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpDecisionSheet" table="PER_EMP_DECISION_SHEET" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpDecisionSheetId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="decisionId" type="string">
+                <column name="DECISION_ID" length="10" />
+            </key-property>
+            <key-property name="employeeId" type="string">
+                <column name="EMPLOYEE_ID" length="10" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="budLocation" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudLocation" fetch="select">
+            <column name="LOCATION_CODE_EMP" length="3" />
+        </many-to-one>
+        <many-to-one name="perDecisionSheet" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerDecisionSheet" update="false" insert="false" fetch="select">
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+            <column name="DECISION_ID" length="10" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perEmploymentMasters" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" update="false" insert="false" fetch="select">
+            <column name="EMPLOYEE_ID" length="10" not-null="true" />
+        </many-to-one>
+        <property name="decisionSubject" type="string">
+            <column name="DECISION_SUBJECT" length="4000" />
+        </property>
+        <property name="decisionSummary" type="string">
+            <column name="DECISION_SUMMARY" length="2000" />
+        </property>
+    </class>
+</hibernate-mapping>

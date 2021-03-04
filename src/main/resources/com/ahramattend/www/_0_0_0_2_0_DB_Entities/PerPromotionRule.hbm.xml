@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionRule" table="PER_PROMOTION_RULE" schema="SHAMS" optimistic-lock="version">
+        <id name="promotionType" type="string">
+            <column name="PROMOTION_TYPE" length="5" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="perGeneralCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerGeneralCode" fetch="select">
+            <column name="GENERAL_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <property name="promotionName" type="string">
+            <column name="PROMOTION_NAME" length="30" not-null="true" />
+        </property>
+        <property name="promotionMethod" type="boolean">
+            <column name="PROMOTION_METHOD" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="promotionAction" type="boolean">
+            <column name="PROMOTION_ACTION" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="periodFlag" type="boolean">
+            <column name="PERIOD_FLAG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="emptyDegreeFlag" type="boolean">
+            <column name="EMPTY_DEGREE_FLAG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="100" />
+        </property>
+        <property name="recordCreateUser" type="string">
+            <column name="RECORD_CREATE_USER" length="15" />
+        </property>
+        <property name="recordCreateDate" type="date">
+            <column name="RECORD_CREATE_DATE" length="7" />
+        </property>
+        <property name="recordUpdateUser" type="string">
+            <column name="RECORD_UPDATE_USER" length="15" />
+        </property>
+        <property name="recordUpdateDate" type="date">
+            <column name="RECORD_UPDATE_DATE" length="7" />
+        </property>
+        <set name="perPromotionTranses" table="PER_PROMOTION_TRANS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PROMOTION_TYPE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionTrans" />
+        </set>
+        <set name="perPromotionTransNews" table="PER_PROMOTION_TRANS_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PROMOTION_TYPE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionTransNew" />
+        </set>
+    </class>
+</hibernate-mapping>

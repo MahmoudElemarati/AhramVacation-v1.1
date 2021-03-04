@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEvalAttributeSpecialDtl" table="PER_EVAL_ATTRIBUTE_SPECIAL_DTL" schema="SHAMS" optimistic-lock="version">
+        <id name="serial" type="string">
+            <column name="SERIAL" length="5" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="perEvalAttribute" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEvalAttribute" fetch="select">
+            <column name="ATTRIBUTE_NO" length="5" not-null="true" />
+        </many-to-one>
+        <property name="evalDegree1" type="java.lang.Integer">
+            <column name="EVAL_DEGREE_1" precision="5" scale="0" />
+        </property>
+        <property name="evalDegree2" type="java.lang.Integer">
+            <column name="EVAL_DEGREE_2" precision="5" scale="0" />
+        </property>
+        <set name="perAnnualEvalEmpDetails" table="PER_ANNUAL_EVAL_EMP_DETAIL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SERIAL" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalEmpDetail" />
+        </set>
+    </class>
+</hibernate-mapping>

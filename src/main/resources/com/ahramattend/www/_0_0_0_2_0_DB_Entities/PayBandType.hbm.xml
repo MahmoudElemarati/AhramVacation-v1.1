@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayBandType" table="PAY_BAND_TYPE" schema="SHAMS" optimistic-lock="version">
+        <id name="bandType" type="byte">
+            <column name="BAND_TYPE" precision="2" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="typeName" type="string">
+            <column name="TYPE_NAME" length="60" />
+        </property>
+        <set name="payBandCodes" table="PAY_BAND_CODE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="BAND_TYPE" precision="2" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayBandCode" />
+        </set>
+    </class>
+</hibernate-mapping>

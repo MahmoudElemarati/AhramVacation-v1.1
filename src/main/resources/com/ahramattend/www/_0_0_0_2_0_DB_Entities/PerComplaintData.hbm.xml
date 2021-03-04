@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerComplaintData" table="PER_COMPLAINT_DATA" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerComplaintDataId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="complaintId" type="string">
+                <column name="COMPLAINT_ID" length="10" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perOrganizationStructureByOrgIdExec" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrganizationStructure" fetch="select">
+            <column name="ORG_ID_EXEC" length="5" />
+        </many-to-one>
+        <many-to-one name="perOrganizationStructureByOrgId" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrganizationStructure" fetch="select">
+            <column name="ORG_ID" length="5" />
+        </many-to-one>
+        <many-to-one name="perOrgunitCodeByOrgunitCodeExec" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrgunitCode" fetch="select">
+            <column name="ORGUNIT_CODE_EXEC" length="3" />
+        </many-to-one>
+        <many-to-one name="perOrgunitCodeByOrgunitCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrgunitCode" fetch="select">
+            <column name="ORGUNIT_CODE" length="3" />
+        </many-to-one>
+        <many-to-one name="budLocation" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudLocation" update="false" insert="false" fetch="select">
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perComplaintCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerComplaintCode" fetch="select">
+            <column name="COMPLAINT_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perDesicionSideCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerDesicionSideCode" fetch="select">
+            <column name="DESICION_SIDE_CODE" length="5" />
+        </many-to-one>
+        <many-to-one name="perEmploymentMasters" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" fetch="select">
+            <column name="EMPLOYEE_ID" length="10" />
+        </many-to-one>
+        <property name="complaintDate" type="date">
+            <column name="COMPLAINT_DATE" length="7" not-null="true" />
+        </property>
+        <property name="complaintSide" type="boolean">
+            <column name="COMPLAINT_SIDE" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="complaintSubject" type="string">
+            <column name="COMPLAINT_SUBJECT" length="250" />
+        </property>
+        <property name="notebookNo" type="string">
+            <column name="NOTEBOOK_NO" length="10" />
+        </property>
+        <property name="notebookDate" type="date">
+            <column name="NOTEBOOK_DATE" length="7" />
+        </property>
+        <property name="notebookSubject" type="string">
+            <column name="NOTEBOOK_SUBJECT" length="250" />
+        </property>
+        <property name="decisionNo" type="string">
+            <column name="DECISION_NO" length="10" />
+        </property>
+        <property name="decisionDate" type="date">
+            <column name="DECISION_DATE" length="7" />
+        </property>
+        <property name="decisionSubject" type="string">
+            <column name="DECISION_SUBJECT" length="250" />
+        </property>
+    </class>
+</hibernate-mapping>

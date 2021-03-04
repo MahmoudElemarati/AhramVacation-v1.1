@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEasementTrans" table="PER_EASEMENT_TRANS" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEasementTransId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="humanBalId" type="string">
+                <column name="HUMAN_BAL_ID" length="5" />
+            </key-property>
+            <key-property name="transId" type="string">
+                <column name="TRANS_ID" length="5" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perFiscalDegreeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCode" fetch="select">
+            <column name="FISCAL_DEGREE_CODE" length="3" />
+        </many-to-one>
+        <many-to-one name="perFiscalDegreeCodeNew" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCodeNew" fetch="select">
+            <column name="FISCAL_DEGREE_CODE_NEW" length="3" />
+        </many-to-one>
+        <many-to-one name="perGeneralCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerGeneralCode" fetch="select">
+            <column name="GENERAL_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perHumanBalYear" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalYear" update="false" insert="false" fetch="select">
+            <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <property name="transDate" type="date">
+            <column name="TRANS_DATE" length="7" not-null="true" />
+        </property>
+        <property name="desicionNo" type="string">
+            <column name="DESICION_NO" length="10" />
+        </property>
+        <property name="desicionDate" type="date">
+            <column name="DESICION_DATE" length="7" />
+        </property>
+        <property name="postDate" type="date">
+            <column name="POST_DATE" length="7" />
+        </property>
+        <property name="transType" type="byte">
+            <column name="TRANS_TYPE" precision="2" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPunishmentCode" table="PER_PUNISHMENT_CODE" schema="SHAMS" optimistic-lock="version">
+        <id name="punishCode" type="string">
+            <column name="PUNISH_CODE" length="3" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="payBandCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayBandCode" fetch="select">
+            <column name="BAND_TYPE" precision="2" scale="0" />
+            <column name="BAND_CODE" precision="4" scale="0" />
+        </many-to-one>
+        <property name="punishName" type="string">
+            <column name="PUNISH_NAME" length="50" not-null="true" />
+        </property>
+        <property name="suppressPeriod" type="java.lang.Short">
+            <column name="SUPPRESS_PERIOD" precision="3" scale="0" />
+        </property>
+        <property name="recordCreateUser" type="string">
+            <column name="RECORD_CREATE_USER" length="15" />
+        </property>
+        <property name="recordCreateDate" type="date">
+            <column name="RECORD_CREATE_DATE" length="7" />
+        </property>
+        <property name="recordUpdateUser" type="string">
+            <column name="RECORD_UPDATE_USER" length="15" />
+        </property>
+        <property name="recordUpdateDate" type="date">
+            <column name="RECORD_UPDATE_DATE" length="7" />
+        </property>
+        <set name="perPromotionPunishRuleNs" table="PER_PROMOTION_PUNISH_RULE_N" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PUNISH_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionPunishRuleN" />
+        </set>
+        <set name="perElawaPunishRules" table="PER_ELAWA_PUNISH_RULE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PUNISH_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerElawaPunishRule" />
+        </set>
+    </class>
+</hibernate-mapping>
