@@ -18,7 +18,7 @@ public class Encryption {
         int x = 1;
         switch (x) {
             case 1:
-                String Password = "2021-03-15";
+                String Password = "2021-04-15";
                 System.out.println(new Encryption().enchrypt_LIC(Password, "123"));
                 break;
             case 2:
