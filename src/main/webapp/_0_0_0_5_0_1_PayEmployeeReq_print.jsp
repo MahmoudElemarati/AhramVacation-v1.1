@@ -295,20 +295,10 @@
                         <div class="clearfix"></div>
 
                         <%
-
-                            if (checkStatus.equals("others")) {
                                 employeeNo = (String) request.getSession().getAttribute("employeeNo");
                                 List<AppEmployeeReqJ444> pList = new AppEmployeeReqJ444_DAO().getAppEmployeeReqJ444BySpAndEmpNo(ReqSp, employeeNo);
                                 if (!pList.isEmpty()) {
-                                    AppEmployeeReqJ444 m = pList.get(0);
-                                }
-                            } else {
-                                employeeNo = employee_session.getEmployeeNo();
-                                List<AppEmployeeReqJ222> pList = new AppEmployeeReqJ222_DAO().AppEmployeeReqJ222BySp(ReqSp);
-                                if (!pList.isEmpty()) {
-                                    AppEmployeeReqJ222 m = pList.get(0);
-                                }
-                                AppEmployeeReqJ222 m = pList.get(0);
+                                    AppEmployeeReqJ444 m = pList.get(0);                          
 
                         %>
 
@@ -348,12 +338,12 @@
                                                 
                                                 String ArabMonth = "", execDate1 = "";
                                                 try {
-                                                    execDate1 = new DateOp().Date2String(m.getExecDate(), "yyyy");
+                                                    execDate1 = new DateOp().Date2String(m.getAppEmployeeReqJ222().getExecDate(), "yyyy");
                                                 } catch (Exception ex) {
                                                     execDate1 = " ...";
                                                 }
                                                 try {
-                                                    ArabMonth = new DateOp().getMonthNameArabic(Integer.parseInt(new DateOp().Date2String(m.getExecDate(), "MM")));
+                                                    ArabMonth = new DateOp().getMonthNameArabic(Integer.parseInt(new DateOp().Date2String(m.getAppEmployeeReqJ222().getExecDate(), "MM")));
                                                 } catch (Exception ex) {
                                                     ArabMonth = " ...";
                                                 }
