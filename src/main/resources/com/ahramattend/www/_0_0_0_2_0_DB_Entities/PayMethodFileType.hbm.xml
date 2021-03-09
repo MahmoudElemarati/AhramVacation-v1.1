@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayMethodFileType" table="PAY_METHOD_FILE_TYPE" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayMethodFileTypeId">
+            <key-property name="fileSp" type="short">
+                <column name="FILE_SP" precision="3" scale="0" />
+            </key-property>
+            <key-property name="bandType" type="byte">
+                <column name="BAND_TYPE" precision="2" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="payMethodFile" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayMethodFile" update="false" insert="false" fetch="select">
+            <column name="FILE_SP" precision="3" scale="0" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

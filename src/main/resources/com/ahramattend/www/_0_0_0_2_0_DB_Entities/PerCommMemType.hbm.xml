@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerCommMemType" table="PER_COMM_MEM_TYPE" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerCommMemTypeId">
+            <key-property name="commTypeCode" type="string">
+                <column name="COMM_TYPE_CODE" length="5" />
+            </key-property>
+            <key-property name="commMemTypeCode" type="string">
+                <column name="COMM_MEM_TYPE_CODE" length="5" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perCommMemTypeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerCommMemTypeCode" update="false" insert="false" fetch="select">
+            <column name="COMM_MEM_TYPE_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perCommTypeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerCommTypeCode" update="false" insert="false" fetch="select">
+            <column name="COMM_TYPE_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <property name="recordCreateUser" type="string">
+            <column name="RECORD_CREATE_USER" length="15" />
+        </property>
+        <property name="recordCreateDate" type="date">
+            <column name="RECORD_CREATE_DATE" length="7" />
+        </property>
+        <property name="recordUpdateUser" type="string">
+            <column name="RECORD_UPDATE_USER" length="15" />
+        </property>
+        <property name="recordUpdateDate" type="date">
+            <column name="RECORD_UPDATE_DATE" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

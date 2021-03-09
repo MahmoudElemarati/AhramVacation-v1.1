@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanPlan" table="PER_HUMAN_PLAN" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanPlanId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="humanBalId" type="string">
+                <column name="HUMAN_BAL_ID" length="5" />
+            </key-property>
+            <key-property name="orgId" type="string">
+                <column name="ORG_ID" length="5" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perHumanBalYear" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalYear" update="false" insert="false" fetch="select">
+            <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perOrganizationStructure" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrganizationStructure" update="false" insert="false" fetch="select">
+            <column name="ORG_ID" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perOrgunitCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrgunitCode" fetch="select">
+            <column name="ORGUNIT_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <property name="targetDesc" type="string">
+            <column name="TARGET_DESC" length="2000" />
+        </property>
+        <property name="targetNotes" type="string">
+            <column name="TARGET_NOTES" length="500" />
+        </property>
+        <set name="perHumanActivities" table="PER_HUMAN_ACTIVITY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+                <column name="ORG_ID" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanActivity" />
+        </set>
+    </class>
+</hibernate-mapping>

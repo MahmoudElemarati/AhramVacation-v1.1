@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerMosqueGehaCode" table="PER_MOSQUE_GEHA_CODE" schema="SHAMS" optimistic-lock="version">
+        <id name="gehaCode" type="string">
+            <column name="GEHA_CODE" length="3" />
+            <generator class="assigned" />
+        </id>
+        <property name="gehaName" type="string">
+            <column name="GEHA_NAME" length="100" not-null="true" />
+        </property>
+        <property name="gehaKind" type="boolean">
+            <column name="GEHA_KIND" precision="1" scale="0" not-null="true" />
+        </property>
+        <set name="perMosqueCodes" table="PER_MOSQUE_CODE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="GEHA_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerMosqueCode" />
+        </set>
+    </class>
+</hibernate-mapping>

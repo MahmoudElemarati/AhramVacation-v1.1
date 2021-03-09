@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPhoto" table="PER_EMP_PHOTO" schema="SHAMS" optimistic-lock="version">
+        <id name="employeeId" type="string">
+            <column name="EMPLOYEE_ID" length="10" />
+            <generator class="foreign">
+                <param name="property">perEmploymentMasters</param>
+            </generator>
+        </id>
+        <one-to-one name="perEmploymentMasters" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" constrained="true"></one-to-one>
+        <property name="empPhotoSp" type="int">
+            <column name="EMP_PHOTO_SP" precision="5" scale="0" not-null="true" />
+        </property>
+        <property name="empPhotoBlob" type="blob">
+            <column name="EMP_PHOTO_BLOB" />
+        </property>
+        <property name="empPhotoBase64" type="string">
+            <column name="EMP_PHOTO_BASE64" length="4000" />
+        </property>
+    </class>
+</hibernate-mapping>

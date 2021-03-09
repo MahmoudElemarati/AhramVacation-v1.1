@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayDeserveEmpFileStop" table="PAY_DESERVE_EMP_FILE_STOP" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayDeserveEmpFileStopId">
+            <key-property name="employeeId" type="string">
+                <column name="EMPLOYEE_ID" length="10" />
+            </key-property>
+            <key-property name="stopSp" type="int">
+                <column name="STOP_SP" precision="6" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="payEmployeeMaster" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayEmployeeMaster" update="false" insert="false" fetch="select">
+            <column name="EMPLOYEE_ID" length="10" not-null="true" />
+        </many-to-one>
+        <property name="employeeNo" type="string">
+            <column name="EMPLOYEE_NO" length="240" />
+        </property>
+        <property name="SFromDate" type="date">
+            <column name="S_FROM_DATE" length="7" />
+        </property>
+        <property name="SToDate" type="date">
+            <column name="S_TO_DATE" length="7" />
+        </property>
+        <property name="currDate" type="date">
+            <column name="CURR_DATE" length="7" />
+        </property>
+        <property name="currTime" type="string">
+            <column name="CURR_TIME" length="240" />
+        </property>
+        <property name="rmrk" type="string">
+            <column name="RMRK" length="200" />
+        </property>
+        <set name="payDeserveEmpFileStopDtls" table="PAY_DESERVE_EMP_FILE_STOP_DTL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID" length="10" not-null="true" />
+                <column name="STOP_SP" precision="6" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayDeserveEmpFileStopDtl" />
+        </set>
+    </class>
+</hibernate-mapping>

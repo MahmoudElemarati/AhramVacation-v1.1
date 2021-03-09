@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanActivity" table="PER_HUMAN_ACTIVITY" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanActivityId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="humanBalId" type="string">
+                <column name="HUMAN_BAL_ID" length="5" />
+            </key-property>
+            <key-property name="orgId" type="string">
+                <column name="ORG_ID" length="5" />
+            </key-property>
+            <key-property name="actSerialNo" type="string">
+                <column name="ACT_SERIAL_NO" length="3" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perHumanPlan" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanPlan" update="false" insert="false" fetch="select">
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+            <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+            <column name="ORG_ID" length="5" not-null="true" />
+        </many-to-one>
+        <property name="actDescription" type="string">
+            <column name="ACT_DESCRIPTION" length="150" not-null="true" />
+        </property>
+        <property name="planStartdate" type="date">
+            <column name="PLAN_STARTDATE" length="7" not-null="true" />
+        </property>
+        <property name="planEnddate" type="date">
+            <column name="PLAN_ENDDATE" length="7" not-null="true" />
+        </property>
+        <property name="actualStartdate" type="date">
+            <column name="ACTUAL_STARTDATE" length="7" />
+        </property>
+        <property name="actualEnddate" type="date">
+            <column name="ACTUAL_ENDDATE" length="7" />
+        </property>
+        <property name="actNote" type="string">
+            <column name="ACT_NOTE" length="50" />
+        </property>
+        <set name="perHumanActivityFollows" table="PER_HUMAN_ACTIVITY_FOLLOW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+                <column name="ORG_ID" length="5" not-null="true" />
+                <column name="ACT_SERIAL_NO" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanActivityFollow" />
+        </set>
+    </class>
+</hibernate-mapping>

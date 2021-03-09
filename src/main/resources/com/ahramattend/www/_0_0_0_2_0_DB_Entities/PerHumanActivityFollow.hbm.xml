@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanActivityFollow" table="PER_HUMAN_ACTIVITY_FOLLOW" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanActivityFollowId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="humanBalId" type="string">
+                <column name="HUMAN_BAL_ID" length="5" />
+            </key-property>
+            <key-property name="orgId" type="string">
+                <column name="ORG_ID" length="5" />
+            </key-property>
+            <key-property name="actSerialNo" type="string">
+                <column name="ACT_SERIAL_NO" length="3" />
+            </key-property>
+            <key-property name="followNo" type="string">
+                <column name="FOLLOW_NO" length="3" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perHumanActivity" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanActivity" update="false" insert="false" fetch="select">
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+            <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+            <column name="ORG_ID" length="5" not-null="true" />
+            <column name="ACT_SERIAL_NO" length="3" not-null="true" />
+        </many-to-one>
+        <property name="followDate" type="date">
+            <column name="FOLLOW_DATE" length="7" not-null="true" />
+        </property>
+        <property name="followStatusCode" type="string">
+            <column name="FOLLOW_STATUS_CODE" length="5" not-null="true" />
+        </property>
+        <property name="evalRatio" type="big_decimal">
+            <column name="EVAL_RATIO" precision="5" />
+        </property>
+        <property name="followNote" type="string">
+            <column name="FOLLOW_NOTE" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

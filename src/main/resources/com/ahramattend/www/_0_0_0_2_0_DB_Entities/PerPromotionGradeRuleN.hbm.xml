@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionGradeRuleN" table="PER_PROMOTION_GRADE_RULE_N" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionGradeRuleNId">
+            <key-property name="gradeRuleId" type="string">
+                <column name="GRADE_RULE_ID" length="3" />
+            </key-property>
+            <key-property name="transId" type="long">
+                <column name="TRANS_ID" precision="10" scale="0" />
+            </key-property>
+            <key-property name="promotionType" type="string">
+                <column name="PROMOTION_TYPE" length="5" />
+            </key-property>
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perFiscalDegreeCodeNew" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCodeNew" fetch="select">
+            <column name="FISCAL_DEGREE_CODE_NEW" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perPromotionTransNew" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionTransNew" update="false" insert="false" fetch="select">
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+            <column name="PROMOTION_TYPE" length="5" not-null="true" />
+            <column name="TRANS_ID" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perEvalPercentage" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEvalPercentage" fetch="select">
+            <column name="GRADE_CODE" length="2" not-null="true" />
+        </many-to-one>
+        <property name="annualId" type="string">
+            <column name="ANNUAL_ID" length="5" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

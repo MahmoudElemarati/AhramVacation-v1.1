@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalYear" table="PER_HUMAN_BAL_YEAR" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalYearId">
+            <key-property name="humanBalId" type="string">
+                <column name="HUMAN_BAL_ID" length="5" />
+            </key-property>
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="budLocation" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudLocation" update="false" insert="false" fetch="select">
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <property name="balFromDate" type="date">
+            <column name="BAL_FROM_DATE" length="7" not-null="true" />
+        </property>
+        <property name="balToDate" type="date">
+            <column name="BAL_TO_DATE" length="7" not-null="true" />
+        </property>
+        <property name="aprvdateCenter" type="date">
+            <column name="APRVDATE_CENTER" length="7" />
+        </property>
+        <property name="aprvdateMalia" type="date">
+            <column name="APRVDATE_MALIA" length="7" />
+        </property>
+        <set name="perHumanPlans" table="PER_HUMAN_PLAN" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanPlan" />
+        </set>
+        <set name="perHumanBalJobs" table="PER_HUMAN_BAL_JOB" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJob" />
+        </set>
+        <set name="perHumanBalJobNews" table="PER_HUMAN_BAL_JOB_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJobNew" />
+        </set>
+        <set name="perEasementTranses" table="PER_EASEMENT_TRANS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEasementTrans" />
+        </set>
+        <set name="perHumanBalJobDistributeNs" table="PER_HUMAN_BAL_JOB_DISTRIBUTE_N" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJobDistributeN" />
+        </set>
+        <set name="perHumanBalJobDistributes" table="PER_HUMAN_BAL_JOB_DISTRIBUTE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJobDistribute" />
+        </set>
+    </class>
+</hibernate-mapping>

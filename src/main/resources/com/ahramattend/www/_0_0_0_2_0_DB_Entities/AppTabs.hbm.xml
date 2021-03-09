@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.AppTabs" table="APP_TABS" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.AppTabsId">
+            <key-property name="applicationId" type="short">
+                <column name="APPLICATION_ID" precision="3" scale="0" />
+            </key-property>
+            <key-property name="tabId" type="int">
+                <column name="TAB_ID" precision="5" scale="0" />
+            </key-property>
+            <key-property name="tabName" type="string">
+                <column name="TAB_NAME" length="50" />
+            </key-property>
+            <key-property name="tabFafaIcon" type="string">
+                <column name="TAB_FAFA_ICON" length="50" />
+            </key-property>
+            <key-property name="tabIndex" type="java.lang.Integer">
+                <column name="TAB_INDEX" precision="5" scale="0" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

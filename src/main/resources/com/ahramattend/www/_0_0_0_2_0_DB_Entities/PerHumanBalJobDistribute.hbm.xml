@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJobDistribute" table="PER_HUMAN_BAL_JOB_DISTRIBUTE" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJobDistributeId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="humanBalId" type="string">
+                <column name="HUMAN_BAL_ID" length="5" />
+            </key-property>
+            <key-property name="distributeSerial" type="string">
+                <column name="DISTRIBUTE_SERIAL" length="5" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perGroupDegree" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerGroupDegree" fetch="select">
+            <column name="GROUP_TYPE_CODE" length="3" not-null="true" />
+            <column name="FISCAL_DEGREE_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perHumanBalYear" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalYear" update="false" insert="false" fetch="select">
+            <column name="HUMAN_BAL_ID" length="5" not-null="true" />
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perJobCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobCode" fetch="select">
+            <column name="JOB_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perOrganizationStructureByOrgIdMinus" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrganizationStructure" fetch="select">
+            <column name="ORG_ID_MINUS" length="5" />
+        </many-to-one>
+        <many-to-one name="perOrganizationStructureByOrgId" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrganizationStructure" fetch="select">
+            <column name="ORG_ID" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perOrgunitCodeByOrgunitCodeMinus" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrgunitCode" fetch="select">
+            <column name="ORGUNIT_CODE_MINUS" length="3" />
+        </many-to-one>
+        <many-to-one name="perOrgunitCodeByOrgunitCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrgunitCode" fetch="select">
+            <column name="ORGUNIT_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <property name="transDate" type="date">
+            <column name="TRANS_DATE" length="7" not-null="true" />
+        </property>
+        <property name="fundedPlus" type="java.lang.Integer">
+            <column name="FUNDED_PLUS" precision="5" scale="0" />
+        </property>
+        <property name="existPlus" type="java.lang.Integer">
+            <column name="EXIST_PLUS" precision="5" scale="0" />
+        </property>
+        <property name="emptyPlus" type="java.lang.Integer">
+            <column name="EMPTY_PLUS" precision="5" scale="0" />
+        </property>
+        <property name="fundedMinus" type="java.lang.Integer">
+            <column name="FUNDED_MINUS" precision="5" scale="0" />
+        </property>
+        <property name="existMinus" type="java.lang.Integer">
+            <column name="EXIST_MINUS" precision="5" scale="0" />
+        </property>
+        <property name="emptyMinus" type="java.lang.Integer">
+            <column name="EMPTY_MINUS" precision="5" scale="0" />
+        </property>
+        <property name="degreeTransfeerd" type="int">
+            <column name="DEGREE_TRANSFEERD" precision="5" scale="0" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

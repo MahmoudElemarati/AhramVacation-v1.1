@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerElawaTransaction" table="PER_ELAWA_TRANSACTION" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerElawaTransactionId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="elawaDate" type="date">
+                <column name="ELAWA_DATE" length="7" />
+            </key-property>
+            <key-property name="elawaTypeCode" type="string">
+                <column name="ELAWA_TYPE_CODE" length="2" />
+            </key-property>
+            <key-property name="employeeId" type="string">
+                <column name="EMPLOYEE_ID" length="10" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perFiscalDegreeCodeNew" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCodeNew" fetch="select">
+            <column name="FISCAL_DEGREE_CODE_NEW" length="3" />
+        </many-to-one>
+        <many-to-one name="perEmploymentMasters" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" update="false" insert="false" fetch="select">
+            <column name="EMPLOYEE_ID" length="10" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perFiscalDegreeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCode" fetch="select">
+            <column name="FISCAL_DEGREE_CODE" length="3" />
+        </many-to-one>
+        <many-to-one name="perGroupTypeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerGroupTypeCode" fetch="select">
+            <column name="GROUP_TYPE_CODE" length="3" />
+        </many-to-one>
+        <many-to-one name="perJobCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobCode" fetch="select">
+            <column name="JOB_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perLocationCodes" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerLocationCodes" update="false" insert="false" fetch="select">
+            <column name="LOC_CODE" length="3" />
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <property name="degreeDate" type="date">
+            <column name="DEGREE_DATE" length="7" />
+        </property>
+        <property name="jobDate" type="date">
+            <column name="JOB_DATE" length="7" />
+        </property>
+        <property name="basicSalaryValueB" type="big_decimal">
+            <column name="BASIC_SALARY_VALUE_B" precision="9" not-null="true" />
+        </property>
+        <property name="salaryValueB" type="big_decimal">
+            <column name="SALARY_VALUE_B" precision="9" not-null="true" />
+        </property>
+        <property name="elawaCalc" type="boolean">
+            <column name="ELAWA_CALC" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="elawaValue" type="big_decimal">
+            <column name="ELAWA_VALUE" precision="9" not-null="true" />
+        </property>
+        <property name="basicSalaryValueA" type="big_decimal">
+            <column name="BASIC_SALARY_VALUE_A" precision="9" not-null="true" />
+        </property>
+        <property name="salaryValueA" type="big_decimal">
+            <column name="SALARY_VALUE_A" precision="9" not-null="true" />
+        </property>
+        <property name="constantElawaFg" type="string">
+            <column name="CONSTANT_ELAWA_FG" length="1" />
+        </property>
+        <property name="elawaDecisionFg" type="java.lang.Boolean">
+            <column name="ELAWA_DECISION_FG" precision="1" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

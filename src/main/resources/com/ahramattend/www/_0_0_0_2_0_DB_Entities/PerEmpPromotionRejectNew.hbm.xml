@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotionRejectNew" table="PER_EMP_PROMOTION_REJECT_NEW" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpPromotionRejectNewId">
+            <key-property name="transId" type="long">
+                <column name="TRANS_ID" precision="10" scale="0" />
+            </key-property>
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="promotionType" type="string">
+                <column name="PROMOTION_TYPE" length="5" />
+            </key-property>
+            <key-property name="employeeId" type="string">
+                <column name="EMPLOYEE_ID" length="10" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perFiscalDegreeCodeNew" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerFiscalDegreeCodeNew" fetch="select">
+            <column name="FISCAL_DEGREE_CODE_NEW" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perPromotionTransNew" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerPromotionTransNew" update="false" insert="false" fetch="select">
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+            <column name="PROMOTION_TYPE" length="5" not-null="true" />
+            <column name="TRANS_ID" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perEmploymentMasters" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" update="false" insert="false" fetch="select">
+            <column name="EMPLOYEE_ID" length="10" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perGroupTypeCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerGroupTypeCode" fetch="select">
+            <column name="GROUP_TYPE_CODE" length="3" />
+        </many-to-one>
+        <many-to-one name="perJobCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobCode" fetch="select">
+            <column name="JOB_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <property name="rejectReason" type="string">
+            <column name="REJECT_REASON" length="250" />
+        </property>
+        <property name="jobDate" type="date">
+            <column name="JOB_DATE" length="7" />
+        </property>
+        <property name="degreePriorityDate" type="date">
+            <column name="DEGREE_PRIORITY_DATE" length="7" />
+        </property>
+        <property name="degreeDate" type="date">
+            <column name="DEGREE_DATE" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayDeserveEmpFile" table="PAY_DESERVE_EMP_FILE" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayDeserveEmpFileId">
+            <key-property name="openMm" type="byte">
+                <column name="OPEN_MM" precision="2" scale="0" />
+            </key-property>
+            <key-property name="openYyyy" type="short">
+                <column name="OPEN_YYYY" precision="4" scale="0" />
+            </key-property>
+            <key-property name="locCode" type="string">
+                <column name="LOC_CODE" length="3" />
+            </key-property>
+            <key-property name="bandType" type="byte">
+                <column name="BAND_TYPE" precision="2" scale="0" />
+            </key-property>
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="bandCode" type="short">
+                <column name="BAND_CODE" precision="4" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="payLocationBandFile" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayLocationBandFile" update="false" insert="false" fetch="select">
+            <column name="BAND_TYPE" precision="2" scale="0" not-null="true" />
+            <column name="BAND_CODE" precision="4" scale="0" not-null="true" />
+            <column name="LOC_CODE" length="3" not-null="true" />
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="payEmployeeMasterByEmployeeIdSent" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayEmployeeMaster" fetch="select">
+            <column name="EMPLOYEE_ID_SENT" length="10" />
+        </many-to-one>
+        <many-to-one name="payEmployeeMasterByEmployeeId" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayEmployeeMaster" fetch="select">
+            <column name="EMPLOYEE_ID" length="10" />
+        </many-to-one>
+        <many-to-one name="payExecutionOpen" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayExecutionOpen" update="false" insert="false" fetch="select">
+            <column name="OPEN_MM" precision="2" scale="0" not-null="true" />
+            <column name="OPEN_YYYY" precision="4" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="nvUsers" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.NvUsers" fetch="select">
+            <column name="USER_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="chkStatus" type="java.lang.Byte">
+            <column name="CHK_STATUS" precision="2" scale="0" />
+        </property>
+        <property name="currDate" type="date">
+            <column name="CURR_DATE" length="7" />
+        </property>
+        <property name="currTime" type="string">
+            <column name="CURR_TIME" length="40" />
+        </property>
+        <property name="sendDate" type="date">
+            <column name="SEND_DATE" length="7" />
+        </property>
+        <property name="sendTime" type="string">
+            <column name="SEND_TIME" length="40" />
+        </property>
+        <property name="pickDate" type="date">
+            <column name="PICK_DATE" length="7" />
+        </property>
+        <property name="pickTime" type="string">
+            <column name="PICK_TIME" length="40" />
+        </property>
+        <property name="rmrk" type="string">
+            <column name="RMRK" length="200" />
+        </property>
+        <set name="payDeserveEmpFileDtlRufs" table="PAY_DESERVE_EMP_FILE_DTL_RUF" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="OPEN_MM" precision="2" scale="0" not-null="true" />
+                <column name="OPEN_YYYY" precision="4" scale="0" not-null="true" />
+                <column name="LOC_CODE" length="3" not-null="true" />
+                <column name="BAND_TYPE" precision="2" scale="0" not-null="true" />
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="BAND_CODE" precision="4" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayDeserveEmpFileDtlRuf" />
+        </set>
+        <set name="payDeserveEmpFileDtls" table="PAY_DESERVE_EMP_FILE_DTL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="OPEN_MM" precision="2" scale="0" not-null="true" />
+                <column name="OPEN_YYYY" precision="4" scale="0" not-null="true" />
+                <column name="LOC_CODE" length="3" not-null="true" />
+                <column name="BAND_TYPE" precision="2" scale="0" not-null="true" />
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="BAND_CODE" precision="4" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayDeserveEmpFileDtl" />
+        </set>
+    </class>
+</hibernate-mapping>

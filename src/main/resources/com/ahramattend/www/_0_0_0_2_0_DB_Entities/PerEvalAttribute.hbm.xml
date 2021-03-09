@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEvalAttribute" table="PER_EVAL_ATTRIBUTE" schema="SHAMS" optimistic-lock="version">
+        <id name="attributeNo" type="string">
+            <column name="ATTRIBUTE_NO" length="5" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="perEvalMainAttribute" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEvalMainAttribute" fetch="select">
+            <column name="MAIN_ATTRIBUTE_NO" length="2" not-null="true" />
+        </many-to-one>
+        <property name="attributeName" type="string">
+            <column name="ATTRIBUTE_NAME" length="75" not-null="true" />
+        </property>
+        <property name="recordCreateUser" type="string">
+            <column name="RECORD_CREATE_USER" length="15" />
+        </property>
+        <property name="recordCreateDate" type="date">
+            <column name="RECORD_CREATE_DATE" length="7" />
+        </property>
+        <property name="recordUpdateUser" type="string">
+            <column name="RECORD_UPDATE_USER" length="15" />
+        </property>
+        <property name="recordUpdateDate" type="date">
+            <column name="RECORD_UPDATE_DATE" length="7" />
+        </property>
+        <set name="perAnnualEvalTypes" table="PER_EVAL_TYPE_ATTRIBUTE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ATTRIBUTE_NO" length="5" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalType">
+                <column name="EVAL_TYPE_SERIAL" length="5" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="perEvalAttributeSpecialDtls" table="PER_EVAL_ATTRIBUTE_SPECIAL_DTL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ATTRIBUTE_NO" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEvalAttributeSpecialDtl" />
+        </set>
+        <set name="perEvalAttributeDetails" table="PER_EVAL_ATTRIBUTE_DETAIL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ATTRIBUTE_NO" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEvalAttributeDetail" />
+        </set>
+    </class>
+</hibernate-mapping>

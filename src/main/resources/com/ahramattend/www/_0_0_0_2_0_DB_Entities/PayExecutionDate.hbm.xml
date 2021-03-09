@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayExecutionDate" table="PAY_EXECUTION_DATE" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayExecutionDateId">
+            <key-property name="methodType" type="byte">
+                <column name="METHOD_TYPE" precision="2" scale="0" />
+            </key-property>
+            <key-property name="execMm" type="date">
+                <column name="EXEC_MM" length="7" />
+            </key-property>
+            <key-property name="methodSeq" type="int">
+                <column name="METHOD_SEQ" precision="5" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="payExecutionOpen" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayExecutionOpen" fetch="select">
+            <column name="OPEN_MM" precision="2" scale="0" />
+            <column name="OPEN_YYYY" precision="4" scale="0" />
+        </many-to-one>
+        <many-to-one name="payMethodType" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayMethodType" update="false" insert="false" fetch="select">
+            <column name="METHOD_TYPE" precision="2" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="startDate" type="date">
+            <column name="START_DATE" length="7" />
+        </property>
+        <property name="endDate" type="date">
+            <column name="END_DATE" length="7" />
+        </property>
+        <property name="dayNo" type="java.lang.Short">
+            <column name="DAY_NO" precision="3" scale="0" />
+        </property>
+        <property name="rmrk" type="string">
+            <column name="RMRK" length="200" />
+        </property>
+        <property name="chkLock" type="java.lang.Boolean">
+            <column name="CHK_LOCK" precision="1" scale="0" />
+        </property>
+        <property name="methodTypePrv" type="java.lang.Byte">
+            <column name="METHOD_TYPE_PRV" precision="2" scale="0" />
+        </property>
+        <property name="execMmPrv" type="date">
+            <column name="EXEC_MM_PRV" length="7" />
+        </property>
+        <property name="chkSalary" type="java.lang.Boolean">
+            <column name="CHK_SALARY" precision="1" scale="0" />
+        </property>
+        <property name="absentStatus" type="java.lang.Boolean">
+            <column name="ABSENT_STATUS" precision="1" scale="0" />
+        </property>
+        <property name="punishStatus" type="java.lang.Boolean">
+            <column name="PUNISH_STATUS" precision="1" scale="0" />
+        </property>
+        <property name="sickStatus" type="java.lang.Boolean">
+            <column name="SICK_STATUS" precision="1" scale="0" />
+        </property>
+        <property name="injuryStatus" type="java.lang.Boolean">
+            <column name="INJURY_STATUS" precision="1" scale="0" />
+        </property>
+        <property name="holidayStatus" type="java.lang.Boolean">
+            <column name="HOLIDAY_STATUS" precision="1" scale="0" />
+        </property>
+        <property name="dayNoParameter" type="java.lang.Byte">
+            <column name="DAY_NO_PARAMETER" precision="2" scale="0" />
+        </property>
+        <property name="insLawDate" type="date">
+            <column name="INS_LAW_DATE" length="7" />
+        </property>
+        <property name="stampLawDate" type="date">
+            <column name="STAMP_LAW_DATE" length="7" />
+        </property>
+        <property name="taxLawDate" type="date">
+            <column name="TAX_LAW_DATE" length="7" />
+        </property>
+        <property name="taxEndDate" type="date">
+            <column name="TAX_END_DATE" length="7" />
+        </property>
+        <property name="taxStartDate" type="date">
+            <column name="TAX_START_DATE" length="7" />
+        </property>
+        <property name="insEndDate" type="date">
+            <column name="INS_END_DATE" length="7" />
+        </property>
+        <property name="insStartDate" type="date">
+            <column name="INS_START_DATE" length="7" />
+        </property>
+        <property name="openDd" type="java.lang.Byte">
+            <column name="OPEN_DD" precision="2" scale="0" />
+        </property>
+        <property name="methodSeqPrv" type="java.lang.Integer">
+            <column name="METHOD_SEQ_PRV" precision="5" scale="0" />
+        </property>
+        <property name="methodOrder" type="java.lang.Integer">
+            <column name="METHOD_ORDER" precision="5" scale="0" />
+        </property>
+        <property name="insMaxBasicLaw" type="big_decimal">
+            <column name="INS_MAX_BASIC_LAW" precision="11" />
+        </property>
+        <property name="insMaxVarLaw" type="big_decimal">
+            <column name="INS_MAX_VAR_LAW" precision="11" />
+        </property>
+        <set name="payExecutionSpecificEmps" table="PAY_EXECUTION_SPECIFIC_EMP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="METHOD_TYPE" precision="2" scale="0" not-null="true" />
+                <column name="EXEC_MM" length="7" not-null="true" />
+                <column name="METHOD_SEQ" precision="5" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayExecutionSpecificEmp" />
+        </set>
+    </class>
+</hibernate-mapping>

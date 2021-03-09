@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayBankCode" table="PAY_BANK_CODE" schema="SHAMS" optimistic-lock="version">
+        <id name="bankCode" type="short">
+            <column name="BANK_CODE" precision="4" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="bankName" type="string">
+            <column name="BANK_NAME" length="50" not-null="true" />
+        </property>
+        <property name="bankType" type="boolean">
+            <column name="BANK_TYPE" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="bankAddress" type="string">
+            <column name="BANK_ADDRESS" length="100" />
+        </property>
+        <property name="bankTel" type="string">
+            <column name="BANK_TEL" length="12" />
+        </property>
+        <property name="bankFax" type="string">
+            <column name="BANK_FAX" length="12" />
+        </property>
+        <property name="chkSide" type="java.lang.Boolean">
+            <column name="CHK_SIDE" precision="1" scale="0" />
+        </property>
+        <set name="paySarfCodes" table="PAY_SARF_CODE_BANK" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="BANK_CODE" precision="4" scale="0" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PaySarfCode">
+                <column name="SARF_CODE" precision="10" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="payExecutionSpecificEmps" table="PAY_EXECUTION_SPECIFIC_EMP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="BANK_CODE" precision="4" scale="0" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayExecutionSpecificEmp" />
+        </set>
+    </class>
+</hibernate-mapping>

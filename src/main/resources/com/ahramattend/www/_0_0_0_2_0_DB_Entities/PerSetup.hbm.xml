@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerSetup" table="PER_SETUP" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerSetupId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="setupDate" type="date">
+                <column name="SETUP_DATE" length="7" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="budLocation" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudLocation" update="false" insert="false" fetch="select">
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+        </many-to-one>
+        <property name="perOrgMan" type="string">
+            <column name="PER_ORG_MAN" length="75" />
+        </property>
+        <property name="attendanceFlg" type="boolean">
+            <column name="ATTENDANCE_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="historyFlg" type="boolean">
+            <column name="HISTORY_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="perOrgManTitle" type="string">
+            <column name="PER_ORG_MAN_TITLE" length="100" />
+        </property>
+        <property name="signature1" type="string">
+            <column name="SIGNATURE_1" length="75" />
+        </property>
+        <property name="title1" type="string">
+            <column name="TITLE_1" length="50" />
+        </property>
+        <property name="signature2" type="string">
+            <column name="SIGNATURE_2" length="75" />
+        </property>
+        <property name="title2" type="string">
+            <column name="TITLE_2" length="50" />
+        </property>
+        <property name="signature3" type="string">
+            <column name="SIGNATURE_3" length="75" />
+        </property>
+        <property name="title3" type="string">
+            <column name="TITLE_3" length="50" />
+        </property>
+        <property name="signature4" type="string">
+            <column name="SIGNATURE_4" length="75" />
+        </property>
+        <property name="title4" type="string">
+            <column name="TITLE_4" length="50" />
+        </property>
+        <property name="signature5" type="string">
+            <column name="SIGNATURE_5" length="75" />
+        </property>
+        <property name="title5" type="string">
+            <column name="TITLE_5" length="50" />
+        </property>
+        <property name="signature6" type="string">
+            <column name="SIGNATURE_6" length="75" />
+        </property>
+        <property name="title6" type="string">
+            <column name="TITLE_6" length="50" />
+        </property>
+        <property name="notes" type="string">
+            <column name="NOTES" length="250" />
+        </property>
+        <property name="bhSignature1" type="string">
+            <column name="BH_SIGNATURE_1" length="75" />
+        </property>
+        <property name="bhTitle1" type="string">
+            <column name="BH_TITLE_1" length="50" />
+        </property>
+        <property name="bhSignature2" type="string">
+            <column name="BH_SIGNATURE_2" length="75" />
+        </property>
+        <property name="bhTitle2" type="string">
+            <column name="BH_TITLE_2" length="50" />
+        </property>
+        <property name="bhSignature3" type="string">
+            <column name="BH_SIGNATURE_3" length="75" />
+        </property>
+        <property name="bhTitle3" type="string">
+            <column name="BH_TITLE_3" length="50" />
+        </property>
+        <property name="bhNotes" type="string">
+            <column name="BH_NOTES" length="250" />
+        </property>
+        <property name="bhGehaName" type="string">
+            <column name="BH_GEHA_NAME" length="150" />
+        </property>
+        <property name="signature7" type="string">
+            <column name="SIGNATURE_7" length="75" />
+        </property>
+        <property name="title7" type="string">
+            <column name="TITLE_7" length="75" />
+        </property>
+        <property name="bhSignature4" type="string">
+            <column name="BH_SIGNATURE_4" length="75" />
+        </property>
+        <property name="bhTitle4" type="string">
+            <column name="BH_TITLE_4" length="50" />
+        </property>
+        <property name="bhSignature5" type="string">
+            <column name="BH_SIGNATURE_5" length="75" />
+        </property>
+        <property name="bhTitle5" type="string">
+            <column name="BH_TITLE_5" length="50" />
+        </property>
+        <property name="attendancePwd" type="string">
+            <column name="ATTENDANCE_PWD" length="15" />
+        </property>
+        <property name="chkTerm" type="java.lang.Boolean">
+            <column name="CHK_TERM" precision="1" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

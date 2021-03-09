@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerVacationRuleEmp" table="PER_VACATION_RULE_EMP" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerVacationRuleEmpId">
+            <key-property name="vacationCode" type="string">
+                <column name="VACATION_CODE" length="2" />
+            </key-property>
+            <key-property name="employmentSourceCode" type="string">
+                <column name="EMPLOYMENT_SOURCE_CODE" length="5" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perVacationCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerVacationCode" update="false" insert="false" fetch="select">
+            <column name="VACATION_CODE" length="2" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perEmploymentParameter" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentParameter" update="false" insert="false" fetch="select">
+            <column name="EMPLOYMENT_SOURCE_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <property name="vacTestPeriod" type="java.lang.Boolean">
+            <column name="VAC_TEST_PERIOD" precision="1" scale="0" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="100" />
+        </property>
+        <property name="sexFlag" type="java.lang.Boolean">
+            <column name="SEX_FLAG" precision="1" scale="0" />
+        </property>
+        <property name="vacAgeFlag" type="java.lang.Boolean">
+            <column name="VAC_AGE_FLAG" precision="1" scale="0" />
+        </property>
+        <property name="balForEmp" type="java.lang.Integer">
+            <column name="BAL_FOR_EMP" precision="5" scale="0" />
+        </property>
+        <property name="maxNumber" type="java.lang.Short">
+            <column name="MAX_NUMBER" precision="3" scale="0" />
+        </property>
+        <property name="femaleRatio" type="big_decimal">
+            <column name="FEMALE_RATIO" precision="5" />
+        </property>
+        <property name="periodNotAllowed" type="java.lang.Short">
+            <column name="PERIOD_NOT_ALLOWED" precision="3" scale="0" />
+        </property>
+        <property name="balNeedDecision" type="java.lang.Boolean">
+            <column name="BAL_NEED_DECISION" precision="1" scale="0" />
+        </property>
+        <property name="vacDaysConstant" type="java.lang.Short">
+            <column name="VAC_DAYS_CONSTANT" precision="3" scale="0" />
+        </property>
+        <property name="maxPeriod" type="java.lang.Short">
+            <column name="MAX_PERIOD" precision="3" scale="0" />
+        </property>
+        <property name="vacMaxDaysContinue" type="java.lang.Short">
+            <column name="VAC_MAX_DAYS_CONTINUE" precision="3" scale="0" />
+        </property>
+        <property name="medVacStartFlag" type="java.lang.Boolean">
+            <column name="MED_VAC_START_FLAG" precision="1" scale="0" />
+        </property>
+        <property name="medVacStartDate" type="date">
+            <column name="MED_VAC_START_DATE" length="7" />
+        </property>
+        <property name="medVacMonPeriod" type="java.lang.Short">
+            <column name="MED_VAC_MON_PERIOD" precision="3" scale="0" />
+        </property>
+        <property name="medVacDoc" type="java.lang.Boolean">
+            <column name="MED_VAC_DOC" precision="1" scale="0" />
+        </property>
+        <property name="totDayPMon" type="java.lang.Byte">
+            <column name="TOT_DAY_P_MON" precision="2" scale="0" />
+        </property>
+        <property name="vacCodRasid" type="string">
+            <column name="VAC_COD_RASID" length="2" />
+        </property>
+        <property name="balFirstYear" type="java.lang.Integer">
+            <column name="BAL_FIRST_YEAR" precision="5" scale="0" />
+        </property>
+        <property name="balForFirst10yr" type="java.lang.Integer">
+            <column name="BAL_FOR_FIRST_10YR" precision="5" scale="0" />
+        </property>
+        <property name="balAfter10yr" type="java.lang.Integer">
+            <column name="BAL_AFTER_10YR" precision="5" scale="0" />
+        </property>
+        <property name="balAgeGreater50" type="java.lang.Integer">
+            <column name="BAL_AGE_GREATER_50" precision="5" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

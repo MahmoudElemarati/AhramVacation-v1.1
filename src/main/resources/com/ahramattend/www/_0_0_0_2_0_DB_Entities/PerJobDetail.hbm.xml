@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobDetail" table="PER_JOB_DETAIL" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobDetailId">
+            <key-property name="jobCode" type="string">
+                <column name="JOB_CODE" length="5" />
+            </key-property>
+            <key-property name="jobDetailSp" type="string">
+                <column name="JOB_DETAIL_SP" length="2" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perSpecialistCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerSpecialistCode" fetch="select">
+            <column name="SPECIALIST_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perJobCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerJobCode" update="false" insert="false" fetch="select">
+            <column name="JOB_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perQualCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerQualCode" fetch="select">
+            <column name="QUAL_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perQualSpecialist" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerQualSpecialist" update="false" insert="false" fetch="select">
+            <column name="QUAL_CODE" length="5" not-null="true" />
+            <column name="SPECIALIST_CODE" length="5" not-null="true" />
+        </many-to-one>
+        <property name="notes" type="string">
+            <column name="NOTES" length="100" />
+        </property>
+        <property name="recordCreateUser" type="string">
+            <column name="RECORD_CREATE_USER" length="15" />
+        </property>
+        <property name="recordCreateDate" type="date">
+            <column name="RECORD_CREATE_DATE" length="7" />
+        </property>
+        <property name="recordUpdateUser" type="string">
+            <column name="RECORD_UPDATE_USER" length="15" />
+        </property>
+        <property name="recordUpdateDate" type="date">
+            <column name="RECORD_UPDATE_DATE" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

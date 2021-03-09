@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudProjectSub" table="BUD_PROJECT_SUB" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudProjectSubId">
+            <key-property name="projectCode" type="string">
+                <column name="PROJECT_CODE" length="10" />
+            </key-property>
+            <key-property name="projectSubCode" type="string">
+                <column name="PROJECT_SUB_CODE" length="6" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="budProject" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudProject" update="false" insert="false" fetch="select">
+            <column name="PROJECT_CODE" length="10" not-null="true" />
+        </many-to-one>
+        <property name="projectSubName" type="string">
+            <column name="PROJECT_SUB_NAME" length="200" />
+        </property>
+        <property name="filterProjectSubName" type="string">
+            <column name="FILTER_PROJECT_SUB_NAME" length="200" />
+        </property>
+        <property name="projectSubStartDate" type="date">
+            <column name="PROJECT_SUB_START_DATE" length="7" />
+        </property>
+        <property name="projectSubPeriod" type="big_decimal">
+            <column name="PROJECT_SUB_PERIOD" precision="5" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="100" />
+        </property>
+        <property name="estimatedCost" type="big_decimal">
+            <column name="ESTIMATED_COST" precision="12" />
+        </property>
+        <property name="recordCreationUser" type="string">
+            <column name="RECORD_CREATION_USER" length="10" />
+        </property>
+        <property name="recordCreationDate" type="date">
+            <column name="RECORD_CREATION_DATE" length="7" />
+        </property>
+        <property name="lastUpdateUser" type="string">
+            <column name="LAST_UPDATE_USER" length="10" />
+        </property>
+        <property name="lastUpdateDate" type="date">
+            <column name="LAST_UPDATE_DATE" length="7" />
+        </property>
+        <property name="lastUpdateTransaction" type="string">
+            <column name="LAST_UPDATE_TRANSACTION" length="1" />
+        </property>
+        <set name="perEmploymentMastersesForPeremBudProjSFromFk" table="PER_EMPLOYMENT_MASTERS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PROJECT_CODE_FROM" length="10" />
+                <column name="PROJECT_SUB_CODE_FROM" length="6" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" />
+        </set>
+        <set name="perAnnualEvalModels" table="PER_ANNUAL_EVAL_MODEL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PROJECT_CODE" length="10" />
+                <column name="PROJECT_SUB_CODE" length="6" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalModel" />
+        </set>
+        <set name="perEmpHistoriesForPerehBudProjSFromFk" table="PER_EMP_HISTORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PROJECT_CODE_FROM" length="10" />
+                <column name="PROJECT_SUB_CODE_FROM" length="6" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpHistory" />
+        </set>
+        <set name="perAnnualEvals" table="PER_ANNUAL_EVAL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PROJECT_CODE" length="10" />
+                <column name="PROJECT_SUB_CODE" length="6" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEval" />
+        </set>
+        <set name="perEmploymentMastersesForPeremBudProjSFk" table="PER_EMPLOYMENT_MASTERS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PROJECT_CODE" length="10" />
+                <column name="PROJECT_SUB_CODE" length="6" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" />
+        </set>
+        <set name="perEmpHistoriesForPerehBudProjSFk" table="PER_EMP_HISTORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PROJECT_CODE" length="10" />
+                <column name="PROJECT_SUB_CODE" length="6" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpHistory" />
+        </set>
+    </class>
+</hibernate-mapping>

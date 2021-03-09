@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentParameter" table="PER_EMPLOYMENT_PARAMETER" schema="SHAMS" optimistic-lock="version">
+        <id name="employmentSourceCode" type="string">
+            <column name="EMPLOYMENT_SOURCE_CODE" length="5" />
+            <generator class="assigned" />
+        </id>
+        <property name="employmentSourceDesc" type="string">
+            <column name="EMPLOYMENT_SOURCE_DESC" length="50" not-null="true" />
+        </property>
+        <property name="employmentInterval" type="string">
+            <column name="EMPLOYMENT_INTERVAL" length="1" not-null="true" />
+        </property>
+        <property name="equpyFinancedDegree" type="string">
+            <column name="EQUPY_FINANCED_DEGREE" length="1" not-null="true" />
+        </property>
+        <property name="testPeriod" type="short">
+            <column name="TEST_PERIOD" precision="3" scale="0" not-null="true" />
+        </property>
+        <property name="employmentYearsNo" type="java.lang.Short">
+            <column name="EMPLOYMENT_YEARS_NO" precision="3" scale="0" />
+        </property>
+        <property name="pensionAge" type="java.lang.Byte">
+            <column name="PENSION_AGE" precision="2" scale="0" />
+        </property>
+        <property name="hireAge" type="java.lang.Byte">
+            <column name="HIRE_AGE" precision="2" scale="0" />
+        </property>
+        <property name="recordCreateUser" type="string">
+            <column name="RECORD_CREATE_USER" length="15" />
+        </property>
+        <property name="recordCreateDate" type="date">
+            <column name="RECORD_CREATE_DATE" length="7" />
+        </property>
+        <property name="recordUpdateUser" type="string">
+            <column name="RECORD_UPDATE_USER" length="15" />
+        </property>
+        <property name="recordUpdateDate" type="date">
+            <column name="RECORD_UPDATE_DATE" length="7" />
+        </property>
+        <set name="perElawaHireRules" table="PER_ELAWA_HIRE_RULE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYMENT_SOURCE_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerElawaHireRule" />
+        </set>
+        <set name="perEmploymentMasterses" table="PER_EMPLOYMENT_MASTERS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYMENT_SOURCE_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" />
+        </set>
+        <set name="perVacationRuleEmps" table="PER_VACATION_RULE_EMP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYMENT_SOURCE_CODE" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerVacationRuleEmp" />
+        </set>
+        <set name="perEmpHistories" table="PER_EMP_HISTORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYMENT_SOURCE_CODE" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpHistory" />
+        </set>
+        <set name="payExecutionSpecificEmps" table="PAY_EXECUTION_SPECIFIC_EMP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYMENT_SOURCE_CODE" length="5" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PayExecutionSpecificEmp" />
+        </set>
+    </class>
+</hibernate-mapping>

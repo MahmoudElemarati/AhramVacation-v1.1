@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerElawaGeneralRule" table="PER_ELAWA_GENERAL_RULE" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerElawaGeneralRuleId">
+            <key-property name="elawaTypeCode" type="string">
+                <column name="ELAWA_TYPE_CODE" length="2" />
+            </key-property>
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="elawaDate" type="date">
+                <column name="ELAWA_DATE" length="7" />
+            </key-property>
+            <key-property name="generalCode" type="string">
+                <column name="GENERAL_CODE" length="3" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perGeneralCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerGeneralCode" update="false" insert="false" fetch="select">
+            <column name="GENERAL_CODE" length="3" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

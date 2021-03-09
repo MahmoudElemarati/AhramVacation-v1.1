@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerSetupGeneral" table="PER_SETUP_GENERAL" schema="SHAMS" optimistic-lock="version">
+        <id name="setupDate" type="date">
+            <column name="SETUP_DATE" length="7" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeeNoFlg" type="boolean">
+            <column name="EMPLOYEE_NO_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="jobCodeFlg" type="boolean">
+            <column name="JOB_CODE_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="minBirthDate" type="date">
+            <column name="MIN_BIRTH_DATE" length="7" not-null="true" />
+        </property>
+        <property name="hireCodeFlg" type="boolean">
+            <column name="HIRE_CODE_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="locCodeFlg" type="boolean">
+            <column name="LOC_CODE_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="orgCodeFlag" type="boolean">
+            <column name="ORG_CODE_FLAG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="hireMenuFlg" type="boolean">
+            <column name="HIRE_MENU_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="religonCodeFlg" type="boolean">
+            <column name="RELIGON_CODE_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="fiscalDegreeCodeFlg" type="boolean">
+            <column name="FISCAL_DEGREE_CODE_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="generalCodeFlg" type="boolean">
+            <column name="GENERAL_CODE_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="quilCodeFlg" type="boolean">
+            <column name="QUIL_CODE_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="groupCodeFlg" type="boolean">
+            <column name="GROUP_CODE_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="statusFlg" type="boolean">
+            <column name="STATUS_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="workTypeFlg" type="boolean">
+            <column name="WORK_TYPE_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="employeeDataFlg" type="boolean">
+            <column name="EMPLOYEE_DATA_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="salaryFlg" type="boolean">
+            <column name="SALARY_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="vacationPwd" type="string">
+            <column name="VACATION_PWD" length="20" not-null="true" />
+        </property>
+        <property name="mosqueFlg" type="boolean">
+            <column name="MOSQUE_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="chkDegreePriorityDate" type="java.lang.Boolean">
+            <column name="CHK_DEGREE_PRIORITY_DATE" precision="1" scale="0" />
+        </property>
+        <property name="nationalFlg" type="boolean">
+            <column name="NATIONAL_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="evalPermission" type="java.lang.Byte">
+            <column name="EVAL_PERMISSION" precision="2" scale="0" />
+        </property>
+        <property name="vacSalDate" type="java.lang.Boolean">
+            <column name="VAC_SAL_DATE" precision="1" scale="0" />
+        </property>
+        <property name="nameFlg" type="java.lang.Boolean">
+            <column name="NAME_FLG" precision="1" scale="0" />
+        </property>
+        <property name="employeeLawFlg" type="boolean">
+            <column name="EMPLOYEE_LAW_FLG" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="attendTransData" type="java.lang.Boolean">
+            <column name="ATTEND_TRANS_DATA" precision="1" scale="0" />
+        </property>
+        <property name="insPwd" type="string">
+            <column name="INS_PWD" length="20" not-null="true" />
+        </property>
+        <property name="nadbPeriod" type="java.lang.Byte">
+            <column name="NADB_PERIOD" precision="2" scale="0" />
+        </property>
+        <property name="fiscalDegreeNameFlg" type="java.lang.Boolean">
+            <column name="FISCAL_DEGREE_NAME_FLG" precision="1" scale="0" />
+        </property>
+        <property name="empNameFlg" type="java.lang.Boolean">
+            <column name="EMP_NAME_FLG" precision="1" scale="0" />
+        </property>
+        <property name="webLogic" type="java.lang.Boolean">
+            <column name="WEB_LOGIC" precision="1" scale="0" />
+        </property>
+        <property name="decArch" type="java.lang.Boolean">
+            <column name="DEC_ARCH" precision="1" scale="0" />
+        </property>
+        <property name="javaIpServer" type="string">
+            <column name="JAVA_IP_SERVER" length="30" />
+        </property>
+        <property name="gehaCode" type="java.lang.Short">
+            <column name="GEHA_CODE" precision="4" scale="0" />
+        </property>
+        <property name="state" type="java.lang.Boolean">
+            <column name="STATE" precision="1" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

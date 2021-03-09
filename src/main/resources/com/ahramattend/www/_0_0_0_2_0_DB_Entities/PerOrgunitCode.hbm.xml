@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrgunitCode" table="PER_ORGUNIT_CODE" schema="SHAMS" optimistic-lock="version">
+        <id name="orgunitCode" type="string">
+            <column name="ORGUNIT_CODE" length="3" />
+            <generator class="assigned" />
+        </id>
+        <property name="orgunitName" type="string">
+            <column name="ORGUNIT_NAME" length="50" not-null="true" />
+        </property>
+        <property name="orgunitOrder" type="byte">
+            <column name="ORGUNIT_ORDER" precision="2" scale="0" not-null="true" />
+        </property>
+        <property name="recordCreateUser" type="string">
+            <column name="RECORD_CREATE_USER" length="15" />
+        </property>
+        <property name="recordCreateDate" type="date">
+            <column name="RECORD_CREATE_DATE" length="7" />
+        </property>
+        <property name="recordUpdateUser" type="string">
+            <column name="RECORD_UPDATE_USER" length="15" />
+        </property>
+        <property name="recordUpdateDate" type="date">
+            <column name="RECORD_UPDATE_DATE" length="7" />
+        </property>
+        <set name="perHumanBalJobDistributesForOrgunitCodeMinus" table="PER_HUMAN_BAL_JOB_DISTRIBUTE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE_MINUS" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJobDistribute" />
+        </set>
+        <set name="perHumanBalOrgs" table="PER_HUMAN_BAL_ORG" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalOrg" />
+        </set>
+        <set name="perComplaintDatasForOrgunitCodeExec" table="PER_COMPLAINT_DATA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE_EXEC" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerComplaintData" />
+        </set>
+        <set name="perEmpHistoriesForOrgunitCodeFrom" table="PER_EMP_HISTORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE_FROM" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpHistory" />
+        </set>
+        <set name="perHumanBalOrgNews" table="PER_HUMAN_BAL_ORG_NEW" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalOrgNew" />
+        </set>
+        <set name="perHumanPlans" table="PER_HUMAN_PLAN" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanPlan" />
+        </set>
+        <set name="perAnnualEvals" table="PER_ANNUAL_EVAL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEval" />
+        </set>
+        <set name="perAnnualEvalModels" table="PER_ANNUAL_EVAL_MODEL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalModel" />
+        </set>
+        <set name="perHumanBalJobDistributeNsForOrgunitCodeMinus" table="PER_HUMAN_BAL_JOB_DISTRIBUTE_N" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE_MINUS" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJobDistributeN" />
+        </set>
+        <set name="perOrganizationStructures" table="PER_ORGANIZATION_STRUCTURE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrganizationStructure" />
+        </set>
+        <set name="perComplaintDatasForOrgunitCode" table="PER_COMPLAINT_DATA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerComplaintData" />
+        </set>
+        <set name="perEmploymentMastersesForOrgunitCode" table="PER_EMPLOYMENT_MASTERS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" />
+        </set>
+        <set name="perEmpHistoriesForOrgunitCode" table="PER_EMP_HISTORY" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmpHistory" />
+        </set>
+        <set name="perHumanBalJobDistributeNsForOrgunitCode" table="PER_HUMAN_BAL_JOB_DISTRIBUTE_N" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJobDistributeN" />
+        </set>
+        <set name="perHumanBalJobDistributesForOrgunitCode" table="PER_HUMAN_BAL_JOB_DISTRIBUTE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerHumanBalJobDistribute" />
+        </set>
+        <set name="perEmploymentMastersesForOrgunitCodeFrom" table="PER_EMPLOYMENT_MASTERS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORGUNIT_CODE_FROM" length="3" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" />
+        </set>
+    </class>
+</hibernate-mapping>

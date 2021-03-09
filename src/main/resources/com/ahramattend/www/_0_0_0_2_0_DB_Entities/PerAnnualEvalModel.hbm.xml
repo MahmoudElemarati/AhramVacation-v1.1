@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalModel" table="PER_ANNUAL_EVAL_MODEL" schema="SHAMS" optimistic-lock="version">
+        <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalModelId">
+            <key-property name="locationCode" type="string">
+                <column name="LOCATION_CODE" length="3" />
+            </key-property>
+            <key-property name="annualId" type="string">
+                <column name="ANNUAL_ID" length="5" />
+            </key-property>
+            <key-property name="serialNo" type="string">
+                <column name="SERIAL_NO" length="5" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="perAnnualEvalType" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalType" fetch="select">
+            <column name="EVAL_TYPE_SERIAL" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perAnnualEvalYear" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalYear" update="false" insert="false" fetch="select">
+            <column name="LOCATION_CODE" length="3" not-null="true" />
+            <column name="ANNUAL_ID" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perOrganizationStructure" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrganizationStructure" fetch="select">
+            <column name="ORG_ID" length="5" />
+        </many-to-one>
+        <many-to-one name="perOrgunitCode" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerOrgunitCode" fetch="select">
+            <column name="ORGUNIT_CODE" length="3" />
+        </many-to-one>
+        <many-to-one name="budProjectSub" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.BudProjectSub" fetch="select">
+            <column name="PROJECT_CODE" length="10" />
+            <column name="PROJECT_SUB_CODE" length="6" />
+        </many-to-one>
+        <property name="empDirectBoss" type="string">
+            <column name="EMP_DIRECT_BOSS" length="10" />
+        </property>
+        <property name="commityNo" type="string">
+            <column name="COMMITY_NO" length="10" />
+        </property>
+        <property name="evalDate" type="date">
+            <column name="EVAL_DATE" length="7" not-null="true" />
+        </property>
+        <property name="empBigBoss" type="string">
+            <column name="EMP_BIG_BOSS" length="10" />
+        </property>
+        <set name="perAnnualEvalModelEmps" table="PER_ANNUAL_EVAL_MODEL_EMP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOCATION_CODE" length="3" not-null="true" />
+                <column name="ANNUAL_ID" length="5" not-null="true" />
+                <column name="SERIAL_NO" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAnnualEvalModelEmp" />
+        </set>
+    </class>
+</hibernate-mapping>
