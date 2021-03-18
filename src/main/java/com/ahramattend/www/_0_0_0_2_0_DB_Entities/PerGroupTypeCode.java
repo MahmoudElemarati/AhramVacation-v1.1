@@ -159,7 +159,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PerJobCode> getPerJobCodes() {
         return this.perJobCodes;
     }
@@ -168,7 +168,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perJobCodes = perJobCodes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCodeByGroupTypeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCodeByGroupTypeCodeNew")
     public Set<PerEmpPromotionNew> getPerEmpPromotionNewsForGroupTypeCodeNew() {
         return this.perEmpPromotionNewsForGroupTypeCodeNew;
     }
@@ -177,7 +177,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perEmpPromotionNewsForGroupTypeCodeNew = perEmpPromotionNewsForGroupTypeCodeNew;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PerPromotionTrainRuleN> getPerPromotionTrainRuleNs() {
         return this.perPromotionTrainRuleNs;
     }
@@ -186,7 +186,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perPromotionTrainRuleNs = perPromotionTrainRuleNs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }
@@ -195,7 +195,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perEmploymentMasterses = perEmploymentMasterses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCodeByGroupTypeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCodeByGroupTypeCodeNew")
     public Set<PerEmpPromotion> getPerEmpPromotionsForGroupTypeCodeNew() {
         return this.perEmpPromotionsForGroupTypeCodeNew;
     }
@@ -204,7 +204,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perEmpPromotionsForGroupTypeCodeNew = perEmpPromotionsForGroupTypeCodeNew;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PerEmpPromotionRejectNew> getPerEmpPromotionRejectNews() {
         return this.perEmpPromotionRejectNews;
     }
@@ -213,7 +213,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perEmpPromotionRejectNews = perEmpPromotionRejectNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PerElawaTransaction> getPerElawaTransactions() {
         return this.perElawaTransactions;
     }
@@ -222,7 +222,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perElawaTransactions = perElawaTransactions;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PerElawaTransactionReject> getPerElawaTransactionRejects() {
         return this.perElawaTransactionRejects;
     }
@@ -231,7 +231,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perElawaTransactionRejects = perElawaTransactionRejects;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCodeByGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCodeByGroupTypeCode")
     public Set<PerEmpPromotion> getPerEmpPromotionsForGroupTypeCode() {
         return this.perEmpPromotionsForGroupTypeCode;
     }
@@ -240,7 +240,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perEmpPromotionsForGroupTypeCode = perEmpPromotionsForGroupTypeCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PerPromotionTransNew> getPerPromotionTransNews() {
         return this.perPromotionTransNews;
     }
@@ -249,7 +249,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perPromotionTransNews = perPromotionTransNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PayFinancialGroupType> getPayFinancialGroupTypes() {
         return this.payFinancialGroupTypes;
     }
@@ -258,7 +258,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.payFinancialGroupTypes = payFinancialGroupTypes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PerEmpHistory> getPerEmpHistories() {
         return this.perEmpHistories;
     }
@@ -267,7 +267,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perEmpHistories = perEmpHistories;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCodeByGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCodeByGroupTypeCode")
     public Set<PerEmpPromotionNew> getPerEmpPromotionNewsForGroupTypeCode() {
         return this.perEmpPromotionNewsForGroupTypeCode;
     }
@@ -276,7 +276,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perEmpPromotionNewsForGroupTypeCode = perEmpPromotionNewsForGroupTypeCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PerGroupDegreeNew> getPerGroupDegreeNews() {
         return this.perGroupDegreeNews;
     }
@@ -285,7 +285,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perGroupDegreeNews = perGroupDegreeNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PerGroupDegree> getPerGroupDegrees() {
         return this.perGroupDegrees;
     }
@@ -294,7 +294,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perGroupDegrees = perGroupDegrees;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PerPromotionTrans> getPerPromotionTranses() {
         return this.perPromotionTranses;
     }
@@ -303,7 +303,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perPromotionTranses = perPromotionTranses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PerElawaGroupTypeRule> getPerElawaGroupTypeRules() {
         return this.perElawaGroupTypeRules;
     }
@@ -312,7 +312,7 @@ public class PerGroupTypeCode  implements java.io.Serializable {
         this.perElawaGroupTypeRules = perElawaGroupTypeRules;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupTypeCode")
     public Set<PerEvalAttributeDetail> getPerEvalAttributeDetails() {
         return this.perEvalAttributeDetails;
     }

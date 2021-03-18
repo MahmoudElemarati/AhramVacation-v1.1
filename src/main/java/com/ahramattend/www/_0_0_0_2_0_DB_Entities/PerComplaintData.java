@@ -90,7 +90,7 @@ public class PerComplaintData  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="COMPLAINT_CODE", nullable=false)
     public PerComplaintCode getPerComplaintCode() {
         return this.perComplaintCode;
@@ -100,7 +100,7 @@ public class PerComplaintData  implements java.io.Serializable {
         this.perComplaintCode = perComplaintCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="DESICION_SIDE_CODE")
     public PerDesicionSideCode getPerDesicionSideCode() {
         return this.perDesicionSideCode;
@@ -110,7 +110,7 @@ public class PerComplaintData  implements java.io.Serializable {
         this.perDesicionSideCode = perDesicionSideCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID")
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
@@ -120,7 +120,7 @@ public class PerComplaintData  implements java.io.Serializable {
         this.perEmploymentMasters = perEmploymentMasters;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORG_ID_EXEC")
     public PerOrganizationStructure getPerOrganizationStructureByOrgIdExec() {
         return this.perOrganizationStructureByOrgIdExec;
@@ -130,7 +130,7 @@ public class PerComplaintData  implements java.io.Serializable {
         this.perOrganizationStructureByOrgIdExec = perOrganizationStructureByOrgIdExec;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORG_ID")
     public PerOrganizationStructure getPerOrganizationStructureByOrgId() {
         return this.perOrganizationStructureByOrgId;
@@ -140,7 +140,7 @@ public class PerComplaintData  implements java.io.Serializable {
         this.perOrganizationStructureByOrgId = perOrganizationStructureByOrgId;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORGUNIT_CODE_EXEC")
     public PerOrgunitCode getPerOrgunitCodeByOrgunitCodeExec() {
         return this.perOrgunitCodeByOrgunitCodeExec;
@@ -150,7 +150,7 @@ public class PerComplaintData  implements java.io.Serializable {
         this.perOrgunitCodeByOrgunitCodeExec = perOrgunitCodeByOrgunitCodeExec;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORGUNIT_CODE")
     public PerOrgunitCode getPerOrgunitCodeByOrgunitCode() {
         return this.perOrgunitCodeByOrgunitCode;
@@ -160,7 +160,7 @@ public class PerComplaintData  implements java.io.Serializable {
         this.perOrgunitCodeByOrgunitCode = perOrgunitCodeByOrgunitCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="LOCATION_CODE", nullable=false, insertable=false, updatable=false)
     public BudLocation getBudLocation() {
         return this.budLocation;

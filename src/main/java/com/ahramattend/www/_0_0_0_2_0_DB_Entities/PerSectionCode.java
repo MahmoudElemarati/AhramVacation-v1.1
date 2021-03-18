@@ -63,7 +63,7 @@ public class PerSectionCode  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOC_CODE", referencedColumnName="LOC_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false) } )
@@ -95,7 +95,7 @@ public class PerSectionCode  implements java.io.Serializable {
         this.secFloor = secFloor;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perSectionCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perSectionCode")
     public Set<PerDeptCode> getPerDeptCodes() {
         return this.perDeptCodes;
     }

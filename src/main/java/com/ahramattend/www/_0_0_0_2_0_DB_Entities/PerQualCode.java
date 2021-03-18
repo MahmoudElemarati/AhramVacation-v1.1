@@ -81,7 +81,7 @@ public class PerQualCode  implements java.io.Serializable {
         this.qualCode = qualCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="QUAL_CLASS_CODE", nullable=false)
     public PerQualClass getPerQualClass() {
         return this.perQualClass;
@@ -141,7 +141,7 @@ public class PerQualCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perQualCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perQualCode")
     public Set<PayExecutionSpecificEmp> getPayExecutionSpecificEmps() {
         return this.payExecutionSpecificEmps;
     }
@@ -150,7 +150,7 @@ public class PerQualCode  implements java.io.Serializable {
         this.payExecutionSpecificEmps = payExecutionSpecificEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perQualCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perQualCode")
     public Set<PerEmpQualification> getPerEmpQualifications() {
         return this.perEmpQualifications;
     }
@@ -159,7 +159,7 @@ public class PerQualCode  implements java.io.Serializable {
         this.perEmpQualifications = perEmpQualifications;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perQualCodeByQualCodeFirst")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perQualCodeByQualCodeFirst")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForQualCodeFirst() {
         return this.perEmploymentMastersesForQualCodeFirst;
     }
@@ -168,7 +168,7 @@ public class PerQualCode  implements java.io.Serializable {
         this.perEmploymentMastersesForQualCodeFirst = perEmploymentMastersesForQualCodeFirst;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perQualCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perQualCode")
     public Set<PerQualSpecialist> getPerQualSpecialists() {
         return this.perQualSpecialists;
     }
@@ -177,7 +177,7 @@ public class PerQualCode  implements java.io.Serializable {
         this.perQualSpecialists = perQualSpecialists;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perQualCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perQualCode")
     public Set<PerJobDetail> getPerJobDetails() {
         return this.perJobDetails;
     }
@@ -186,7 +186,7 @@ public class PerQualCode  implements java.io.Serializable {
         this.perJobDetails = perJobDetails;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perQualCodeByQualCodeBegin")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perQualCodeByQualCodeBegin")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForQualCodeBegin() {
         return this.perEmploymentMastersesForQualCodeBegin;
     }
@@ -195,7 +195,7 @@ public class PerQualCode  implements java.io.Serializable {
         this.perEmploymentMastersesForQualCodeBegin = perEmploymentMastersesForQualCodeBegin;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perQualCodeByQualCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perQualCodeByQualCode")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForQualCode() {
         return this.perEmploymentMastersesForQualCode;
     }
@@ -204,7 +204,7 @@ public class PerQualCode  implements java.io.Serializable {
         this.perEmploymentMastersesForQualCode = perEmploymentMastersesForQualCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perQualCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perQualCode")
     public Set<PerQualFaculty> getPerQualFaculties() {
         return this.perQualFaculties;
     }

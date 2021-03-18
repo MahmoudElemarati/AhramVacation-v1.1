@@ -92,7 +92,7 @@ public class PerHumanBalJobNew  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="FISCAL_DEGREE_CODE_NEW", referencedColumnName="FISCAL_DEGREE_CODE_NEW", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="GROUP_TYPE_CODE", referencedColumnName="GROUP_TYPE_CODE", nullable=false, insertable=false, updatable=false) } )
@@ -104,7 +104,7 @@ public class PerHumanBalJobNew  implements java.io.Serializable {
         this.perGroupDegreeNew = perGroupDegreeNew;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="HUMAN_BAL_ID", referencedColumnName="HUMAN_BAL_ID", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false) } )
@@ -116,7 +116,7 @@ public class PerHumanBalJobNew  implements java.io.Serializable {
         this.perHumanBalYear = perHumanBalYear;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="JOB_CODE", nullable=false, insertable=false, updatable=false)
     public PerJobCode getPerJobCode() {
         return this.perJobCode;
@@ -216,7 +216,7 @@ public class PerHumanBalJobNew  implements java.io.Serializable {
         this.jobPlaned = jobPlaned;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perHumanBalJobNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perHumanBalJobNew")
     public Set<PerHumanBalOrgNew> getPerHumanBalOrgNews() {
         return this.perHumanBalOrgNews;
     }

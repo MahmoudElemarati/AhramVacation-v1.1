@@ -150,7 +150,7 @@ public class PerQualClass  implements java.io.Serializable {
         this.qualClass = qualClass;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perQualClass")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perQualClass")
     public Set<PerQualCode> getPerQualCodes() {
         return this.perQualCodes;
     }

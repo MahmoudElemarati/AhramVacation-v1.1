@@ -195,7 +195,7 @@ public class PerEmploymentParameter  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentParameter")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentParameter")
     public Set<PerElawaHireRule> getPerElawaHireRules() {
         return this.perElawaHireRules;
     }
@@ -204,7 +204,7 @@ public class PerEmploymentParameter  implements java.io.Serializable {
         this.perElawaHireRules = perElawaHireRules;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentParameter")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentParameter")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }
@@ -213,7 +213,7 @@ public class PerEmploymentParameter  implements java.io.Serializable {
         this.perEmploymentMasterses = perEmploymentMasterses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentParameter")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentParameter")
     public Set<PerVacationRuleEmp> getPerVacationRuleEmps() {
         return this.perVacationRuleEmps;
     }
@@ -222,7 +222,7 @@ public class PerEmploymentParameter  implements java.io.Serializable {
         this.perVacationRuleEmps = perVacationRuleEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentParameter")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentParameter")
     public Set<PerEmpHistory> getPerEmpHistories() {
         return this.perEmpHistories;
     }
@@ -231,7 +231,7 @@ public class PerEmploymentParameter  implements java.io.Serializable {
         this.perEmpHistories = perEmpHistories;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentParameter")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentParameter")
     public Set<PayExecutionSpecificEmp> getPayExecutionSpecificEmps() {
         return this.payExecutionSpecificEmps;
     }

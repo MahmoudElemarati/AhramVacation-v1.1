@@ -60,7 +60,7 @@ public class PerElawaGradeRule  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GRADE_CODE", nullable=false, insertable=false, updatable=false)
     public PerEvalPercentage getPerEvalPercentage() {
         return this.perEvalPercentage;

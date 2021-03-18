@@ -86,7 +86,7 @@ public class PerHumanBalOrg  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="HUMAN_BAL_ID", referencedColumnName="HUMAN_BAL_ID", nullable=false, insertable=false, updatable=false), 
@@ -101,7 +101,7 @@ public class PerHumanBalOrg  implements java.io.Serializable {
         this.perHumanBalJob = perHumanBalJob;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORG_ID", nullable=false, insertable=false, updatable=false)
     public PerOrganizationStructure getPerOrganizationStructure() {
         return this.perOrganizationStructure;
@@ -111,7 +111,7 @@ public class PerHumanBalOrg  implements java.io.Serializable {
         this.perOrganizationStructure = perOrganizationStructure;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORGUNIT_CODE", nullable=false)
     public PerOrgunitCode getPerOrgunitCode() {
         return this.perOrgunitCode;

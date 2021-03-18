@@ -77,7 +77,7 @@ public class PerEmpPromotionRejectNew  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE_NEW", nullable=false)
     public PerFiscalDegreeCodeNew getPerFiscalDegreeCodeNew() {
         return this.perFiscalDegreeCodeNew;
@@ -87,7 +87,7 @@ public class PerEmpPromotionRejectNew  implements java.io.Serializable {
         this.perFiscalDegreeCodeNew = perFiscalDegreeCodeNew;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="PROMOTION_TYPE", referencedColumnName="PROMOTION_TYPE", nullable=false, insertable=false, updatable=false), 
@@ -100,7 +100,7 @@ public class PerEmpPromotionRejectNew  implements java.io.Serializable {
         this.perPromotionTransNew = perPromotionTransNew;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false)
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
@@ -110,7 +110,7 @@ public class PerEmpPromotionRejectNew  implements java.io.Serializable {
         this.perEmploymentMasters = perEmploymentMasters;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GROUP_TYPE_CODE")
     public PerGroupTypeCode getPerGroupTypeCode() {
         return this.perGroupTypeCode;
@@ -120,7 +120,7 @@ public class PerEmpPromotionRejectNew  implements java.io.Serializable {
         this.perGroupTypeCode = perGroupTypeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="JOB_CODE", nullable=false)
     public PerJobCode getPerJobCode() {
         return this.perJobCode;

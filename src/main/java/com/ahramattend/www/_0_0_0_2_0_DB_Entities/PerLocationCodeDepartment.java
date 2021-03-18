@@ -65,7 +65,7 @@ public class PerLocationCodeDepartment  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOC_CODE", referencedColumnName="LOC_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false) } )
@@ -97,7 +97,7 @@ public class PerLocationCodeDepartment  implements java.io.Serializable {
         this.departmentName = departmentName;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perLocationCodeDepartment")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perLocationCodeDepartment")
     public Set<PerMosqueCode> getPerMosqueCodes() {
         return this.perMosqueCodes;
     }

@@ -79,7 +79,7 @@ public class PerGovernorateCode  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="COUNTRY_CODE", nullable=false, insertable=false, updatable=false)
     public PerCountryCode getPerCountryCode() {
         return this.perCountryCode;
@@ -159,7 +159,7 @@ public class PerGovernorateCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGovernorateCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGovernorateCode")
     public Set<PerInsuranceSideCode> getPerInsuranceSideCodes() {
         return this.perInsuranceSideCodes;
     }
@@ -168,7 +168,7 @@ public class PerGovernorateCode  implements java.io.Serializable {
         this.perInsuranceSideCodes = perInsuranceSideCodes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGovernorateCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGovernorateCode")
     public Set<PerCityCode> getPerCityCodes() {
         return this.perCityCodes;
     }
@@ -177,7 +177,7 @@ public class PerGovernorateCode  implements java.io.Serializable {
         this.perCityCodes = perCityCodes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGovernorateCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGovernorateCode")
     public Set<PerLocationCodes> getPerLocationCodeses() {
         return this.perLocationCodeses;
     }

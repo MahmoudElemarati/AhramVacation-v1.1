@@ -72,7 +72,7 @@ public class PayEmployeeReq  implements java.io.Serializable {
         this.reqSp = reqSp;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID")
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
@@ -82,7 +82,7 @@ public class PayEmployeeReq  implements java.io.Serializable {
         this.perEmploymentMasters = perEmploymentMasters;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="USER_ID")
     public NvUsers getNvUsers() {
         return this.nvUsers;
@@ -162,7 +162,7 @@ public class PayEmployeeReq  implements java.io.Serializable {
         this.rmrk = rmrk;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payEmployeeReq")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payEmployeeReq")
     public Set<PayEmployeeReqDtl> getPayEmployeeReqDtls() {
         return this.payEmployeeReqDtls;
     }

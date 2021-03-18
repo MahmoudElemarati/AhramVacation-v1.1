@@ -83,7 +83,7 @@ public class PerVacationCode  implements java.io.Serializable {
         this.vacationCode = vacationCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GENERAL_CODE")
     public PerGeneralCode getPerGeneralCode() {
         return this.perGeneralCode;
@@ -163,7 +163,7 @@ public class PerVacationCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perVacationCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perVacationCode")
     public Set<PerEmpVacationReqJava> getPerEmpVacationReqJavas() {
         return this.perEmpVacationReqJavas;
     }
@@ -172,7 +172,7 @@ public class PerVacationCode  implements java.io.Serializable {
         this.perEmpVacationReqJavas = perEmpVacationReqJavas;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perVacationCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perVacationCode")
     public Set<PerElawaVacationRule> getPerElawaVacationRules() {
         return this.perElawaVacationRules;
     }
@@ -181,7 +181,7 @@ public class PerVacationCode  implements java.io.Serializable {
         this.perElawaVacationRules = perElawaVacationRules;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perVacationCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perVacationCode")
     public Set<PerPromotionVacationRuleN> getPerPromotionVacationRuleNs() {
         return this.perPromotionVacationRuleNs;
     }
@@ -190,7 +190,7 @@ public class PerVacationCode  implements java.io.Serializable {
         this.perPromotionVacationRuleNs = perPromotionVacationRuleNs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perVacationCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perVacationCode")
     public Set<PerVacationRuleDoc> getPerVacationRuleDocs() {
         return this.perVacationRuleDocs;
     }
@@ -199,7 +199,7 @@ public class PerVacationCode  implements java.io.Serializable {
         this.perVacationRuleDocs = perVacationRuleDocs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perVacationCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perVacationCode")
     public Set<PerVacationRuleEmp> getPerVacationRuleEmps() {
         return this.perVacationRuleEmps;
     }
@@ -208,7 +208,7 @@ public class PerVacationCode  implements java.io.Serializable {
         this.perVacationRuleEmps = perVacationRuleEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perVacationCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perVacationCode")
     public Set<PerEmpVacationBalance> getPerEmpVacationBalances() {
         return this.perEmpVacationBalances;
     }
@@ -217,7 +217,7 @@ public class PerVacationCode  implements java.io.Serializable {
         this.perEmpVacationBalances = perEmpVacationBalances;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perVacationCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perVacationCode")
     public Set<PerEmpVacationTrans> getPerEmpVacationTranses() {
         return this.perEmpVacationTranses;
     }

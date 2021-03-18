@@ -63,7 +63,7 @@ public class PerEmpFile  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false)
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
@@ -73,7 +73,7 @@ public class PerEmpFile  implements java.io.Serializable {
         this.perEmploymentMasters = perEmploymentMasters;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="DOC_TYPE_CODE", nullable=false)
     public PerFileDocType getPerFileDocType() {
         return this.perFileDocType;
@@ -83,7 +83,7 @@ public class PerEmpFile  implements java.io.Serializable {
         this.perFileDocType = perFileDocType;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FILE_TYPE_CODE", nullable=false)
     public PerFileType getPerFileType() {
         return this.perFileType;
@@ -93,7 +93,7 @@ public class PerEmpFile  implements java.io.Serializable {
         this.perFileType = perFileType;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmpFile")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmpFile")
     public Set<PerEmpFileDoc> getPerEmpFileDocs() {
         return this.perEmpFileDocs;
     }

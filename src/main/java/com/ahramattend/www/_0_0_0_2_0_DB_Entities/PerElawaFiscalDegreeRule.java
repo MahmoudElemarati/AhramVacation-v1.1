@@ -49,7 +49,7 @@ public class PerElawaFiscalDegreeRule  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE", nullable=false, insertable=false, updatable=false)
     public PerFiscalDegreeCode getPerFiscalDegreeCode() {
         return this.perFiscalDegreeCode;

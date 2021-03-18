@@ -116,7 +116,7 @@ public class PerFacultyCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFacultyCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFacultyCode")
     public Set<PerEmpQualification> getPerEmpQualifications() {
         return this.perEmpQualifications;
     }
@@ -125,7 +125,7 @@ public class PerFacultyCode  implements java.io.Serializable {
         this.perEmpQualifications = perEmpQualifications;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFacultyCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFacultyCode")
     public Set<PerFacultyUniversity> getPerFacultyUniversities() {
         return this.perFacultyUniversities;
     }
@@ -134,7 +134,7 @@ public class PerFacultyCode  implements java.io.Serializable {
         this.perFacultyUniversities = perFacultyUniversities;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFacultyCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFacultyCode")
     public Set<PerQualFaculty> getPerQualFaculties() {
         return this.perQualFaculties;
     }

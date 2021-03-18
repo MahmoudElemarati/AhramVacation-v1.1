@@ -164,7 +164,7 @@ public class PerGeneralCode  implements java.io.Serializable {
         this.gehaKind = gehaKind;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGeneralCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGeneralCode")
     public Set<PerElawaGeneralRule> getPerElawaGeneralRules() {
         return this.perElawaGeneralRules;
     }
@@ -173,7 +173,7 @@ public class PerGeneralCode  implements java.io.Serializable {
         this.perElawaGeneralRules = perElawaGeneralRules;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGeneralCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGeneralCode")
     public Set<PerEmpHistory> getPerEmpHistories() {
         return this.perEmpHistories;
     }
@@ -182,7 +182,7 @@ public class PerGeneralCode  implements java.io.Serializable {
         this.perEmpHistories = perEmpHistories;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGeneralCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGeneralCode")
     public Set<PerPromotionRule> getPerPromotionRules() {
         return this.perPromotionRules;
     }
@@ -191,7 +191,7 @@ public class PerGeneralCode  implements java.io.Serializable {
         this.perPromotionRules = perPromotionRules;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGeneralCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGeneralCode")
     public Set<PerEasementTrans> getPerEasementTranses() {
         return this.perEasementTranses;
     }
@@ -200,7 +200,7 @@ public class PerGeneralCode  implements java.io.Serializable {
         this.perEasementTranses = perEasementTranses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGeneralCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGeneralCode")
     public Set<PerElawaType> getPerElawaTypes() {
         return this.perElawaTypes;
     }
@@ -209,7 +209,7 @@ public class PerGeneralCode  implements java.io.Serializable {
         this.perElawaTypes = perElawaTypes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGeneralCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGeneralCode")
     public Set<PerVacationCode> getPerVacationCodes() {
         return this.perVacationCodes;
     }
@@ -218,7 +218,7 @@ public class PerGeneralCode  implements java.io.Serializable {
         this.perVacationCodes = perVacationCodes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGeneralCodeByGeneralCodeFirst")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGeneralCodeByGeneralCodeFirst")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForGeneralCodeFirst() {
         return this.perEmploymentMastersesForGeneralCodeFirst;
     }
@@ -227,7 +227,7 @@ public class PerGeneralCode  implements java.io.Serializable {
         this.perEmploymentMastersesForGeneralCodeFirst = perEmploymentMastersesForGeneralCodeFirst;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGeneralCodeByGeneralCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGeneralCodeByGeneralCode")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForGeneralCode() {
         return this.perEmploymentMastersesForGeneralCode;
     }

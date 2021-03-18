@@ -122,7 +122,7 @@ public class PerSpecialistCode  implements java.io.Serializable {
         this.recordCreateUser = recordCreateUser;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perSpecialistCodeBySpecialistCodeBegin")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perSpecialistCodeBySpecialistCodeBegin")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForSpecialistCodeBegin() {
         return this.perEmploymentMastersesForSpecialistCodeBegin;
     }
@@ -131,7 +131,7 @@ public class PerSpecialistCode  implements java.io.Serializable {
         this.perEmploymentMastersesForSpecialistCodeBegin = perEmploymentMastersesForSpecialistCodeBegin;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perSpecialistCodeBySpecialistCodeFirst")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perSpecialistCodeBySpecialistCodeFirst")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForSpecialistCodeFirst() {
         return this.perEmploymentMastersesForSpecialistCodeFirst;
     }
@@ -140,7 +140,7 @@ public class PerSpecialistCode  implements java.io.Serializable {
         this.perEmploymentMastersesForSpecialistCodeFirst = perEmploymentMastersesForSpecialistCodeFirst;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perSpecialistCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perSpecialistCode")
     public Set<PerEmpQualification> getPerEmpQualifications() {
         return this.perEmpQualifications;
     }
@@ -149,7 +149,7 @@ public class PerSpecialistCode  implements java.io.Serializable {
         this.perEmpQualifications = perEmpQualifications;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perSpecialistCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perSpecialistCode")
     public Set<PerQualSpecialist> getPerQualSpecialists() {
         return this.perQualSpecialists;
     }
@@ -158,7 +158,7 @@ public class PerSpecialistCode  implements java.io.Serializable {
         this.perQualSpecialists = perQualSpecialists;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perSpecialistCodeBySpecialistCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perSpecialistCodeBySpecialistCode")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForSpecialistCode() {
         return this.perEmploymentMastersesForSpecialistCode;
     }
@@ -167,7 +167,7 @@ public class PerSpecialistCode  implements java.io.Serializable {
         this.perEmploymentMastersesForSpecialistCode = perEmploymentMastersesForSpecialistCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perSpecialistCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perSpecialistCode")
     public Set<PerJobDetail> getPerJobDetails() {
         return this.perJobDetails;
     }

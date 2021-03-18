@@ -117,7 +117,7 @@ public class PayEmployeeMaster  implements java.io.Serializable {
         this.employeeId = employeeId;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="STATUS_CODE", referencedColumnName="STATUS_CODE"), 
         @JoinColumn(name="STATUS_GROUP", referencedColumnName="STATUS_GROUP") } )
@@ -129,7 +129,7 @@ public class PayEmployeeMaster  implements java.io.Serializable {
         this.payFinancialGroupType = payFinancialGroupType;
     }
 
-@OneToOne(fetch=FetchType.LAZY)@PrimaryKeyJoinColumn
+@OneToOne(fetch=FetchType.EAGER)@PrimaryKeyJoinColumn
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
     }
@@ -328,7 +328,7 @@ public class PayEmployeeMaster  implements java.io.Serializable {
         this.factoryCode = factoryCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payEmployeeMaster")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payEmployeeMaster")
     public Set<PayDeserveEmpFileDtlRuf> getPayDeserveEmpFileDtlRufs() {
         return this.payDeserveEmpFileDtlRufs;
     }
@@ -337,7 +337,7 @@ public class PayEmployeeMaster  implements java.io.Serializable {
         this.payDeserveEmpFileDtlRufs = payDeserveEmpFileDtlRufs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payEmployeeMaster")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payEmployeeMaster")
     public Set<PayDeserveEmp> getPayDeserveEmps() {
         return this.payDeserveEmps;
     }
@@ -346,7 +346,7 @@ public class PayEmployeeMaster  implements java.io.Serializable {
         this.payDeserveEmps = payDeserveEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payEmployeeMaster")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payEmployeeMaster")
     public Set<PayDeserveEmpFileStop> getPayDeserveEmpFileStops() {
         return this.payDeserveEmpFileStops;
     }
@@ -355,7 +355,7 @@ public class PayEmployeeMaster  implements java.io.Serializable {
         this.payDeserveEmpFileStops = payDeserveEmpFileStops;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payEmployeeMaster")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payEmployeeMaster")
     public Set<PaySarfCodeEmp> getPaySarfCodeEmps() {
         return this.paySarfCodeEmps;
     }
@@ -364,7 +364,7 @@ public class PayEmployeeMaster  implements java.io.Serializable {
         this.paySarfCodeEmps = paySarfCodeEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payEmployeeMasterByEmployeeId")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payEmployeeMasterByEmployeeId")
     public Set<PayDeserveEmpFileDtl> getPayDeserveEmpFileDtlsForEmployeeId() {
         return this.payDeserveEmpFileDtlsForEmployeeId;
     }
@@ -373,7 +373,7 @@ public class PayEmployeeMaster  implements java.io.Serializable {
         this.payDeserveEmpFileDtlsForEmployeeId = payDeserveEmpFileDtlsForEmployeeId;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payEmployeeMaster")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payEmployeeMaster")
     public Set<PayExecutionSpecificEmp> getPayExecutionSpecificEmps() {
         return this.payExecutionSpecificEmps;
     }
@@ -382,7 +382,7 @@ public class PayEmployeeMaster  implements java.io.Serializable {
         this.payExecutionSpecificEmps = payExecutionSpecificEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payEmployeeMasterByEmployeeIdSent")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payEmployeeMasterByEmployeeIdSent")
     public Set<PayDeserveEmpFile> getPayDeserveEmpFilesForEmployeeIdSent() {
         return this.payDeserveEmpFilesForEmployeeIdSent;
     }
@@ -391,7 +391,7 @@ public class PayEmployeeMaster  implements java.io.Serializable {
         this.payDeserveEmpFilesForEmployeeIdSent = payDeserveEmpFilesForEmployeeIdSent;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payEmployeeMasterByEmployeeIdUser")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payEmployeeMasterByEmployeeIdUser")
     public Set<PayDeserveEmpFileDtl> getPayDeserveEmpFileDtlsForEmployeeIdUser() {
         return this.payDeserveEmpFileDtlsForEmployeeIdUser;
     }
@@ -400,7 +400,7 @@ public class PayEmployeeMaster  implements java.io.Serializable {
         this.payDeserveEmpFileDtlsForEmployeeIdUser = payDeserveEmpFileDtlsForEmployeeIdUser;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payEmployeeMasterByEmployeeId")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payEmployeeMasterByEmployeeId")
     public Set<PayDeserveEmpFile> getPayDeserveEmpFilesForEmployeeId() {
         return this.payDeserveEmpFilesForEmployeeId;
     }

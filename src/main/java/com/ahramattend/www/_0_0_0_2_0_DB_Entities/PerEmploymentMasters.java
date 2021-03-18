@@ -90,12 +90,12 @@ public class PerEmploymentMasters  implements java.io.Serializable {
      private String empFilePosition;
      private Boolean empJobFlag;
      private Boolean empFlag;
-     private boolean sexFlag;
+     private Byte sexFlag;
      private Date qualYear;
      private Date militaryDate;
      private String militaryCardNo;
      private Byte noForConstantElawa;
-     private boolean orgFlag;
+     private Byte orgFlag;
      private Boolean orgFlagFrom;
      private String classCode;
      private String categoryCode;
@@ -154,7 +154,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
     }
 
 	
-    public PerEmploymentMasters(String employeeId, PerEmploymentParameter perEmploymentParameter, PerGeneralCode perGeneralCodeByGeneralCode, PerJobCode perJobCodeByJobCode, PerLocationCodes perLocationCodes, String employeeNo, String empAname, Date contractDate, boolean sexFlag, boolean orgFlag) {
+    public PerEmploymentMasters(String employeeId, PerEmploymentParameter perEmploymentParameter, PerGeneralCode perGeneralCodeByGeneralCode, PerJobCode perJobCodeByJobCode, PerLocationCodes perLocationCodes, String employeeNo, String empAname, Date contractDate, Byte sexFlag, Byte orgFlag) {
         this.employeeId = employeeId;
         this.perEmploymentParameter = perEmploymentParameter;
         this.perGeneralCodeByGeneralCode = perGeneralCodeByGeneralCode;
@@ -166,7 +166,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.sexFlag = sexFlag;
         this.orgFlag = orgFlag;
     }
-    public PerEmploymentMasters(String employeeId, PerSpecialistCode perSpecialistCodeBySpecialistCodeBegin, PerSpecialistCode perSpecialistCodeBySpecialistCodeFirst, PerSpecialistCode perSpecialistCodeBySpecialistCode, PerJobLaw perJobLaw, PerFiscalDegreeCodeNew perFiscalDegreeCodeNew, PayFinancialStatusCode payFinancialStatusCode, PerAttendanceWrkTypeDetail perAttendanceWrkTypeDetail, PerCityCode perCityCode, PerEmploymentParameter perEmploymentParameter, PerExternalSideCode perExternalSideCodeByPeremPerescFromFk, PerExternalSideCode perExternalSideCodeByPeremPerescFk, PerFiscalDegreeCode perFiscalDegreeCode, PerGeneralCode perGeneralCodeByGeneralCodeFirst, PerGeneralCode perGeneralCodeByGeneralCode, PerGroupTypeCode perGroupTypeCode, PerInsuranceSideCode perInsuranceSideCode, PerJobCode perJobCodeByJobCodeTransfer, PerJobCode perJobCodeByJobCode, PerLocationCodes perLocationCodes, PerMaritalCode perMaritalCode, PerMilitaryCode perMilitaryCode, PerMosqueCode perMosqueCode, PerNationalCode perNationalCode, PerOrganizationStructure perOrganizationStructureByOrgIdFrom, PerOrganizationStructure perOrganizationStructureByOrgId, PerOrgunitCode perOrgunitCodeByOrgunitCode, PerOrgunitCode perOrgunitCodeByOrgunitCodeFrom, PerQualCode perQualCodeByQualCodeFirst, PerQualCode perQualCodeByQualCodeBegin, PerQualCode perQualCodeByQualCode, PerReligonCode perReligonCode, BudProjectSub budProjectSubByPeremBudProjSFromFk, BudProjectSub budProjectSubByPeremBudProjSFk, String employeeNo, String nationalNo, String insuranceNo, String empAname, String empEname, Date birthDate, Date startContractDate, Date contractDate, Date workStartDate, Date contractEnddate, String requestNo, String decisionNo, Date decisionDate, Short testPeriod, Integer worningPeriod, Date degreeDate, Date degreePriorityDate, Integer degreePriority, Date jobDate, BigDecimal basicSalaryValue, BigDecimal salaryValue, BigDecimal contractValue, Byte deserveNo, String empFileno, String empFilePosition, Boolean empJobFlag, Boolean empFlag, boolean sexFlag, Date qualYear, Date militaryDate, String militaryCardNo, Byte noForConstantElawa, boolean orgFlag, Boolean orgFlagFrom, String classCode, String categoryCode, Boolean foodCard, Boolean foodCardType, String emailWork, Date qualYearFirst, String wrkTypeDecisionNo, Date wrkTypeDecisionDate, Date wrkTypeFromDate, Date wrkTypeToDate, BigDecimal wrkTypeSalaryRatio, String wrkTypeNotes, Date externalStartdate, Date externalEnddate, String recordCreateUser, Date recordCreateDate, String recordUpdateUser, Date recordUpdateDate, Date jobDateTransfer, Date qualYearBegin, Boolean chkSpecialNeeds, Boolean cadreKind, BigDecimal jobSalaryValue, String logUserId, String logFunctionName, Set<PerEmpVacationReqJava> perEmpVacationReqJavasForEmployeeIdBoss, Set<PerComplaintData> perComplaintDatas, Set<PerAnnualEvalModelEmp> perAnnualEvalModelEmps, Set<PerAnnualEvalModEmpTot> perAnnualEvalModEmpTots, Set<PerEmpFile> perEmpFiles, Set<PerEmpPromotion> perEmpPromotions, Set<PerElawaTransactionReject> perElawaTransactionRejects, Set<PerEmpVacationBalance> perEmpVacationBalances, Set<PayEmployeeReq> payEmployeeReqs, PayEmployeeMaster payEmployeeMaster, Set<PerEmpVacationTrans> perEmpVacationTranses, Set<PerEmpDecisionSheet> perEmpDecisionSheets, Set<AppEmployeeReqJ222> appEmployeeReqJ222s, Set<PerEmpHistory> perEmpHistories, Set<AppEmployeeReqJ444> appEmployeeReqJ444s, PerUsers perUsers, Set<PerEmpPromotionNew> perEmpPromotionNews, Set<PerEmpQualification> perEmpQualifications, Set<PerElawaTransaction> perElawaTransactions, Set<PerAnnualEvalEmp> perAnnualEvalEmps, Set<PerEmpPromotionRejectNew> perEmpPromotionRejectNews, Set<AppSubElemSpecAuth> appSubElemSpecAuthsForEmployeeId, Set<AppSubElemSpecAuth> appSubElemSpecAuthsForEmployeeIdAction, Set<PerEmpVacationReqJava> perEmpVacationReqJavasForEmployeeId, Set<AppSubTabSpecAuth> appSubTabSpecAuthsForEmployeeId, PerEmpPhoto perEmpPhoto, Set<AppSubTabSpecAuth> appSubTabSpecAuthsForEmployeeIdAction) {
+    public PerEmploymentMasters(String employeeId, PerSpecialistCode perSpecialistCodeBySpecialistCodeBegin, PerSpecialistCode perSpecialistCodeBySpecialistCodeFirst, PerSpecialistCode perSpecialistCodeBySpecialistCode, PerJobLaw perJobLaw, PerFiscalDegreeCodeNew perFiscalDegreeCodeNew, PayFinancialStatusCode payFinancialStatusCode, PerAttendanceWrkTypeDetail perAttendanceWrkTypeDetail, PerCityCode perCityCode, PerEmploymentParameter perEmploymentParameter, PerExternalSideCode perExternalSideCodeByPeremPerescFromFk, PerExternalSideCode perExternalSideCodeByPeremPerescFk, PerFiscalDegreeCode perFiscalDegreeCode, PerGeneralCode perGeneralCodeByGeneralCodeFirst, PerGeneralCode perGeneralCodeByGeneralCode, PerGroupTypeCode perGroupTypeCode, PerInsuranceSideCode perInsuranceSideCode, PerJobCode perJobCodeByJobCodeTransfer, PerJobCode perJobCodeByJobCode, PerLocationCodes perLocationCodes, PerMaritalCode perMaritalCode, PerMilitaryCode perMilitaryCode, PerMosqueCode perMosqueCode, PerNationalCode perNationalCode, PerOrganizationStructure perOrganizationStructureByOrgIdFrom, PerOrganizationStructure perOrganizationStructureByOrgId, PerOrgunitCode perOrgunitCodeByOrgunitCode, PerOrgunitCode perOrgunitCodeByOrgunitCodeFrom, PerQualCode perQualCodeByQualCodeFirst, PerQualCode perQualCodeByQualCodeBegin, PerQualCode perQualCodeByQualCode, PerReligonCode perReligonCode, BudProjectSub budProjectSubByPeremBudProjSFromFk, BudProjectSub budProjectSubByPeremBudProjSFk, String employeeNo, String nationalNo, String insuranceNo, String empAname, String empEname, Date birthDate, Date startContractDate, Date contractDate, Date workStartDate, Date contractEnddate, String requestNo, String decisionNo, Date decisionDate, Short testPeriod, Integer worningPeriod, Date degreeDate, Date degreePriorityDate, Integer degreePriority, Date jobDate, BigDecimal basicSalaryValue, BigDecimal salaryValue, BigDecimal contractValue, Byte deserveNo, String empFileno, String empFilePosition, Boolean empJobFlag, Boolean empFlag, Byte sexFlag, Date qualYear, Date militaryDate, String militaryCardNo, Byte noForConstantElawa, Byte orgFlag, Boolean orgFlagFrom, String classCode, String categoryCode, Boolean foodCard, Boolean foodCardType, String emailWork, Date qualYearFirst, String wrkTypeDecisionNo, Date wrkTypeDecisionDate, Date wrkTypeFromDate, Date wrkTypeToDate, BigDecimal wrkTypeSalaryRatio, String wrkTypeNotes, Date externalStartdate, Date externalEnddate, String recordCreateUser, Date recordCreateDate, String recordUpdateUser, Date recordUpdateDate, Date jobDateTransfer, Date qualYearBegin, Boolean chkSpecialNeeds, Boolean cadreKind, BigDecimal jobSalaryValue, String logUserId, String logFunctionName, Set<PerEmpVacationReqJava> perEmpVacationReqJavasForEmployeeIdBoss, Set<PerComplaintData> perComplaintDatas, Set<PerAnnualEvalModelEmp> perAnnualEvalModelEmps, Set<PerAnnualEvalModEmpTot> perAnnualEvalModEmpTots, Set<PerEmpFile> perEmpFiles, Set<PerEmpPromotion> perEmpPromotions, Set<PerElawaTransactionReject> perElawaTransactionRejects, Set<PerEmpVacationBalance> perEmpVacationBalances, Set<PayEmployeeReq> payEmployeeReqs, PayEmployeeMaster payEmployeeMaster, Set<PerEmpVacationTrans> perEmpVacationTranses, Set<PerEmpDecisionSheet> perEmpDecisionSheets, Set<AppEmployeeReqJ222> appEmployeeReqJ222s, Set<PerEmpHistory> perEmpHistories, Set<AppEmployeeReqJ444> appEmployeeReqJ444s, PerUsers perUsers, Set<PerEmpPromotionNew> perEmpPromotionNews, Set<PerEmpQualification> perEmpQualifications, Set<PerElawaTransaction> perElawaTransactions, Set<PerAnnualEvalEmp> perAnnualEvalEmps, Set<PerEmpPromotionRejectNew> perEmpPromotionRejectNews, Set<AppSubElemSpecAuth> appSubElemSpecAuthsForEmployeeId, Set<AppSubElemSpecAuth> appSubElemSpecAuthsForEmployeeIdAction, Set<PerEmpVacationReqJava> perEmpVacationReqJavasForEmployeeId, Set<AppSubTabSpecAuth> appSubTabSpecAuthsForEmployeeId, PerEmpPhoto perEmpPhoto, Set<AppSubTabSpecAuth> appSubTabSpecAuthsForEmployeeIdAction) {
        this.employeeId = employeeId;
        this.perSpecialistCodeBySpecialistCodeBegin = perSpecialistCodeBySpecialistCodeBegin;
        this.perSpecialistCodeBySpecialistCodeFirst = perSpecialistCodeBySpecialistCodeFirst;
@@ -301,7 +301,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.employeeId = employeeId;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="SPECIALIST_CODE_BEGIN")
     public PerSpecialistCode getPerSpecialistCodeBySpecialistCodeBegin() {
         return this.perSpecialistCodeBySpecialistCodeBegin;
@@ -311,7 +311,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perSpecialistCodeBySpecialistCodeBegin = perSpecialistCodeBySpecialistCodeBegin;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="SPECIALIST_CODE_FIRST")
     public PerSpecialistCode getPerSpecialistCodeBySpecialistCodeFirst() {
         return this.perSpecialistCodeBySpecialistCodeFirst;
@@ -321,7 +321,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perSpecialistCodeBySpecialistCodeFirst = perSpecialistCodeBySpecialistCodeFirst;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="SPECIALIST_CODE")
     public PerSpecialistCode getPerSpecialistCodeBySpecialistCode() {
         return this.perSpecialistCodeBySpecialistCode;
@@ -331,7 +331,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perSpecialistCodeBySpecialistCode = perSpecialistCodeBySpecialistCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="LAW_SEQ")
     public PerJobLaw getPerJobLaw() {
         return this.perJobLaw;
@@ -341,7 +341,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perJobLaw = perJobLaw;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE_NEW")
     public PerFiscalDegreeCodeNew getPerFiscalDegreeCodeNew() {
         return this.perFiscalDegreeCodeNew;
@@ -351,7 +351,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perFiscalDegreeCodeNew = perFiscalDegreeCodeNew;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="STATUS_CODE")
     public PayFinancialStatusCode getPayFinancialStatusCode() {
         return this.payFinancialStatusCode;
@@ -361,7 +361,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.payFinancialStatusCode = payFinancialStatusCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="WORK_TYPE_CODE", referencedColumnName="WORK_TYPE_CODE"), 
         @JoinColumn(name="WORK_TYPE_SEQ", referencedColumnName="WORK_TYPE_SEQ") } )
@@ -373,7 +373,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perAttendanceWrkTypeDetail = perAttendanceWrkTypeDetail;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="COUNTRY_CODE_BIRTH", referencedColumnName="COUNTRY_CODE"), 
         @JoinColumn(name="GOV_CODE", referencedColumnName="GOV_CODE"), 
@@ -386,7 +386,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perCityCode = perCityCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYMENT_SOURCE_CODE", nullable=false)
     public PerEmploymentParameter getPerEmploymentParameter() {
         return this.perEmploymentParameter;
@@ -396,7 +396,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perEmploymentParameter = perEmploymentParameter;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="COUNTRY_CODE_FROM", referencedColumnName="COUNTRY_CODE"), 
         @JoinColumn(name="EXTERNAL_SIDE_CODE_FROM", referencedColumnName="EXTERNAL_SIDE_CODE") } )
@@ -408,7 +408,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perExternalSideCodeByPeremPerescFromFk = perExternalSideCodeByPeremPerescFromFk;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="COUNTRY_CODE", referencedColumnName="COUNTRY_CODE"), 
         @JoinColumn(name="EXTERNAL_SIDE_CODE", referencedColumnName="EXTERNAL_SIDE_CODE") } )
@@ -420,7 +420,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perExternalSideCodeByPeremPerescFk = perExternalSideCodeByPeremPerescFk;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE")
     public PerFiscalDegreeCode getPerFiscalDegreeCode() {
         return this.perFiscalDegreeCode;
@@ -430,7 +430,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perFiscalDegreeCode = perFiscalDegreeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GENERAL_CODE_FIRST")
     public PerGeneralCode getPerGeneralCodeByGeneralCodeFirst() {
         return this.perGeneralCodeByGeneralCodeFirst;
@@ -440,7 +440,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perGeneralCodeByGeneralCodeFirst = perGeneralCodeByGeneralCodeFirst;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GENERAL_CODE", nullable=false)
     public PerGeneralCode getPerGeneralCodeByGeneralCode() {
         return this.perGeneralCodeByGeneralCode;
@@ -450,7 +450,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perGeneralCodeByGeneralCode = perGeneralCodeByGeneralCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GROUP_TYPE_CODE")
     public PerGroupTypeCode getPerGroupTypeCode() {
         return this.perGroupTypeCode;
@@ -460,7 +460,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perGroupTypeCode = perGroupTypeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="INSURANCE_SIDE_CODE")
     public PerInsuranceSideCode getPerInsuranceSideCode() {
         return this.perInsuranceSideCode;
@@ -470,7 +470,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perInsuranceSideCode = perInsuranceSideCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="JOB_CODE_TRANSFER")
     public PerJobCode getPerJobCodeByJobCodeTransfer() {
         return this.perJobCodeByJobCodeTransfer;
@@ -480,7 +480,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perJobCodeByJobCodeTransfer = perJobCodeByJobCodeTransfer;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="JOB_CODE", nullable=false)
     public PerJobCode getPerJobCodeByJobCode() {
         return this.perJobCodeByJobCode;
@@ -490,7 +490,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perJobCodeByJobCode = perJobCodeByJobCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOC_CODE", referencedColumnName="LOC_CODE", nullable=false), 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false) } )
@@ -502,7 +502,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perLocationCodes = perLocationCodes;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="MARITAL_CODE")
     public PerMaritalCode getPerMaritalCode() {
         return this.perMaritalCode;
@@ -512,7 +512,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perMaritalCode = perMaritalCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="MILITARY_CODE")
     public PerMilitaryCode getPerMilitaryCode() {
         return this.perMilitaryCode;
@@ -522,7 +522,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perMilitaryCode = perMilitaryCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="MOSQUE_CODE")
     public PerMosqueCode getPerMosqueCode() {
         return this.perMosqueCode;
@@ -532,7 +532,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perMosqueCode = perMosqueCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="NATIONAL_CODE")
     public PerNationalCode getPerNationalCode() {
         return this.perNationalCode;
@@ -542,7 +542,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perNationalCode = perNationalCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORG_ID_FROM")
     public PerOrganizationStructure getPerOrganizationStructureByOrgIdFrom() {
         return this.perOrganizationStructureByOrgIdFrom;
@@ -552,7 +552,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perOrganizationStructureByOrgIdFrom = perOrganizationStructureByOrgIdFrom;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORG_ID")
     public PerOrganizationStructure getPerOrganizationStructureByOrgId() {
         return this.perOrganizationStructureByOrgId;
@@ -562,7 +562,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perOrganizationStructureByOrgId = perOrganizationStructureByOrgId;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORGUNIT_CODE")
     public PerOrgunitCode getPerOrgunitCodeByOrgunitCode() {
         return this.perOrgunitCodeByOrgunitCode;
@@ -572,7 +572,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perOrgunitCodeByOrgunitCode = perOrgunitCodeByOrgunitCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORGUNIT_CODE_FROM")
     public PerOrgunitCode getPerOrgunitCodeByOrgunitCodeFrom() {
         return this.perOrgunitCodeByOrgunitCodeFrom;
@@ -582,7 +582,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perOrgunitCodeByOrgunitCodeFrom = perOrgunitCodeByOrgunitCodeFrom;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="QUAL_CODE_FIRST")
     public PerQualCode getPerQualCodeByQualCodeFirst() {
         return this.perQualCodeByQualCodeFirst;
@@ -592,7 +592,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perQualCodeByQualCodeFirst = perQualCodeByQualCodeFirst;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="QUAL_CODE_BEGIN")
     public PerQualCode getPerQualCodeByQualCodeBegin() {
         return this.perQualCodeByQualCodeBegin;
@@ -602,7 +602,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perQualCodeByQualCodeBegin = perQualCodeByQualCodeBegin;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="QUAL_CODE")
     public PerQualCode getPerQualCodeByQualCode() {
         return this.perQualCodeByQualCode;
@@ -612,7 +612,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perQualCodeByQualCode = perQualCodeByQualCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="RELIGON_CODE")
     public PerReligonCode getPerReligonCode() {
         return this.perReligonCode;
@@ -622,7 +622,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perReligonCode = perReligonCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="PROJECT_CODE_FROM", referencedColumnName="PROJECT_CODE"), 
         @JoinColumn(name="PROJECT_SUB_CODE_FROM", referencedColumnName="PROJECT_SUB_CODE") } )
@@ -634,7 +634,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.budProjectSubByPeremBudProjSFromFk = budProjectSubByPeremBudProjSFromFk;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="PROJECT_CODE", referencedColumnName="PROJECT_CODE"), 
         @JoinColumn(name="PROJECT_SUB_CODE", referencedColumnName="PROJECT_SUB_CODE") } )
@@ -918,11 +918,11 @@ public class PerEmploymentMasters  implements java.io.Serializable {
 
     
     @Column(name="SEX_FLAG", nullable=false, precision=1, scale=0)
-    public boolean isSexFlag() {
+    public Byte getSexFlag() {
         return this.sexFlag;
     }
     
-    public void setSexFlag(boolean sexFlag) {
+    public void setSexFlag(Byte sexFlag) {
         this.sexFlag = sexFlag;
     }
 
@@ -968,11 +968,11 @@ public class PerEmploymentMasters  implements java.io.Serializable {
 
     
     @Column(name="ORG_FLAG", nullable=false, precision=1, scale=0)
-    public boolean isOrgFlag() {
+    public Byte getOrgFlag() {
         return this.orgFlag;
     }
     
-    public void setOrgFlag(boolean orgFlag) {
+    public void setOrgFlag(Byte orgFlag) {
         this.orgFlag = orgFlag;
     }
 
@@ -1236,7 +1236,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.logFunctionName = logFunctionName;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMastersByEmployeeIdBoss")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMastersByEmployeeIdBoss")
     public Set<PerEmpVacationReqJava> getPerEmpVacationReqJavasForEmployeeIdBoss() {
         return this.perEmpVacationReqJavasForEmployeeIdBoss;
     }
@@ -1245,7 +1245,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perEmpVacationReqJavasForEmployeeIdBoss = perEmpVacationReqJavasForEmployeeIdBoss;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerComplaintData> getPerComplaintDatas() {
         return this.perComplaintDatas;
     }
@@ -1254,7 +1254,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perComplaintDatas = perComplaintDatas;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerAnnualEvalModelEmp> getPerAnnualEvalModelEmps() {
         return this.perAnnualEvalModelEmps;
     }
@@ -1263,7 +1263,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perAnnualEvalModelEmps = perAnnualEvalModelEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerAnnualEvalModEmpTot> getPerAnnualEvalModEmpTots() {
         return this.perAnnualEvalModEmpTots;
     }
@@ -1272,7 +1272,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perAnnualEvalModEmpTots = perAnnualEvalModEmpTots;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerEmpFile> getPerEmpFiles() {
         return this.perEmpFiles;
     }
@@ -1281,7 +1281,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perEmpFiles = perEmpFiles;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerEmpPromotion> getPerEmpPromotions() {
         return this.perEmpPromotions;
     }
@@ -1290,7 +1290,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perEmpPromotions = perEmpPromotions;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerElawaTransactionReject> getPerElawaTransactionRejects() {
         return this.perElawaTransactionRejects;
     }
@@ -1299,7 +1299,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perElawaTransactionRejects = perElawaTransactionRejects;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerEmpVacationBalance> getPerEmpVacationBalances() {
         return this.perEmpVacationBalances;
     }
@@ -1308,7 +1308,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perEmpVacationBalances = perEmpVacationBalances;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PayEmployeeReq> getPayEmployeeReqs() {
         return this.payEmployeeReqs;
     }
@@ -1317,7 +1317,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.payEmployeeReqs = payEmployeeReqs;
     }
 
-@OneToOne(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToOne(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public PayEmployeeMaster getPayEmployeeMaster() {
         return this.payEmployeeMaster;
     }
@@ -1326,7 +1326,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.payEmployeeMaster = payEmployeeMaster;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerEmpVacationTrans> getPerEmpVacationTranses() {
         return this.perEmpVacationTranses;
     }
@@ -1335,7 +1335,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perEmpVacationTranses = perEmpVacationTranses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerEmpDecisionSheet> getPerEmpDecisionSheets() {
         return this.perEmpDecisionSheets;
     }
@@ -1344,7 +1344,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perEmpDecisionSheets = perEmpDecisionSheets;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<AppEmployeeReqJ222> getAppEmployeeReqJ222s() {
         return this.appEmployeeReqJ222s;
     }
@@ -1353,7 +1353,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.appEmployeeReqJ222s = appEmployeeReqJ222s;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerEmpHistory> getPerEmpHistories() {
         return this.perEmpHistories;
     }
@@ -1362,7 +1362,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perEmpHistories = perEmpHistories;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<AppEmployeeReqJ444> getAppEmployeeReqJ444s() {
         return this.appEmployeeReqJ444s;
     }
@@ -1371,7 +1371,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.appEmployeeReqJ444s = appEmployeeReqJ444s;
     }
 
-@OneToOne(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToOne(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public PerUsers getPerUsers() {
         return this.perUsers;
     }
@@ -1380,7 +1380,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perUsers = perUsers;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerEmpPromotionNew> getPerEmpPromotionNews() {
         return this.perEmpPromotionNews;
     }
@@ -1389,7 +1389,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perEmpPromotionNews = perEmpPromotionNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerEmpQualification> getPerEmpQualifications() {
         return this.perEmpQualifications;
     }
@@ -1398,7 +1398,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perEmpQualifications = perEmpQualifications;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerElawaTransaction> getPerElawaTransactions() {
         return this.perElawaTransactions;
     }
@@ -1407,7 +1407,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perElawaTransactions = perElawaTransactions;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerAnnualEvalEmp> getPerAnnualEvalEmps() {
         return this.perAnnualEvalEmps;
     }
@@ -1416,7 +1416,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perAnnualEvalEmps = perAnnualEvalEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public Set<PerEmpPromotionRejectNew> getPerEmpPromotionRejectNews() {
         return this.perEmpPromotionRejectNews;
     }
@@ -1425,7 +1425,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perEmpPromotionRejectNews = perEmpPromotionRejectNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMastersByEmployeeId")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMastersByEmployeeId")
     public Set<AppSubElemSpecAuth> getAppSubElemSpecAuthsForEmployeeId() {
         return this.appSubElemSpecAuthsForEmployeeId;
     }
@@ -1434,7 +1434,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.appSubElemSpecAuthsForEmployeeId = appSubElemSpecAuthsForEmployeeId;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMastersByEmployeeIdAction")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMastersByEmployeeIdAction")
     public Set<AppSubElemSpecAuth> getAppSubElemSpecAuthsForEmployeeIdAction() {
         return this.appSubElemSpecAuthsForEmployeeIdAction;
     }
@@ -1443,7 +1443,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.appSubElemSpecAuthsForEmployeeIdAction = appSubElemSpecAuthsForEmployeeIdAction;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMastersByEmployeeId")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMastersByEmployeeId")
     public Set<PerEmpVacationReqJava> getPerEmpVacationReqJavasForEmployeeId() {
         return this.perEmpVacationReqJavasForEmployeeId;
     }
@@ -1452,7 +1452,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perEmpVacationReqJavasForEmployeeId = perEmpVacationReqJavasForEmployeeId;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMastersByEmployeeId")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMastersByEmployeeId")
     public Set<AppSubTabSpecAuth> getAppSubTabSpecAuthsForEmployeeId() {
         return this.appSubTabSpecAuthsForEmployeeId;
     }
@@ -1461,7 +1461,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.appSubTabSpecAuthsForEmployeeId = appSubTabSpecAuthsForEmployeeId;
     }
 
-@OneToOne(fetch=FetchType.LAZY, mappedBy="perEmploymentMasters")
+@OneToOne(fetch=FetchType.EAGER, mappedBy="perEmploymentMasters")
     public PerEmpPhoto getPerEmpPhoto() {
         return this.perEmpPhoto;
     }
@@ -1470,7 +1470,7 @@ public class PerEmploymentMasters  implements java.io.Serializable {
         this.perEmpPhoto = perEmpPhoto;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmploymentMastersByEmployeeIdAction")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmploymentMastersByEmployeeIdAction")
     public Set<AppSubTabSpecAuth> getAppSubTabSpecAuthsForEmployeeIdAction() {
         return this.appSubTabSpecAuthsForEmployeeIdAction;
     }

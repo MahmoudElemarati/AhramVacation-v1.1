@@ -82,7 +82,7 @@ public class PayBandCode  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="BAND_TYPE", nullable=false, insertable=false, updatable=false)
     public PayBandType getPayBandType() {
         return this.payBandType;
@@ -92,7 +92,7 @@ public class PayBandCode  implements java.io.Serializable {
         this.payBandType = payBandType;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FINANCIAL_CODE")
     public PayFinancialCode getPayFinancialCode() {
         return this.payFinancialCode;
@@ -152,7 +152,7 @@ public class PayBandCode  implements java.io.Serializable {
         this.chkRepState = chkRepState;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payBandCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payBandCode")
     public Set<PayLocationBandFile> getPayLocationBandFiles() {
         return this.payLocationBandFiles;
     }
@@ -161,7 +161,7 @@ public class PayBandCode  implements java.io.Serializable {
         this.payLocationBandFiles = payLocationBandFiles;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payBandCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payBandCode")
     public Set<AppEmployeeReqJ2221> getAppEmployeeReqJ2221s() {
         return this.appEmployeeReqJ2221s;
     }
@@ -170,7 +170,7 @@ public class PayBandCode  implements java.io.Serializable {
         this.appEmployeeReqJ2221s = appEmployeeReqJ2221s;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payBandCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payBandCode")
     public Set<PayBandClassificationFile> getPayBandClassificationFiles() {
         return this.payBandClassificationFiles;
     }
@@ -179,7 +179,7 @@ public class PayBandCode  implements java.io.Serializable {
         this.payBandClassificationFiles = payBandClassificationFiles;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payBandCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payBandCode")
     public Set<PayFinancialGroupBand> getPayFinancialGroupBands() {
         return this.payFinancialGroupBands;
     }
@@ -188,7 +188,7 @@ public class PayBandCode  implements java.io.Serializable {
         this.payFinancialGroupBands = payFinancialGroupBands;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payBandCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payBandCode")
     public Set<PerPunishmentCode> getPerPunishmentCodes() {
         return this.perPunishmentCodes;
     }
@@ -197,7 +197,7 @@ public class PayBandCode  implements java.io.Serializable {
         this.perPunishmentCodes = perPunishmentCodes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payBandCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payBandCode")
     public Set<PayDeserveEmp> getPayDeserveEmps() {
         return this.payDeserveEmps;
     }
@@ -206,7 +206,7 @@ public class PayBandCode  implements java.io.Serializable {
         this.payDeserveEmps = payDeserveEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payBandCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payBandCode")
     public Set<PayEmployeeReqDtl> getPayEmployeeReqDtls() {
         return this.payEmployeeReqDtls;
     }

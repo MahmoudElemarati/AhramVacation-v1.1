@@ -138,7 +138,7 @@ public class PerCommMemTypeCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perCommMemTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perCommMemTypeCode")
     public Set<PerCommMemType> getPerCommMemTypes() {
         return this.perCommMemTypes;
     }

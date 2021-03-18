@@ -67,7 +67,7 @@ public class PaySarfCode  implements java.io.Serializable {
         this.sarfName = sarfName;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="paySarfCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="paySarfCode")
     public Set<PayExecutionSpecificEmp> getPayExecutionSpecificEmps() {
         return this.payExecutionSpecificEmps;
     }
@@ -76,7 +76,7 @@ public class PaySarfCode  implements java.io.Serializable {
         this.payExecutionSpecificEmps = payExecutionSpecificEmps;
     }
 
-@ManyToMany(fetch=FetchType.LAZY)
+@ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(name="PAY_SARF_CODE_BANK", schema="SHAMS", joinColumns = { 
         @JoinColumn(name="SARF_CODE", nullable=false, updatable=false) }, inverseJoinColumns = { 
         @JoinColumn(name="BANK_CODE", nullable=false, updatable=false) })
@@ -88,7 +88,7 @@ public class PaySarfCode  implements java.io.Serializable {
         this.payBankCodes = payBankCodes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="paySarfCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="paySarfCode")
     public Set<PaySarfCodeEmp> getPaySarfCodeEmps() {
         return this.paySarfCodeEmps;
     }

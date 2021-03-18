@@ -166,7 +166,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="LAW_SEQ")
     public PerJobLaw getPerJobLaw() {
         return this.perJobLaw;
@@ -176,7 +176,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perJobLaw = perJobLaw;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE_NEW")
     public PerFiscalDegreeCodeNew getPerFiscalDegreeCodeNew() {
         return this.perFiscalDegreeCodeNew;
@@ -186,7 +186,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perFiscalDegreeCodeNew = perFiscalDegreeCodeNew;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="WORK_TYPE_CODE", referencedColumnName="WORK_TYPE_CODE"), 
         @JoinColumn(name="WORK_TYPE_SEQ", referencedColumnName="WORK_TYPE_SEQ") } )
@@ -198,7 +198,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perAttendanceWrkTypeDetail = perAttendanceWrkTypeDetail;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false)
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
@@ -208,7 +208,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perEmploymentMasters = perEmploymentMasters;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYMENT_SOURCE_CODE")
     public PerEmploymentParameter getPerEmploymentParameter() {
         return this.perEmploymentParameter;
@@ -218,7 +218,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perEmploymentParameter = perEmploymentParameter;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="COUNTRY_CODE", referencedColumnName="COUNTRY_CODE"), 
         @JoinColumn(name="EXTERNAL_SIDE_CODE", referencedColumnName="EXTERNAL_SIDE_CODE") } )
@@ -230,7 +230,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perExternalSideCodeByPerehPerescFk = perExternalSideCodeByPerehPerescFk;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="COUNTRY_CODE_FROM", referencedColumnName="COUNTRY_CODE"), 
         @JoinColumn(name="EXTERNAL_SIDE_CODE_FROM", referencedColumnName="EXTERNAL_SIDE_CODE") } )
@@ -242,7 +242,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perExternalSideCodeByPerehPerescFromFk = perExternalSideCodeByPerehPerescFromFk;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE")
     public PerFiscalDegreeCode getPerFiscalDegreeCode() {
         return this.perFiscalDegreeCode;
@@ -252,7 +252,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perFiscalDegreeCode = perFiscalDegreeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GENERAL_CODE", nullable=false)
     public PerGeneralCode getPerGeneralCode() {
         return this.perGeneralCode;
@@ -262,7 +262,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perGeneralCode = perGeneralCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GROUP_TYPE_CODE")
     public PerGroupTypeCode getPerGroupTypeCode() {
         return this.perGroupTypeCode;
@@ -272,7 +272,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perGroupTypeCode = perGroupTypeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="JOB_CODE", nullable=false)
     public PerJobCode getPerJobCodeByJobCode() {
         return this.perJobCodeByJobCode;
@@ -282,7 +282,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perJobCodeByJobCode = perJobCodeByJobCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="JOB_CODE_TRANSFER")
     public PerJobCode getPerJobCodeByJobCodeTransfer() {
         return this.perJobCodeByJobCodeTransfer;
@@ -292,7 +292,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perJobCodeByJobCodeTransfer = perJobCodeByJobCodeTransfer;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOC_CODE_FROM", referencedColumnName="LOC_CODE"), 
         @JoinColumn(name="LOCATION_CODE_FROM", referencedColumnName="LOCATION_CODE") } )
@@ -304,7 +304,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perLocationCodesByPerehPerlcFromFk = perLocationCodesByPerehPerlcFromFk;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOC_CODE", referencedColumnName="LOC_CODE"), 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE") } )
@@ -316,7 +316,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perLocationCodesByPerehPerlcFk = perLocationCodesByPerehPerlcFk;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="MOSQUE_CODE")
     public PerMosqueCode getPerMosqueCode() {
         return this.perMosqueCode;
@@ -326,7 +326,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perMosqueCode = perMosqueCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORG_ID")
     public PerOrganizationStructure getPerOrganizationStructureByOrgId() {
         return this.perOrganizationStructureByOrgId;
@@ -336,7 +336,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perOrganizationStructureByOrgId = perOrganizationStructureByOrgId;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORG_ID_FROM")
     public PerOrganizationStructure getPerOrganizationStructureByOrgIdFrom() {
         return this.perOrganizationStructureByOrgIdFrom;
@@ -346,7 +346,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perOrganizationStructureByOrgIdFrom = perOrganizationStructureByOrgIdFrom;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORGUNIT_CODE_FROM")
     public PerOrgunitCode getPerOrgunitCodeByOrgunitCodeFrom() {
         return this.perOrgunitCodeByOrgunitCodeFrom;
@@ -356,7 +356,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perOrgunitCodeByOrgunitCodeFrom = perOrgunitCodeByOrgunitCodeFrom;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORGUNIT_CODE")
     public PerOrgunitCode getPerOrgunitCodeByOrgunitCode() {
         return this.perOrgunitCodeByOrgunitCode;
@@ -366,7 +366,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.perOrgunitCodeByOrgunitCode = perOrgunitCodeByOrgunitCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="LOCATION_CODE_FROM", insertable=false, updatable=false)
     public BudLocation getBudLocationByLocationCodeFrom() {
         return this.budLocationByLocationCodeFrom;
@@ -376,7 +376,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.budLocationByLocationCodeFrom = budLocationByLocationCodeFrom;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="LOCATION_CODE", insertable=false, updatable=false)
     public BudLocation getBudLocationByLocationCode() {
         return this.budLocationByLocationCode;
@@ -386,7 +386,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.budLocationByLocationCode = budLocationByLocationCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="PROJECT_CODE_FROM", referencedColumnName="PROJECT_CODE"), 
         @JoinColumn(name="PROJECT_SUB_CODE_FROM", referencedColumnName="PROJECT_SUB_CODE") } )
@@ -398,7 +398,7 @@ public class PerEmpHistory  implements java.io.Serializable {
         this.budProjectSubByPerehBudProjSFromFk = budProjectSubByPerehBudProjSFromFk;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="PROJECT_CODE", referencedColumnName="PROJECT_CODE"), 
         @JoinColumn(name="PROJECT_SUB_CODE", referencedColumnName="PROJECT_SUB_CODE") } )

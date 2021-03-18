@@ -79,7 +79,7 @@ public class PerAnnualEvalType  implements java.io.Serializable {
         this.evalTypeAmount = evalTypeAmount;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perAnnualEvalType")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perAnnualEvalType")
     public Set<PerAnnualEvalModel> getPerAnnualEvalModels() {
         return this.perAnnualEvalModels;
     }
@@ -88,7 +88,7 @@ public class PerAnnualEvalType  implements java.io.Serializable {
         this.perAnnualEvalModels = perAnnualEvalModels;
     }
 
-@ManyToMany(fetch=FetchType.LAZY)
+@ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(name="PER_EVAL_TYPE_ATTRIBUTE", schema="SHAMS", joinColumns = { 
         @JoinColumn(name="EVAL_TYPE_SERIAL", nullable=false, updatable=false) }, inverseJoinColumns = { 
         @JoinColumn(name="ATTRIBUTE_NO", nullable=false, updatable=false) })

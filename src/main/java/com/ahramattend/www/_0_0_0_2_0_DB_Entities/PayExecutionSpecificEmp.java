@@ -217,7 +217,7 @@ public class PayExecutionSpecificEmp  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="BANK_CODE")
     public PayBankCode getPayBankCode() {
         return this.payBankCode;
@@ -227,7 +227,7 @@ public class PayExecutionSpecificEmp  implements java.io.Serializable {
         this.payBankCode = payBankCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false)
     public PayEmployeeMaster getPayEmployeeMaster() {
         return this.payEmployeeMaster;
@@ -237,7 +237,7 @@ public class PayExecutionSpecificEmp  implements java.io.Serializable {
         this.payEmployeeMaster = payEmployeeMaster;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="METHOD_TYPE", referencedColumnName="METHOD_TYPE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="EXEC_MM", referencedColumnName="EXEC_MM", nullable=false, insertable=false, updatable=false), 
@@ -250,7 +250,7 @@ public class PayExecutionSpecificEmp  implements java.io.Serializable {
         this.payExecutionDate = payExecutionDate;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="STATUS_CODE", referencedColumnName="STATUS_CODE"), 
         @JoinColumn(name="STATUS_GROUP", referencedColumnName="STATUS_GROUP") } )
@@ -262,7 +262,7 @@ public class PayExecutionSpecificEmp  implements java.io.Serializable {
         this.payFinancialGroupType = payFinancialGroupType;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="SARF_CODE")
     public PaySarfCode getPaySarfCode() {
         return this.paySarfCode;
@@ -272,7 +272,7 @@ public class PayExecutionSpecificEmp  implements java.io.Serializable {
         this.paySarfCode = paySarfCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYMENT_SOURCE_CODE")
     public PerEmploymentParameter getPerEmploymentParameter() {
         return this.perEmploymentParameter;
@@ -282,7 +282,7 @@ public class PayExecutionSpecificEmp  implements java.io.Serializable {
         this.perEmploymentParameter = perEmploymentParameter;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE")
     public PerFiscalDegreeCode getPerFiscalDegreeCode() {
         return this.perFiscalDegreeCode;
@@ -292,7 +292,7 @@ public class PayExecutionSpecificEmp  implements java.io.Serializable {
         this.perFiscalDegreeCode = perFiscalDegreeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="QUAL_CODE")
     public PerQualCode getPerQualCode() {
         return this.perQualCode;

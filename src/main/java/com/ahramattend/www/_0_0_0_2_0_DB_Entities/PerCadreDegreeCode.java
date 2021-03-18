@@ -126,7 +126,7 @@ public class PerCadreDegreeCode  implements java.io.Serializable {
         this.cadreKind = cadreKind;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perCadreDegreeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perCadreDegreeCode")
     public Set<PerFiscalDegreeCode> getPerFiscalDegreeCodes() {
         return this.perFiscalDegreeCodes;
     }
@@ -135,7 +135,7 @@ public class PerCadreDegreeCode  implements java.io.Serializable {
         this.perFiscalDegreeCodes = perFiscalDegreeCodes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perCadreDegreeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perCadreDegreeCode")
     public Set<PerFiscalDegreeCodeNew> getPerFiscalDegreeCodeNews() {
         return this.perFiscalDegreeCodeNews;
     }

@@ -1,5 +1,5 @@
 package com.ahramattend.www._0_0_0_2_0_DB_Entities;
-// Generated Mar 9, 2021 2:52:01 PM by Hibernate Tools 4.3.1
+// Generated Feb 23, 2021 6:24:44 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -26,7 +26,7 @@ public class PerAttendanceWrkTypeCode  implements java.io.Serializable {
 
      private String workTypeCode;
      private String workTypeName;
-     private boolean workTypeKind;
+     private Byte workTypeKind;
      private String recordCreateUser;
      private Date recordCreateDate;
      private String recordUpdateUser;
@@ -37,12 +37,12 @@ public class PerAttendanceWrkTypeCode  implements java.io.Serializable {
     }
 
 	
-    public PerAttendanceWrkTypeCode(String workTypeCode, String workTypeName, boolean workTypeKind) {
+    public PerAttendanceWrkTypeCode(String workTypeCode, String workTypeName, Byte workTypeKind) {
         this.workTypeCode = workTypeCode;
         this.workTypeName = workTypeName;
         this.workTypeKind = workTypeKind;
     }
-    public PerAttendanceWrkTypeCode(String workTypeCode, String workTypeName, boolean workTypeKind, String recordCreateUser, Date recordCreateDate, String recordUpdateUser, Date recordUpdateDate, Set<PerAttendanceWrkTypeDetail> perAttendanceWrkTypeDetails) {
+    public PerAttendanceWrkTypeCode(String workTypeCode, String workTypeName, Byte workTypeKind, String recordCreateUser, Date recordCreateDate, String recordUpdateUser, Date recordUpdateDate, Set<PerAttendanceWrkTypeDetail> perAttendanceWrkTypeDetails) {
        this.workTypeCode = workTypeCode;
        this.workTypeName = workTypeName;
        this.workTypeKind = workTypeKind;
@@ -77,11 +77,11 @@ public class PerAttendanceWrkTypeCode  implements java.io.Serializable {
 
     
     @Column(name="WORK_TYPE_KIND", nullable=false, precision=1, scale=0)
-    public boolean isWorkTypeKind() {
+    public Byte getWorkTypeKind() {
         return this.workTypeKind;
     }
     
-    public void setWorkTypeKind(boolean workTypeKind) {
+    public void setWorkTypeKind(Byte workTypeKind) {
         this.workTypeKind = workTypeKind;
     }
 
@@ -125,7 +125,7 @@ public class PerAttendanceWrkTypeCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perAttendanceWrkTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perAttendanceWrkTypeCode")
     public Set<PerAttendanceWrkTypeDetail> getPerAttendanceWrkTypeDetails() {
         return this.perAttendanceWrkTypeDetails;
     }

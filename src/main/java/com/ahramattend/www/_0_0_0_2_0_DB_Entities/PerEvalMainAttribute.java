@@ -112,7 +112,7 @@ public class PerEvalMainAttribute  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalMainAttribute")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalMainAttribute")
     public Set<PerEvalAttribute> getPerEvalAttributes() {
         return this.perEvalAttributes;
     }

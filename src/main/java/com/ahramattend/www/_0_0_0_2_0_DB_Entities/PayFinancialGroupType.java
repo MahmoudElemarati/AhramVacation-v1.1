@@ -67,7 +67,7 @@ public class PayFinancialGroupType  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="STATUS_CODE", nullable=false, insertable=false, updatable=false)
     public PayFinancialStatusCode getPayFinancialStatusCode() {
         return this.payFinancialStatusCode;
@@ -77,7 +77,7 @@ public class PayFinancialGroupType  implements java.io.Serializable {
         this.payFinancialStatusCode = payFinancialStatusCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GROUP_TYPE_CODE")
     public PerGroupTypeCode getPerGroupTypeCode() {
         return this.perGroupTypeCode;
@@ -107,7 +107,7 @@ public class PayFinancialGroupType  implements java.io.Serializable {
         this.ratio = ratio;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payFinancialGroupType")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payFinancialGroupType")
     public Set<PayFinancialGroupBand> getPayFinancialGroupBands() {
         return this.payFinancialGroupBands;
     }
@@ -116,7 +116,7 @@ public class PayFinancialGroupType  implements java.io.Serializable {
         this.payFinancialGroupBands = payFinancialGroupBands;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payFinancialGroupType")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payFinancialGroupType")
     public Set<PayExecutionSpecificEmp> getPayExecutionSpecificEmps() {
         return this.payExecutionSpecificEmps;
     }
@@ -125,7 +125,7 @@ public class PayFinancialGroupType  implements java.io.Serializable {
         this.payExecutionSpecificEmps = payExecutionSpecificEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payFinancialGroupType")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payFinancialGroupType")
     public Set<PayEmployeeMaster> getPayEmployeeMasters() {
         return this.payEmployeeMasters;
     }

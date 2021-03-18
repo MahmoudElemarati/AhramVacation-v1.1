@@ -93,7 +93,7 @@ public class PerFiscalDegreeDetail  implements java.io.Serializable {
         this.fiscalDegreeCode = fiscalDegreeCode;
     }
 
-@OneToOne(fetch=FetchType.LAZY)@PrimaryKeyJoinColumn
+@OneToOne(fetch=FetchType.EAGER)@PrimaryKeyJoinColumn
     public PerFiscalDegreeCode getPerFiscalDegreeCodeByFiscalDegreeCode() {
         return this.perFiscalDegreeCodeByFiscalDegreeCode;
     }
@@ -102,7 +102,7 @@ public class PerFiscalDegreeDetail  implements java.io.Serializable {
         this.perFiscalDegreeCodeByFiscalDegreeCode = perFiscalDegreeCodeByFiscalDegreeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="DEGREE_PERIODIC_ELAWA", nullable=false)
     public PerFiscalDegreeCode getPerFiscalDegreeCodeByDegreePeriodicElawa() {
         return this.perFiscalDegreeCodeByDegreePeriodicElawa;
@@ -112,7 +112,7 @@ public class PerFiscalDegreeDetail  implements java.io.Serializable {
         this.perFiscalDegreeCodeByDegreePeriodicElawa = perFiscalDegreeCodeByDegreePeriodicElawa;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="DEGREE_ENCOURAG_ELAWA", nullable=false)
     public PerFiscalDegreeCode getPerFiscalDegreeCodeByDegreeEncouragElawa() {
         return this.perFiscalDegreeCodeByDegreeEncouragElawa;

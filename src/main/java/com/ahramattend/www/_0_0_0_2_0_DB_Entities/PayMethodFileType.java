@@ -47,7 +47,7 @@ public class PayMethodFileType  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FILE_SP", nullable=false, insertable=false, updatable=false)
     public PayMethodFile getPayMethodFile() {
         return this.payMethodFile;

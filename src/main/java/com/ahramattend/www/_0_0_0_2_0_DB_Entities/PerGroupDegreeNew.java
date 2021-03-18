@@ -79,7 +79,7 @@ public class PerGroupDegreeNew  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE_NEW", nullable=false, insertable=false, updatable=false)
     public PerFiscalDegreeCodeNew getPerFiscalDegreeCodeNew() {
         return this.perFiscalDegreeCodeNew;
@@ -89,7 +89,7 @@ public class PerGroupDegreeNew  implements java.io.Serializable {
         this.perFiscalDegreeCodeNew = perFiscalDegreeCodeNew;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GROUP_TYPE_CODE", nullable=false, insertable=false, updatable=false)
     public PerGroupTypeCode getPerGroupTypeCode() {
         return this.perGroupTypeCode;
@@ -159,7 +159,7 @@ public class PerGroupDegreeNew  implements java.io.Serializable {
         this.reordUpdateDate = reordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupDegreeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupDegreeNew")
     public Set<PerHumanBalJobNew> getPerHumanBalJobNews() {
         return this.perHumanBalJobNews;
     }
@@ -168,7 +168,7 @@ public class PerGroupDegreeNew  implements java.io.Serializable {
         this.perHumanBalJobNews = perHumanBalJobNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupDegreeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupDegreeNew")
     public Set<PerHumanBalJobDistributeN> getPerHumanBalJobDistributeNs() {
         return this.perHumanBalJobDistributeNs;
     }
@@ -177,7 +177,7 @@ public class PerGroupDegreeNew  implements java.io.Serializable {
         this.perHumanBalJobDistributeNs = perHumanBalJobDistributeNs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perGroupDegreeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perGroupDegreeNew")
     public Set<PerAnnualEvalEmp> getPerAnnualEvalEmps() {
         return this.perAnnualEvalEmps;
     }

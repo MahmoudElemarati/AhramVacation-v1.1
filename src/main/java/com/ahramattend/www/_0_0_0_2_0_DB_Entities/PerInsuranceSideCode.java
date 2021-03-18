@@ -68,7 +68,7 @@ public class PerInsuranceSideCode  implements java.io.Serializable {
         this.insuranceSideCode = insuranceSideCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="COUNTRY_CODE", referencedColumnName="COUNTRY_CODE", nullable=false), 
         @JoinColumn(name="GOV_CODE", referencedColumnName="GOV_CODE", nullable=false) } )
@@ -130,7 +130,7 @@ public class PerInsuranceSideCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perInsuranceSideCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perInsuranceSideCode")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }

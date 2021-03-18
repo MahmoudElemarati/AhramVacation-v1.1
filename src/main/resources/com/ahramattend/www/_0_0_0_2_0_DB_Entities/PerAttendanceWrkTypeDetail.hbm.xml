@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAttendanceWrkTypeDetail" table="PER_ATTENDANCE_WRK_TYPE_DETAIL" schema="SHAMS" optimistic-lock="version">
         <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAttendanceWrkTypeDetailId">
@@ -21,7 +21,7 @@
         <property name="workDays" type="byte">
             <column name="WORK_DAYS" precision="2" scale="0" not-null="true" />
         </property>
-        <property name="workDaysType" type="boolean">
+        <property name="workDaysType" type="java.lang.Byte">
             <column name="WORK_DAYS_TYPE" precision="1" scale="0" not-null="true" />
         </property>
         <property name="salaryRatio" type="big_decimal">

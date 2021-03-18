@@ -78,7 +78,7 @@ public class PayDeserveEmpFileDtl  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="OPEN_MM", referencedColumnName="OPEN_MM", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="OPEN_YYYY", referencedColumnName="OPEN_YYYY", nullable=false, insertable=false, updatable=false), 
@@ -94,7 +94,7 @@ public class PayDeserveEmpFileDtl  implements java.io.Serializable {
         this.payDeserveEmpFile = payDeserveEmpFile;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false)
     public PayEmployeeMaster getPayEmployeeMasterByEmployeeId() {
         return this.payEmployeeMasterByEmployeeId;
@@ -104,7 +104,7 @@ public class PayDeserveEmpFileDtl  implements java.io.Serializable {
         this.payEmployeeMasterByEmployeeId = payEmployeeMasterByEmployeeId;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID_USER")
     public PayEmployeeMaster getPayEmployeeMasterByEmployeeIdUser() {
         return this.payEmployeeMasterByEmployeeIdUser;

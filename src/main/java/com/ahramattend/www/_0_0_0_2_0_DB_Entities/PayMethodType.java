@@ -104,7 +104,7 @@ public class PayMethodType  implements java.io.Serializable {
         this.monthFlag = monthFlag;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payMethodType")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payMethodType")
     public Set<PayFinancialGroupBand> getPayFinancialGroupBands() {
         return this.payFinancialGroupBands;
     }
@@ -113,7 +113,7 @@ public class PayMethodType  implements java.io.Serializable {
         this.payFinancialGroupBands = payFinancialGroupBands;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payMethodType")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payMethodType")
     public Set<PayDeserveEmp> getPayDeserveEmps() {
         return this.payDeserveEmps;
     }
@@ -122,7 +122,7 @@ public class PayMethodType  implements java.io.Serializable {
         this.payDeserveEmps = payDeserveEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payMethodType")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payMethodType")
     public Set<PayMethodFileDtl> getPayMethodFileDtls() {
         return this.payMethodFileDtls;
     }
@@ -131,7 +131,7 @@ public class PayMethodType  implements java.io.Serializable {
         this.payMethodFileDtls = payMethodFileDtls;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payMethodType")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payMethodType")
     public Set<PayLocationBandFile> getPayLocationBandFiles() {
         return this.payLocationBandFiles;
     }
@@ -140,7 +140,7 @@ public class PayMethodType  implements java.io.Serializable {
         this.payLocationBandFiles = payLocationBandFiles;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payMethodType")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payMethodType")
     public Set<PayExecutionDate> getPayExecutionDates() {
         return this.payExecutionDates;
     }

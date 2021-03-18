@@ -71,7 +71,7 @@ public class PerPunishmentCode  implements java.io.Serializable {
         this.punishCode = punishCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="BAND_TYPE", referencedColumnName="BAND_TYPE"), 
         @JoinColumn(name="BAND_CODE", referencedColumnName="BAND_CODE") } )
@@ -143,7 +143,7 @@ public class PerPunishmentCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perPunishmentCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perPunishmentCode")
     public Set<PerPromotionPunishRuleN> getPerPromotionPunishRuleNs() {
         return this.perPromotionPunishRuleNs;
     }
@@ -152,7 +152,7 @@ public class PerPunishmentCode  implements java.io.Serializable {
         this.perPromotionPunishRuleNs = perPromotionPunishRuleNs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perPunishmentCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perPunishmentCode")
     public Set<PerElawaPunishRule> getPerElawaPunishRules() {
         return this.perElawaPunishRules;
     }

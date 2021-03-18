@@ -110,7 +110,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.orgId = orgId;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="PARENT_ORG_ID")
     public PerOrganizationStructure getPerOrganizationStructure() {
         return this.perOrganizationStructure;
@@ -120,7 +120,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perOrganizationStructure = perOrganizationStructure;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORGUNIT_CODE")
     public PerOrgunitCode getPerOrgunitCode() {
         return this.perOrgunitCode;
@@ -130,7 +130,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perOrgunitCode = perOrgunitCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="LOCATION_CODE", nullable=false)
     public BudLocation getBudLocation() {
         return this.budLocation;
@@ -230,7 +230,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.empBigBoss = empBigBoss;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructure")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructure")
     public Set<PerAnnualEval> getPerAnnualEvals() {
         return this.perAnnualEvals;
     }
@@ -239,7 +239,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perAnnualEvals = perAnnualEvals;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructure")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructure")
     public Set<PerAnnualEvalModel> getPerAnnualEvalModels() {
         return this.perAnnualEvalModels;
     }
@@ -248,7 +248,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perAnnualEvalModels = perAnnualEvalModels;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructureByOrgIdMinus")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructureByOrgIdMinus")
     public Set<PerHumanBalJobDistribute> getPerHumanBalJobDistributesForOrgIdMinus() {
         return this.perHumanBalJobDistributesForOrgIdMinus;
     }
@@ -257,7 +257,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perHumanBalJobDistributesForOrgIdMinus = perHumanBalJobDistributesForOrgIdMinus;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructure")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructure")
     public Set<PerOrganizationStructure> getPerOrganizationStructures() {
         return this.perOrganizationStructures;
     }
@@ -266,7 +266,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perOrganizationStructures = perOrganizationStructures;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructureByOrgId")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructureByOrgId")
     public Set<PerHumanBalJobDistributeN> getPerHumanBalJobDistributeNsForOrgId() {
         return this.perHumanBalJobDistributeNsForOrgId;
     }
@@ -275,7 +275,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perHumanBalJobDistributeNsForOrgId = perHumanBalJobDistributeNsForOrgId;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructure")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructure")
     public Set<PerHumanBalOrg> getPerHumanBalOrgs() {
         return this.perHumanBalOrgs;
     }
@@ -284,7 +284,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perHumanBalOrgs = perHumanBalOrgs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructure")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructure")
     public Set<PerHumanBalOrgNew> getPerHumanBalOrgNews() {
         return this.perHumanBalOrgNews;
     }
@@ -293,7 +293,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perHumanBalOrgNews = perHumanBalOrgNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructureByOrgIdExec")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructureByOrgIdExec")
     public Set<PerComplaintData> getPerComplaintDatasForOrgIdExec() {
         return this.perComplaintDatasForOrgIdExec;
     }
@@ -302,7 +302,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perComplaintDatasForOrgIdExec = perComplaintDatasForOrgIdExec;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructureByOrgId")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructureByOrgId")
     public Set<PerEmpHistory> getPerEmpHistoriesForOrgId() {
         return this.perEmpHistoriesForOrgId;
     }
@@ -311,7 +311,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perEmpHistoriesForOrgId = perEmpHistoriesForOrgId;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructureByOrgIdFrom")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructureByOrgIdFrom")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForOrgIdFrom() {
         return this.perEmploymentMastersesForOrgIdFrom;
     }
@@ -320,7 +320,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perEmploymentMastersesForOrgIdFrom = perEmploymentMastersesForOrgIdFrom;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructureByOrgIdFrom")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructureByOrgIdFrom")
     public Set<PerEmpHistory> getPerEmpHistoriesForOrgIdFrom() {
         return this.perEmpHistoriesForOrgIdFrom;
     }
@@ -329,7 +329,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perEmpHistoriesForOrgIdFrom = perEmpHistoriesForOrgIdFrom;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructureByOrgIdMinus")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructureByOrgIdMinus")
     public Set<PerHumanBalJobDistributeN> getPerHumanBalJobDistributeNsForOrgIdMinus() {
         return this.perHumanBalJobDistributeNsForOrgIdMinus;
     }
@@ -338,7 +338,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perHumanBalJobDistributeNsForOrgIdMinus = perHumanBalJobDistributeNsForOrgIdMinus;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructure")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructure")
     public Set<PerHumanPlan> getPerHumanPlans() {
         return this.perHumanPlans;
     }
@@ -347,7 +347,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perHumanPlans = perHumanPlans;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructureByOrgId")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructureByOrgId")
     public Set<PerHumanBalJobDistribute> getPerHumanBalJobDistributesForOrgId() {
         return this.perHumanBalJobDistributesForOrgId;
     }
@@ -356,7 +356,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perHumanBalJobDistributesForOrgId = perHumanBalJobDistributesForOrgId;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructureByOrgId")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructureByOrgId")
     public Set<PerComplaintData> getPerComplaintDatasForOrgId() {
         return this.perComplaintDatasForOrgId;
     }
@@ -365,7 +365,7 @@ public class PerOrganizationStructure  implements java.io.Serializable {
         this.perComplaintDatasForOrgId = perComplaintDatasForOrgId;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perOrganizationStructureByOrgId")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perOrganizationStructureByOrgId")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForOrgId() {
         return this.perEmploymentMastersesForOrgId;
     }

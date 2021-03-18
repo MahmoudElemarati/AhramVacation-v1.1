@@ -54,7 +54,7 @@ public class AppReqTypeJ111  implements java.io.Serializable {
         this.appReqSeq = appReqSeq;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="APPLICATION_ID")
     public AppName getAppName() {
         return this.appName;
@@ -74,7 +74,7 @@ public class AppReqTypeJ111  implements java.io.Serializable {
         this.appReqName = appReqName;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="appReqTypeJ111")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="appReqTypeJ111")
     public Set<AppEmployeeReqJ222> getAppEmployeeReqJ222s() {
         return this.appEmployeeReqJ222s;
     }

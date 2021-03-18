@@ -103,7 +103,7 @@ public class PerVacationRuleEmp  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="VACATION_CODE", nullable=false, insertable=false, updatable=false)
     public PerVacationCode getPerVacationCode() {
         return this.perVacationCode;
@@ -113,7 +113,7 @@ public class PerVacationRuleEmp  implements java.io.Serializable {
         this.perVacationCode = perVacationCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYMENT_SOURCE_CODE", nullable=false, insertable=false, updatable=false)
     public PerEmploymentParameter getPerEmploymentParameter() {
         return this.perEmploymentParameter;

@@ -64,7 +64,7 @@ public class PayMethodFileDtl  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FILE_SP", nullable=false, insertable=false, updatable=false)
     public PayMethodFile getPayMethodFile() {
         return this.payMethodFile;
@@ -74,7 +74,7 @@ public class PayMethodFileDtl  implements java.io.Serializable {
         this.payMethodFile = payMethodFile;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="METHOD_TYPE", nullable=false, insertable=false, updatable=false)
     public PayMethodType getPayMethodType() {
         return this.payMethodType;
@@ -104,7 +104,7 @@ public class PayMethodFileDtl  implements java.io.Serializable {
         this.fileSeqPass = fileSeqPass;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payMethodFileDtl")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payMethodFileDtl")
     public Set<PayBandClassificationFile> getPayBandClassificationFiles() {
         return this.payBandClassificationFiles;
     }

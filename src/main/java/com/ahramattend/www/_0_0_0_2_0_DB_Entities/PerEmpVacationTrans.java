@@ -133,7 +133,7 @@ public class PerEmpVacationTrans  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="VACATION_CODE", nullable=false, insertable=false, updatable=false)
     public PerVacationCode getPerVacationCode() {
         return this.perVacationCode;
@@ -143,7 +143,7 @@ public class PerEmpVacationTrans  implements java.io.Serializable {
         this.perVacationCode = perVacationCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false)
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
@@ -493,7 +493,7 @@ public class PerEmpVacationTrans  implements java.io.Serializable {
         this.directBossNo = directBossNo;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEmpVacationTrans")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEmpVacationTrans")
     public Set<PerEmpVacationAdjstmnt> getPerEmpVacationAdjstmnts() {
         return this.perEmpVacationAdjstmnts;
     }

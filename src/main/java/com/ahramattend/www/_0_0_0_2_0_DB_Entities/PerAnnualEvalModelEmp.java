@@ -75,7 +75,7 @@ public class PerAnnualEvalModelEmp  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="ANNUAL_ID", referencedColumnName="ANNUAL_ID", nullable=false, insertable=false, updatable=false), 
@@ -88,7 +88,7 @@ public class PerAnnualEvalModelEmp  implements java.io.Serializable {
         this.perAnnualEvalModel = perAnnualEvalModel;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false)
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
@@ -98,7 +98,7 @@ public class PerAnnualEvalModelEmp  implements java.io.Serializable {
         this.perEmploymentMasters = perEmploymentMasters;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GRADE_CODE_DIRECTBOSS")
     public PerEvalPercentage getPerEvalPercentageByGradeCodeDirectboss() {
         return this.perEvalPercentageByGradeCodeDirectboss;
@@ -108,7 +108,7 @@ public class PerAnnualEvalModelEmp  implements java.io.Serializable {
         this.perEvalPercentageByGradeCodeDirectboss = perEvalPercentageByGradeCodeDirectboss;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GRADE_CODE_FINAL")
     public PerEvalPercentage getPerEvalPercentageByGradeCodeFinal() {
         return this.perEvalPercentageByGradeCodeFinal;
@@ -118,7 +118,7 @@ public class PerAnnualEvalModelEmp  implements java.io.Serializable {
         this.perEvalPercentageByGradeCodeFinal = perEvalPercentageByGradeCodeFinal;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GRADE_CODE")
     public PerEvalPercentage getPerEvalPercentageByGradeCode() {
         return this.perEvalPercentageByGradeCode;
@@ -128,7 +128,7 @@ public class PerAnnualEvalModelEmp  implements java.io.Serializable {
         this.perEvalPercentageByGradeCode = perEvalPercentageByGradeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GRADE_CODE_COMM")
     public PerEvalPercentage getPerEvalPercentageByGradeCodeComm() {
         return this.perEvalPercentageByGradeCodeComm;
@@ -138,7 +138,7 @@ public class PerAnnualEvalModelEmp  implements java.io.Serializable {
         this.perEvalPercentageByGradeCodeComm = perEvalPercentageByGradeCodeComm;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="GROUP_TYPE_CODE", referencedColumnName="GROUP_TYPE_CODE"), 
         @JoinColumn(name="FISCAL_DEGREE_CODE", referencedColumnName="FISCAL_DEGREE_CODE") } )
@@ -150,7 +150,7 @@ public class PerAnnualEvalModelEmp  implements java.io.Serializable {
         this.perGroupDegree = perGroupDegree;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="JOB_CODE")
     public PerJobCode getPerJobCode() {
         return this.perJobCode;
@@ -160,7 +160,7 @@ public class PerAnnualEvalModelEmp  implements java.io.Serializable {
         this.perJobCode = perJobCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perAnnualEvalModelEmp")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perAnnualEvalModelEmp")
     public Set<PerAnnualEvalModelEmpDtl> getPerAnnualEvalModelEmpDtls() {
         return this.perAnnualEvalModelEmpDtls;
     }

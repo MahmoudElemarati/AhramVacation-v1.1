@@ -171,7 +171,7 @@ public class BudLocation  implements java.io.Serializable {
         this.locationDatabaseName = locationDatabaseName;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budLocationByLocationCodeFrom")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budLocationByLocationCodeFrom")
     public Set<PerEmpHistory> getPerEmpHistoriesForLocationCodeFrom() {
         return this.perEmpHistoriesForLocationCodeFrom;
     }
@@ -180,7 +180,7 @@ public class BudLocation  implements java.io.Serializable {
         this.perEmpHistoriesForLocationCodeFrom = perEmpHistoriesForLocationCodeFrom;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budLocation")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budLocation")
     public Set<PerCommityMaster> getPerCommityMasters() {
         return this.perCommityMasters;
     }
@@ -189,7 +189,7 @@ public class BudLocation  implements java.io.Serializable {
         this.perCommityMasters = perCommityMasters;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budLocation")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budLocation")
     public Set<PerHumanBalYear> getPerHumanBalYears() {
         return this.perHumanBalYears;
     }
@@ -198,7 +198,7 @@ public class BudLocation  implements java.io.Serializable {
         this.perHumanBalYears = perHumanBalYears;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budLocation")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budLocation")
     public Set<PerLocationCodes> getPerLocationCodeses() {
         return this.perLocationCodeses;
     }
@@ -207,7 +207,7 @@ public class BudLocation  implements java.io.Serializable {
         this.perLocationCodeses = perLocationCodeses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budLocation")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budLocation")
     public Set<PerOrganizationStructure> getPerOrganizationStructures() {
         return this.perOrganizationStructures;
     }
@@ -216,7 +216,7 @@ public class BudLocation  implements java.io.Serializable {
         this.perOrganizationStructures = perOrganizationStructures;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budLocationByLocationCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budLocationByLocationCode")
     public Set<PerEmpHistory> getPerEmpHistoriesForLocationCode() {
         return this.perEmpHistoriesForLocationCode;
     }
@@ -225,7 +225,7 @@ public class BudLocation  implements java.io.Serializable {
         this.perEmpHistoriesForLocationCode = perEmpHistoriesForLocationCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budLocation")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budLocation")
     public Set<PerSetup> getPerSetups() {
         return this.perSetups;
     }
@@ -234,7 +234,7 @@ public class BudLocation  implements java.io.Serializable {
         this.perSetups = perSetups;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budLocation")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budLocation")
     public Set<PerPromotionTransNew> getPerPromotionTransNews() {
         return this.perPromotionTransNews;
     }
@@ -243,7 +243,7 @@ public class BudLocation  implements java.io.Serializable {
         this.perPromotionTransNews = perPromotionTransNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budLocation")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budLocation")
     public Set<PerEmpDecisionSheet> getPerEmpDecisionSheets() {
         return this.perEmpDecisionSheets;
     }
@@ -252,7 +252,7 @@ public class BudLocation  implements java.io.Serializable {
         this.perEmpDecisionSheets = perEmpDecisionSheets;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budLocation")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budLocation")
     public Set<PerAnnualEvalYear> getPerAnnualEvalYears() {
         return this.perAnnualEvalYears;
     }
@@ -261,7 +261,7 @@ public class BudLocation  implements java.io.Serializable {
         this.perAnnualEvalYears = perAnnualEvalYears;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budLocation")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budLocation")
     public Set<PerComplaintData> getPerComplaintDatas() {
         return this.perComplaintDatas;
     }
@@ -270,7 +270,7 @@ public class BudLocation  implements java.io.Serializable {
         this.perComplaintDatas = perComplaintDatas;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budLocation")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budLocation")
     public Set<PerDecisionSheet> getPerDecisionSheets() {
         return this.perDecisionSheets;
     }
@@ -279,7 +279,7 @@ public class BudLocation  implements java.io.Serializable {
         this.perDecisionSheets = perDecisionSheets;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budLocation")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budLocation")
     public Set<PerPromotionTrans> getPerPromotionTranses() {
         return this.perPromotionTranses;
     }

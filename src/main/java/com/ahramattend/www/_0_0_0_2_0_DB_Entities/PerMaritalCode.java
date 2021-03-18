@@ -112,7 +112,7 @@ public class PerMaritalCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perMaritalCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perMaritalCode")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }

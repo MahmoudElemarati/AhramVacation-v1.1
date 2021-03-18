@@ -76,7 +76,7 @@ public class PerEasementTrans  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE_NEW")
     public PerFiscalDegreeCodeNew getPerFiscalDegreeCodeNew() {
         return this.perFiscalDegreeCodeNew;
@@ -86,7 +86,7 @@ public class PerEasementTrans  implements java.io.Serializable {
         this.perFiscalDegreeCodeNew = perFiscalDegreeCodeNew;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE")
     public PerFiscalDegreeCode getPerFiscalDegreeCode() {
         return this.perFiscalDegreeCode;
@@ -96,7 +96,7 @@ public class PerEasementTrans  implements java.io.Serializable {
         this.perFiscalDegreeCode = perFiscalDegreeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GENERAL_CODE", nullable=false)
     public PerGeneralCode getPerGeneralCode() {
         return this.perGeneralCode;
@@ -106,7 +106,7 @@ public class PerEasementTrans  implements java.io.Serializable {
         this.perGeneralCode = perGeneralCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="HUMAN_BAL_ID", referencedColumnName="HUMAN_BAL_ID", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false) } )

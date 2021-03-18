@@ -123,7 +123,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.fiscalDegreeCodeNew = fiscalDegreeCodeNew;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="LAW_SEQ")
     public PerJobLaw getPerJobLaw() {
         return this.perJobLaw;
@@ -133,7 +133,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perJobLaw = perJobLaw;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="CADRE_DEGREE_CODE", nullable=false)
     public PerCadreDegreeCode getPerCadreDegreeCode() {
         return this.perCadreDegreeCode;
@@ -143,7 +143,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perCadreDegreeCode = perCadreDegreeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE")
     public PerFiscalDegreeCode getPerFiscalDegreeCode() {
         return this.perFiscalDegreeCode;
@@ -263,7 +263,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNew")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }
@@ -272,7 +272,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perEmploymentMasterses = perEmploymentMasterses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNewByFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNewByFiscalDegreeCodeNew")
     public Set<PerPromotionTransNew> getPerPromotionTransNewsForFiscalDegreeCodeNew() {
         return this.perPromotionTransNewsForFiscalDegreeCodeNew;
     }
@@ -281,7 +281,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perPromotionTransNewsForFiscalDegreeCodeNew = perPromotionTransNewsForFiscalDegreeCodeNew;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNew")
     public Set<PerElawaTransactionReject> getPerElawaTransactionRejects() {
         return this.perElawaTransactionRejects;
     }
@@ -290,7 +290,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perElawaTransactionRejects = perElawaTransactionRejects;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNew")
     public Set<PerEmpPromotionRejectNew> getPerEmpPromotionRejectNews() {
         return this.perEmpPromotionRejectNews;
     }
@@ -299,7 +299,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perEmpPromotionRejectNews = perEmpPromotionRejectNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNew")
     public Set<PerElawaTransaction> getPerElawaTransactions() {
         return this.perElawaTransactions;
     }
@@ -308,7 +308,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perElawaTransactions = perElawaTransactions;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNewByFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNewByFiscalDegreeCodeNew")
     public Set<PerEmpPromotionNew> getPerEmpPromotionNewsForFiscalDegreeCodeNew() {
         return this.perEmpPromotionNewsForFiscalDegreeCodeNew;
     }
@@ -317,7 +317,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perEmpPromotionNewsForFiscalDegreeCodeNew = perEmpPromotionNewsForFiscalDegreeCodeNew;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNewByFiscalDegreeCodeNewNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNewByFiscalDegreeCodeNewNew")
     public Set<PerPromotionTransNew> getPerPromotionTransNewsForFiscalDegreeCodeNewNew() {
         return this.perPromotionTransNewsForFiscalDegreeCodeNewNew;
     }
@@ -326,7 +326,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perPromotionTransNewsForFiscalDegreeCodeNewNew = perPromotionTransNewsForFiscalDegreeCodeNewNew;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNew")
     public Set<PerEasementTrans> getPerEasementTranses() {
         return this.perEasementTranses;
     }
@@ -335,7 +335,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perEasementTranses = perEasementTranses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNew")
     public Set<PerFiscalDegreePromotionN> getPerFiscalDegreePromotionNs() {
         return this.perFiscalDegreePromotionNs;
     }
@@ -344,7 +344,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perFiscalDegreePromotionNs = perFiscalDegreePromotionNs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNewByFiscalDegreeCodeNewNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNewByFiscalDegreeCodeNewNew")
     public Set<PerEmpPromotionNew> getPerEmpPromotionNewsForFiscalDegreeCodeNewNew() {
         return this.perEmpPromotionNewsForFiscalDegreeCodeNewNew;
     }
@@ -353,7 +353,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perEmpPromotionNewsForFiscalDegreeCodeNewNew = perEmpPromotionNewsForFiscalDegreeCodeNewNew;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNew")
     public Set<PerEvalAttributeDetail> getPerEvalAttributeDetails() {
         return this.perEvalAttributeDetails;
     }
@@ -362,7 +362,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perEvalAttributeDetails = perEvalAttributeDetails;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNewByFiscalDegreeCodeNewEndsal")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNewByFiscalDegreeCodeNewEndsal")
     public Set<PerPromotionTransNew> getPerPromotionTransNewsForFiscalDegreeCodeNewEndsal() {
         return this.perPromotionTransNewsForFiscalDegreeCodeNewEndsal;
     }
@@ -371,7 +371,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perPromotionTransNewsForFiscalDegreeCodeNewEndsal = perPromotionTransNewsForFiscalDegreeCodeNewEndsal;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNew")
     public Set<PerPromotionGradeRuleN> getPerPromotionGradeRuleNs() {
         return this.perPromotionGradeRuleNs;
     }
@@ -380,7 +380,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perPromotionGradeRuleNs = perPromotionGradeRuleNs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNew")
     public Set<PerElawaFiscalDegreeRuleN> getPerElawaFiscalDegreeRuleNs() {
         return this.perElawaFiscalDegreeRuleNs;
     }
@@ -389,7 +389,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perElawaFiscalDegreeRuleNs = perElawaFiscalDegreeRuleNs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNew")
     public Set<PerEmpHistory> getPerEmpHistories() {
         return this.perEmpHistories;
     }
@@ -398,7 +398,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perEmpHistories = perEmpHistories;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNew")
     public Set<PerGroupDegreeNew> getPerGroupDegreeNews() {
         return this.perGroupDegreeNews;
     }
@@ -407,7 +407,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perGroupDegreeNews = perGroupDegreeNews;
     }
 
-@OneToOne(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNew")
+@OneToOne(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNew")
     public PerFiscalDegreeDetailNew getPerFiscalDegreeDetailNew() {
         return this.perFiscalDegreeDetailNew;
     }
@@ -416,7 +416,7 @@ public class PerFiscalDegreeCodeNew  implements java.io.Serializable {
         this.perFiscalDegreeDetailNew = perFiscalDegreeDetailNew;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFiscalDegreeCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFiscalDegreeCodeNew")
     public Set<PerJobCode> getPerJobCodes() {
         return this.perJobCodes;
     }

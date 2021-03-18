@@ -62,7 +62,7 @@ public class PayDeserveEmpFileStopDtl  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="BAND_TYPE", referencedColumnName="BAND_TYPE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="BAND_CODE", referencedColumnName="BAND_CODE", nullable=false, insertable=false, updatable=false), 
@@ -76,7 +76,7 @@ public class PayDeserveEmpFileStopDtl  implements java.io.Serializable {
         this.payLocationBandFile = payLocationBandFile;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="EMPLOYEE_ID", referencedColumnName="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="STOP_SP", referencedColumnName="STOP_SP", nullable=false, insertable=false, updatable=false) } )

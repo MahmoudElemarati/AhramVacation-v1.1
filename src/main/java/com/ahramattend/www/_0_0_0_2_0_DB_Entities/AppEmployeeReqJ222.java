@@ -77,7 +77,7 @@ public class AppEmployeeReqJ222  implements java.io.Serializable {
         this.reqSp = reqSp;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID")
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
@@ -87,7 +87,7 @@ public class AppEmployeeReqJ222  implements java.io.Serializable {
         this.perEmploymentMasters = perEmploymentMasters;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="APP_REQ_SEQ", nullable=false)
     public AppReqTypeJ111 getAppReqTypeJ111() {
         return this.appReqTypeJ111;
@@ -187,7 +187,7 @@ public class AppEmployeeReqJ222  implements java.io.Serializable {
         this.rmrk = rmrk;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="appEmployeeReqJ222")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="appEmployeeReqJ222")
     public Set<AppEmployeeReqJ444> getAppEmployeeReqJ444s() {
         return this.appEmployeeReqJ444s;
     }

@@ -69,7 +69,7 @@ public class PerHumanPlan  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="HUMAN_BAL_ID", referencedColumnName="HUMAN_BAL_ID", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false) } )
@@ -81,7 +81,7 @@ public class PerHumanPlan  implements java.io.Serializable {
         this.perHumanBalYear = perHumanBalYear;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORG_ID", nullable=false, insertable=false, updatable=false)
     public PerOrganizationStructure getPerOrganizationStructure() {
         return this.perOrganizationStructure;
@@ -91,7 +91,7 @@ public class PerHumanPlan  implements java.io.Serializable {
         this.perOrganizationStructure = perOrganizationStructure;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORGUNIT_CODE", nullable=false)
     public PerOrgunitCode getPerOrgunitCode() {
         return this.perOrgunitCode;
@@ -121,7 +121,7 @@ public class PerHumanPlan  implements java.io.Serializable {
         this.targetNotes = targetNotes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perHumanPlan")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perHumanPlan")
     public Set<PerHumanActivity> getPerHumanActivities() {
         return this.perHumanActivities;
     }

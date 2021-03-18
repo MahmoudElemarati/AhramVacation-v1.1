@@ -1,5 +1,5 @@
 package com.ahramattend.www._0_0_0_2_0_DB_Entities;
-// Generated Mar 9, 2021 2:52:01 PM by Hibernate Tools 4.3.1
+// Generated Feb 23, 2021 6:24:44 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.AttributeOverride;
@@ -51,7 +51,7 @@ public class PerDecisionSheetImageDtl  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="DECISION_ID", referencedColumnName="DECISION_ID", nullable=false, insertable=false, updatable=false) } )

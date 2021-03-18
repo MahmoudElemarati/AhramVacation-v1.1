@@ -74,7 +74,7 @@ public class PerMosqueGehaCode  implements java.io.Serializable {
         this.gehaKind = gehaKind;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perMosqueGehaCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perMosqueGehaCode")
     public Set<PerMosqueCode> getPerMosqueCodes() {
         return this.perMosqueCodes;
     }

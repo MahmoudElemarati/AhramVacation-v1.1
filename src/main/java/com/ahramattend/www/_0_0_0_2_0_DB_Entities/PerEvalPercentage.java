@@ -181,7 +181,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.gradeName81 = gradeName81;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCodeDirectboss")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCodeDirectboss")
     public Set<PerAnnualEvalModelEmp> getPerAnnualEvalModelEmpsForGradeCodeDirectboss() {
         return this.perAnnualEvalModelEmpsForGradeCodeDirectboss;
     }
@@ -190,7 +190,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perAnnualEvalModelEmpsForGradeCodeDirectboss = perAnnualEvalModelEmpsForGradeCodeDirectboss;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCodeBigboss")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCodeBigboss")
     public Set<PerAnnualEvalEmp> getPerAnnualEvalEmpsForGradeCodeBigboss() {
         return this.perAnnualEvalEmpsForGradeCodeBigboss;
     }
@@ -199,7 +199,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perAnnualEvalEmpsForGradeCodeBigboss = perAnnualEvalEmpsForGradeCodeBigboss;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCodeComm")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCodeComm")
     public Set<PerAnnualEvalEmpDetail> getPerAnnualEvalEmpDetailsForGradeCodeComm() {
         return this.perAnnualEvalEmpDetailsForGradeCodeComm;
     }
@@ -208,7 +208,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perAnnualEvalEmpDetailsForGradeCodeComm = perAnnualEvalEmpDetailsForGradeCodeComm;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCodeFinal")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCodeFinal")
     public Set<PerAnnualEvalModelEmp> getPerAnnualEvalModelEmpsForGradeCodeFinal() {
         return this.perAnnualEvalModelEmpsForGradeCodeFinal;
     }
@@ -217,7 +217,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perAnnualEvalModelEmpsForGradeCodeFinal = perAnnualEvalModelEmpsForGradeCodeFinal;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCode")
     public Set<PerAnnualEvalEmp> getPerAnnualEvalEmpsForGradeCode() {
         return this.perAnnualEvalEmpsForGradeCode;
     }
@@ -226,7 +226,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perAnnualEvalEmpsForGradeCode = perAnnualEvalEmpsForGradeCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCode")
     public Set<PerAnnualEvalEmpDetail> getPerAnnualEvalEmpDetailsForGradeCode() {
         return this.perAnnualEvalEmpDetailsForGradeCode;
     }
@@ -235,7 +235,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perAnnualEvalEmpDetailsForGradeCode = perAnnualEvalEmpDetailsForGradeCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCodeBigboss")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCodeBigboss")
     public Set<PerAnnualEvalEmpDetail> getPerAnnualEvalEmpDetailsForGradeCodeBigboss() {
         return this.perAnnualEvalEmpDetailsForGradeCodeBigboss;
     }
@@ -244,7 +244,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perAnnualEvalEmpDetailsForGradeCodeBigboss = perAnnualEvalEmpDetailsForGradeCodeBigboss;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentage")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentage")
     public Set<PerPromotionGradeRuleN> getPerPromotionGradeRuleNs() {
         return this.perPromotionGradeRuleNs;
     }
@@ -253,7 +253,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perPromotionGradeRuleNs = perPromotionGradeRuleNs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCodeDirectboss")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCodeDirectboss")
     public Set<PerAnnualEvalModelEmpDtl> getPerAnnualEvalModelEmpDtlsForGradeCodeDirectboss() {
         return this.perAnnualEvalModelEmpDtlsForGradeCodeDirectboss;
     }
@@ -262,7 +262,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perAnnualEvalModelEmpDtlsForGradeCodeDirectboss = perAnnualEvalModelEmpDtlsForGradeCodeDirectboss;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCode")
     public Set<PerAnnualEvalModelEmp> getPerAnnualEvalModelEmpsForGradeCode() {
         return this.perAnnualEvalModelEmpsForGradeCode;
     }
@@ -271,7 +271,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perAnnualEvalModelEmpsForGradeCode = perAnnualEvalModelEmpsForGradeCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCodeFinal")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCodeFinal")
     public Set<PerAnnualEvalEmp> getPerAnnualEvalEmpsForGradeCodeFinal() {
         return this.perAnnualEvalEmpsForGradeCodeFinal;
     }
@@ -280,7 +280,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perAnnualEvalEmpsForGradeCodeFinal = perAnnualEvalEmpsForGradeCodeFinal;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCodeBigboss")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCodeBigboss")
     public Set<PerAnnualEvalModelEmpDtl> getPerAnnualEvalModelEmpDtlsForGradeCodeBigboss() {
         return this.perAnnualEvalModelEmpDtlsForGradeCodeBigboss;
     }
@@ -289,7 +289,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perAnnualEvalModelEmpDtlsForGradeCodeBigboss = perAnnualEvalModelEmpDtlsForGradeCodeBigboss;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCodeComm")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCodeComm")
     public Set<PerAnnualEvalModelEmp> getPerAnnualEvalModelEmpsForGradeCodeComm() {
         return this.perAnnualEvalModelEmpsForGradeCodeComm;
     }
@@ -298,7 +298,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perAnnualEvalModelEmpsForGradeCodeComm = perAnnualEvalModelEmpsForGradeCodeComm;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentage")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentage")
     public Set<PerElawaGradeRule> getPerElawaGradeRules() {
         return this.perElawaGradeRules;
     }
@@ -307,7 +307,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perElawaGradeRules = perElawaGradeRules;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCodeComm")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCodeComm")
     public Set<PerAnnualEvalEmp> getPerAnnualEvalEmpsForGradeCodeComm() {
         return this.perAnnualEvalEmpsForGradeCodeComm;
     }
@@ -316,7 +316,7 @@ public class PerEvalPercentage  implements java.io.Serializable {
         this.perAnnualEvalEmpsForGradeCodeComm = perAnnualEvalEmpsForGradeCodeComm;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalPercentageByGradeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalPercentageByGradeCode")
     public Set<PerAnnualEvalModelEmpDtl> getPerAnnualEvalModelEmpDtlsForGradeCode() {
         return this.perAnnualEvalModelEmpDtlsForGradeCode;
     }

@@ -112,7 +112,7 @@ public class PerFileType  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFileType")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFileType")
     public Set<PerEmpFile> getPerEmpFiles() {
         return this.perEmpFiles;
     }

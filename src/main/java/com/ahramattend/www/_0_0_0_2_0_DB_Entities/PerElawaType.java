@@ -65,7 +65,7 @@ public class PerElawaType  implements java.io.Serializable {
         this.elawaTypeCode = elawaTypeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GENERAL_CODE", nullable=false)
     public PerGeneralCode getPerGeneralCode() {
         return this.perGeneralCode;

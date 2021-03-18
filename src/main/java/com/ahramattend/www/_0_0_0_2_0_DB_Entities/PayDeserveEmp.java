@@ -99,7 +99,7 @@ public class PayDeserveEmp  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="BAND_TYPE", referencedColumnName="BAND_TYPE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="BAND_CODE", referencedColumnName="BAND_CODE", nullable=false, insertable=false, updatable=false) } )
@@ -111,7 +111,7 @@ public class PayDeserveEmp  implements java.io.Serializable {
         this.payBandCode = payBandCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false)
     public PayEmployeeMaster getPayEmployeeMaster() {
         return this.payEmployeeMaster;
@@ -121,7 +121,7 @@ public class PayDeserveEmp  implements java.io.Serializable {
         this.payEmployeeMaster = payEmployeeMaster;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="OPEN_MM", referencedColumnName="OPEN_MM"), 
         @JoinColumn(name="OPEN_YYYY", referencedColumnName="OPEN_YYYY") } )
@@ -133,7 +133,7 @@ public class PayDeserveEmp  implements java.io.Serializable {
         this.payExecutionOpen = payExecutionOpen;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="METHOD_TYPE", nullable=false, insertable=false, updatable=false)
     public PayMethodType getPayMethodType() {
         return this.payMethodType;
@@ -143,7 +143,7 @@ public class PayDeserveEmp  implements java.io.Serializable {
         this.payMethodType = payMethodType;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOC_CODE", referencedColumnName="LOC_CODE"), 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false) } )

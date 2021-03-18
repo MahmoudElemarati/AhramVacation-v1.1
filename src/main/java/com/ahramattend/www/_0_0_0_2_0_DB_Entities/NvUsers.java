@@ -127,7 +127,7 @@ public class NvUsers  implements java.io.Serializable {
         this.userType = userType;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="nvUsers")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="nvUsers")
     public Set<PayDeserveEmpFileDtlRuf> getPayDeserveEmpFileDtlRufs() {
         return this.payDeserveEmpFileDtlRufs;
     }
@@ -136,7 +136,7 @@ public class NvUsers  implements java.io.Serializable {
         this.payDeserveEmpFileDtlRufs = payDeserveEmpFileDtlRufs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="nvUsers")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="nvUsers")
     public Set<PayEmployeeReq> getPayEmployeeReqs() {
         return this.payEmployeeReqs;
     }
@@ -145,7 +145,7 @@ public class NvUsers  implements java.io.Serializable {
         this.payEmployeeReqs = payEmployeeReqs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="nvUsers")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="nvUsers")
     public Set<PayDeserveEmpFile> getPayDeserveEmpFiles() {
         return this.payDeserveEmpFiles;
     }

@@ -61,7 +61,7 @@ public class PerMosqueKindCode  implements java.io.Serializable {
         this.kindName = kindName;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perMosqueKindCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perMosqueKindCode")
     public Set<PerMosqueCode> getPerMosqueCodes() {
         return this.perMosqueCodes;
     }

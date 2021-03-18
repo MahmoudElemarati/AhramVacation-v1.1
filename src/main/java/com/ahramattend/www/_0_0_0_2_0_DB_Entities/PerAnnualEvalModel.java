@@ -80,7 +80,7 @@ public class PerAnnualEvalModel  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EVAL_TYPE_SERIAL", nullable=false)
     public PerAnnualEvalType getPerAnnualEvalType() {
         return this.perAnnualEvalType;
@@ -90,7 +90,7 @@ public class PerAnnualEvalModel  implements java.io.Serializable {
         this.perAnnualEvalType = perAnnualEvalType;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="ANNUAL_ID", referencedColumnName="ANNUAL_ID", nullable=false, insertable=false, updatable=false) } )
@@ -102,7 +102,7 @@ public class PerAnnualEvalModel  implements java.io.Serializable {
         this.perAnnualEvalYear = perAnnualEvalYear;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORG_ID")
     public PerOrganizationStructure getPerOrganizationStructure() {
         return this.perOrganizationStructure;
@@ -112,7 +112,7 @@ public class PerAnnualEvalModel  implements java.io.Serializable {
         this.perOrganizationStructure = perOrganizationStructure;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORGUNIT_CODE")
     public PerOrgunitCode getPerOrgunitCode() {
         return this.perOrgunitCode;
@@ -122,7 +122,7 @@ public class PerAnnualEvalModel  implements java.io.Serializable {
         this.perOrgunitCode = perOrgunitCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="PROJECT_CODE", referencedColumnName="PROJECT_CODE"), 
         @JoinColumn(name="PROJECT_SUB_CODE", referencedColumnName="PROJECT_SUB_CODE") } )
@@ -174,7 +174,7 @@ public class PerAnnualEvalModel  implements java.io.Serializable {
         this.empBigBoss = empBigBoss;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perAnnualEvalModel")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perAnnualEvalModel")
     public Set<PerAnnualEvalModelEmp> getPerAnnualEvalModelEmps() {
         return this.perAnnualEvalModelEmps;
     }

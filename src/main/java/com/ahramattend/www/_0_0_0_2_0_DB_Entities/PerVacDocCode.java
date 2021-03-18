@@ -112,7 +112,7 @@ public class PerVacDocCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perVacDocCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perVacDocCode")
     public Set<PerVacationRuleDoc> getPerVacationRuleDocs() {
         return this.perVacationRuleDocs;
     }

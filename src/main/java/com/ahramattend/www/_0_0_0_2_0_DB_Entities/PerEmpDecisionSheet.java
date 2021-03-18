@@ -63,7 +63,7 @@ public class PerEmpDecisionSheet  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="DECISION_ID", referencedColumnName="DECISION_ID", nullable=false, insertable=false, updatable=false) } )
@@ -75,7 +75,7 @@ public class PerEmpDecisionSheet  implements java.io.Serializable {
         this.perDecisionSheet = perDecisionSheet;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false)
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
@@ -85,7 +85,7 @@ public class PerEmpDecisionSheet  implements java.io.Serializable {
         this.perEmploymentMasters = perEmploymentMasters;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="LOCATION_CODE_EMP")
     public BudLocation getBudLocation() {
         return this.budLocation;

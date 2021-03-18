@@ -139,7 +139,7 @@ public class PerCountryCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perCountryCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perCountryCode")
     public Set<PerExternalSideCode> getPerExternalSideCodes() {
         return this.perExternalSideCodes;
     }
@@ -148,7 +148,7 @@ public class PerCountryCode  implements java.io.Serializable {
         this.perExternalSideCodes = perExternalSideCodes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perCountryCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perCountryCode")
     public Set<PerGovernorateCode> getPerGovernorateCodes() {
         return this.perGovernorateCodes;
     }

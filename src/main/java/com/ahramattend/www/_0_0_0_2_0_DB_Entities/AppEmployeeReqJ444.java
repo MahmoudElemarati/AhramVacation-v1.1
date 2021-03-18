@@ -52,12 +52,11 @@ public class AppEmployeeReqJ444  implements java.io.Serializable {
     }
 
 	
-    public AppEmployeeReqJ444(AppEmployeeReqJ444Id id, PerEmploymentMasters perEmploymentMasters, AppEmployeeReqJ222 appEmployeeReqJ222, String employeeNo, long sarfCode) {
+    public AppEmployeeReqJ444(AppEmployeeReqJ444Id id, PerEmploymentMasters perEmploymentMasters, AppEmployeeReqJ222 appEmployeeReqJ222, String employeeNo) {
         this.id = id;
         this.perEmploymentMasters = perEmploymentMasters;
         this.appEmployeeReqJ222 = appEmployeeReqJ222;
         this.employeeNo = employeeNo;
-        this.sarfCode = sarfCode;
     }
     public AppEmployeeReqJ444(AppEmployeeReqJ444Id id, PerEmploymentMasters perEmploymentMasters, AppEmployeeReqJ222 appEmployeeReqJ222, String employeeNo, String locationCode, Byte statusCode, Date sendDate, Short dayNo, String jobCode, Short bankCode, long sarfCode, String locCode, Short statusGroup, String fiscalDegreeCode, BigDecimal val30, BigDecimal val65, BigDecimal val70, String tafkit, String rmrkFrom, String rmrkTo, String chkRev) {
        this.id = id;
@@ -97,7 +96,7 @@ public class AppEmployeeReqJ444  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false)
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
@@ -107,7 +106,7 @@ public class AppEmployeeReqJ444  implements java.io.Serializable {
         this.perEmploymentMasters = perEmploymentMasters;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="REQ_SP", nullable=false, insertable=false, updatable=false)
     public AppEmployeeReqJ222 getAppEmployeeReqJ222() {
         return this.appEmployeeReqJ222;

@@ -1,34 +1,46 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 9, 2021 2:52:07 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Feb 23, 2021 6:24:48 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAttendanceExistZk" table="PER_ATTENDANCE_EXIST_ZK" schema="SHAMS" optimistic-lock="version">
         <composite-id name="id" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerAttendanceExistZkId">
             <key-property name="attendanceDate" type="date">
                 <column name="ATTENDANCE_DATE" length="7" />
             </key-property>
-            <key-property name="employeeNo" type="string">
-                <column name="EMPLOYEE_NO" length="10" />
+            <key-property name="employeeId" type="string">
+                <column name="EMPLOYEE_ID" length="10" />
             </key-property>
-            <key-property name="timeHh" type="string">
-                <column name="TIME_HH" length="2" />
+            <key-property name="attendanceSp" type="long">
+                <column name="ATTENDANCE_SP" precision="10" scale="0" />
             </key-property>
-            <key-property name="timeMm" type="string">
-                <column name="TIME_MM" length="2" />
-            </key-property>
-            <key-property name="timeSs" type="string">
-                <column name="TIME_SS" length="2" />
-            </key-property>
-            <key-property name="transKind" type="boolean">
-                <column name="TRANS_KIND" precision="1" scale="0" />
+            <key-property name="transKind" type="byte">
+                <column name="TRANS_KIND" precision="2" scale="0" />
             </key-property>
         </composite-id>
-        <property name="empSerial" type="string">
-            <column name="EMP_SERIAL" length="5" />
+        <many-to-one name="perEmploymentMasters" class="com.ahramattend.www._0_0_0_2_0_DB_Entities.PerEmploymentMasters" update="false" insert="false" fetch="select">
+            <column name="EMPLOYEE_ID" length="10" not-null="true" />
+        </many-to-one>
+        <property name="timeMm" type="string">
+            <column name="TIME_MM" length="2" not-null="true" />
         </property>
-        <property name="empSql" type="big_decimal">
-            <column name="EMP_SQL" precision="20" scale="0" />
+        <property name="timeSs" type="string">
+            <column name="TIME_SS" length="2" not-null="true" />
+        </property>
+        <property name="timeHh" type="string">
+            <column name="TIME_HH" length="2" not-null="true" />
+        </property>
+        <property name="postDate" type="date">
+            <column name="POST_DATE" length="7" />
+        </property>
+        <property name="postTime" type="string">
+            <column name="POST_TIME" length="20" />
+        </property>
+        <property name="machineNo" type="string">
+            <column name="MACHINE_NO" length="40" />
+        </property>
+        <property name="employeeNo" type="string">
+            <column name="EMPLOYEE_NO" length="10" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

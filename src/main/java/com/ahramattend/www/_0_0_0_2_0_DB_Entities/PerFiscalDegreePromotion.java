@@ -74,7 +74,7 @@ public class PerFiscalDegreePromotion  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="HIGH_DEGREE_CODE", nullable=false, insertable=false, updatable=false)
     public PerFiscalDegreeCode getPerFiscalDegreeCodeByHighDegreeCode() {
         return this.perFiscalDegreeCodeByHighDegreeCode;
@@ -84,7 +84,7 @@ public class PerFiscalDegreePromotion  implements java.io.Serializable {
         this.perFiscalDegreeCodeByHighDegreeCode = perFiscalDegreeCodeByHighDegreeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE", nullable=false, insertable=false, updatable=false)
     public PerFiscalDegreeCode getPerFiscalDegreeCodeByFiscalDegreeCode() {
         return this.perFiscalDegreeCodeByFiscalDegreeCode;

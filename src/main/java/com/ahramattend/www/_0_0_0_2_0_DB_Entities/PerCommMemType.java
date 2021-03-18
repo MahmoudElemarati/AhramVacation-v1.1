@@ -66,7 +66,7 @@ public class PerCommMemType  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="COMM_MEM_TYPE_CODE", nullable=false, insertable=false, updatable=false)
     public PerCommMemTypeCode getPerCommMemTypeCode() {
         return this.perCommMemTypeCode;
@@ -76,7 +76,7 @@ public class PerCommMemType  implements java.io.Serializable {
         this.perCommMemTypeCode = perCommMemTypeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="COMM_TYPE_CODE", nullable=false, insertable=false, updatable=false)
     public PerCommTypeCode getPerCommTypeCode() {
         return this.perCommTypeCode;

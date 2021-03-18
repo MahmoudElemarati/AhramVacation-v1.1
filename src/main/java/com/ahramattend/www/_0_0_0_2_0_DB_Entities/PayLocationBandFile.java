@@ -71,7 +71,7 @@ public class PayLocationBandFile  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="BAND_TYPE", referencedColumnName="BAND_TYPE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="BAND_CODE", referencedColumnName="BAND_CODE", nullable=false, insertable=false, updatable=false) } )
@@ -83,7 +83,7 @@ public class PayLocationBandFile  implements java.io.Serializable {
         this.payBandCode = payBandCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="METHOD_TYPE")
     public PayMethodType getPayMethodType() {
         return this.payMethodType;
@@ -93,7 +93,7 @@ public class PayLocationBandFile  implements java.io.Serializable {
         this.payMethodType = payMethodType;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOC_CODE", referencedColumnName="LOC_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false) } )
@@ -125,7 +125,7 @@ public class PayLocationBandFile  implements java.io.Serializable {
         this.rmrk = rmrk;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payLocationBandFile")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payLocationBandFile")
     public Set<PayDeserveEmpFileStopDtl> getPayDeserveEmpFileStopDtls() {
         return this.payDeserveEmpFileStopDtls;
     }
@@ -134,7 +134,7 @@ public class PayLocationBandFile  implements java.io.Serializable {
         this.payDeserveEmpFileStopDtls = payDeserveEmpFileStopDtls;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payLocationBandFile")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payLocationBandFile")
     public Set<PayDeserveEmpFile> getPayDeserveEmpFiles() {
         return this.payDeserveEmpFiles;
     }

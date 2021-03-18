@@ -196,7 +196,7 @@
         <property name="empFlag" type="java.lang.Boolean">
             <column name="EMP_FLAG" precision="1" scale="0" />
         </property>
-        <property name="sexFlag" type="boolean">
+        <property name="sexFlag" type="java.lang.Byte">
             <column name="SEX_FLAG" precision="1" scale="0" not-null="true" />
         </property>
         <property name="qualYear" type="date">
@@ -211,7 +211,7 @@
         <property name="noForConstantElawa" type="java.lang.Byte">
             <column name="NO_FOR_CONSTANT_ELAWA" precision="2" scale="0" />
         </property>
-        <property name="orgFlag" type="boolean">
+        <property name="orgFlag" type="java.lang.Byte">
             <column name="ORG_FLAG" precision="1" scale="0" not-null="true" />
         </property>
         <property name="orgFlagFrom" type="java.lang.Boolean">

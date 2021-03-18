@@ -80,7 +80,7 @@ public class PerHumanBalYear  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="LOCATION_CODE", nullable=false, insertable=false, updatable=false)
     public BudLocation getBudLocation() {
         return this.budLocation;
@@ -130,7 +130,7 @@ public class PerHumanBalYear  implements java.io.Serializable {
         this.aprvdateMalia = aprvdateMalia;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perHumanBalYear")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perHumanBalYear")
     public Set<PerHumanPlan> getPerHumanPlans() {
         return this.perHumanPlans;
     }
@@ -139,7 +139,7 @@ public class PerHumanBalYear  implements java.io.Serializable {
         this.perHumanPlans = perHumanPlans;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perHumanBalYear")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perHumanBalYear")
     public Set<PerHumanBalJob> getPerHumanBalJobs() {
         return this.perHumanBalJobs;
     }
@@ -148,7 +148,7 @@ public class PerHumanBalYear  implements java.io.Serializable {
         this.perHumanBalJobs = perHumanBalJobs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perHumanBalYear")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perHumanBalYear")
     public Set<PerHumanBalJobNew> getPerHumanBalJobNews() {
         return this.perHumanBalJobNews;
     }
@@ -157,7 +157,7 @@ public class PerHumanBalYear  implements java.io.Serializable {
         this.perHumanBalJobNews = perHumanBalJobNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perHumanBalYear")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perHumanBalYear")
     public Set<PerEasementTrans> getPerEasementTranses() {
         return this.perEasementTranses;
     }
@@ -166,7 +166,7 @@ public class PerHumanBalYear  implements java.io.Serializable {
         this.perEasementTranses = perEasementTranses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perHumanBalYear")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perHumanBalYear")
     public Set<PerHumanBalJobDistributeN> getPerHumanBalJobDistributeNs() {
         return this.perHumanBalJobDistributeNs;
     }
@@ -175,7 +175,7 @@ public class PerHumanBalYear  implements java.io.Serializable {
         this.perHumanBalJobDistributeNs = perHumanBalJobDistributeNs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perHumanBalYear")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perHumanBalYear")
     public Set<PerHumanBalJobDistribute> getPerHumanBalJobDistributes() {
         return this.perHumanBalJobDistributes;
     }

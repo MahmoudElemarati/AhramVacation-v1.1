@@ -1,5 +1,5 @@
 package com.ahramattend.www._0_0_0_2_0_DB_Entities;
-// Generated Mar 9, 2021 2:52:01 PM by Hibernate Tools 4.3.1
+// Generated Feb 23, 2021 6:24:44 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.AttributeOverride;
@@ -47,10 +47,10 @@ public class PerDeptCode  implements java.io.Serializable {
 
     
     @AttributeOverrides( {
-        @AttributeOverride(name="deptCode", column=@Column(name="DEPT_CODE", nullable=false, precision=3, scale=0) ), 
-        @AttributeOverride(name="secCode", column=@Column(name="SEC_CODE", nullable=false, precision=3, scale=0) ), 
+        @AttributeOverride(name="locationCode", column=@Column(name="LOCATION_CODE", nullable=false, length=3) ), 
         @AttributeOverride(name="locCode", column=@Column(name="LOC_CODE", nullable=false, length=3) ), 
-        @AttributeOverride(name="locationCode", column=@Column(name="LOCATION_CODE", nullable=false, length=3) ) } )
+        @AttributeOverride(name="secCode", column=@Column(name="SEC_CODE", nullable=false, precision=3, scale=0) ), 
+        @AttributeOverride(name="deptCode", column=@Column(name="DEPT_CODE", nullable=false, precision=3, scale=0) ) } )
     public PerDeptCodeId getId() {
         return this.id;
     }
@@ -59,7 +59,7 @@ public class PerDeptCode  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="SEC_CODE", referencedColumnName="SEC_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="LOC_CODE", referencedColumnName="LOC_CODE", nullable=false, insertable=false, updatable=false), 

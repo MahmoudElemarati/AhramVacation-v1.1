@@ -1,5 +1,5 @@
 package com.ahramattend.www._0_0_0_2_0_DB_Entities;
-// Generated Mar 9, 2021 2:52:01 PM by Hibernate Tools 4.3.1
+// Generated Feb 23, 2021 6:24:44 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -29,9 +29,9 @@ public class PerDecisionSheet  implements java.io.Serializable {
 
 
      private PerDecisionSheetId id;
+     private BudLocation budLocation;
      private PerDecisionTypeCode perDecisionTypeCode;
      private PerDesicionSideCode perDesicionSideCode;
-     private BudLocation budLocation;
      private String decisionNo;
      private Date decisionDate;
      private String decisionSubject;
@@ -43,19 +43,19 @@ public class PerDecisionSheet  implements java.io.Serializable {
     }
 
 	
-    public PerDecisionSheet(PerDecisionSheetId id, PerDecisionTypeCode perDecisionTypeCode, PerDesicionSideCode perDesicionSideCode, BudLocation budLocation, String decisionNo, Date decisionDate) {
+    public PerDecisionSheet(PerDecisionSheetId id, BudLocation budLocation, PerDecisionTypeCode perDecisionTypeCode, PerDesicionSideCode perDesicionSideCode, String decisionNo, Date decisionDate) {
         this.id = id;
+        this.budLocation = budLocation;
         this.perDecisionTypeCode = perDecisionTypeCode;
         this.perDesicionSideCode = perDesicionSideCode;
-        this.budLocation = budLocation;
         this.decisionNo = decisionNo;
         this.decisionDate = decisionDate;
     }
-    public PerDecisionSheet(PerDecisionSheetId id, PerDecisionTypeCode perDecisionTypeCode, PerDesicionSideCode perDesicionSideCode, BudLocation budLocation, String decisionNo, Date decisionDate, String decisionSubject, String decisionSummary, Set<PerEmpDecisionSheet> perEmpDecisionSheets, Set<PerDecisionSheetImageDtl> perDecisionSheetImageDtls) {
+    public PerDecisionSheet(PerDecisionSheetId id, BudLocation budLocation, PerDecisionTypeCode perDecisionTypeCode, PerDesicionSideCode perDesicionSideCode, String decisionNo, Date decisionDate, String decisionSubject, String decisionSummary, Set<PerEmpDecisionSheet> perEmpDecisionSheets, Set<PerDecisionSheetImageDtl> perDecisionSheetImageDtls) {
        this.id = id;
+       this.budLocation = budLocation;
        this.perDecisionTypeCode = perDecisionTypeCode;
        this.perDesicionSideCode = perDesicionSideCode;
-       this.budLocation = budLocation;
        this.decisionNo = decisionNo;
        this.decisionDate = decisionDate;
        this.decisionSubject = decisionSubject;
@@ -78,7 +78,17 @@ public class PerDecisionSheet  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="LOCATION_CODE", nullable=false, insertable=false, updatable=false)
+    public BudLocation getBudLocation() {
+        return this.budLocation;
+    }
+    
+    public void setBudLocation(BudLocation budLocation) {
+        this.budLocation = budLocation;
+    }
+
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="DECISION_TYPE_CODE", nullable=false)
     public PerDecisionTypeCode getPerDecisionTypeCode() {
         return this.perDecisionTypeCode;
@@ -88,7 +98,7 @@ public class PerDecisionSheet  implements java.io.Serializable {
         this.perDecisionTypeCode = perDecisionTypeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="DESICION_SIDE_CODE", nullable=false)
     public PerDesicionSideCode getPerDesicionSideCode() {
         return this.perDesicionSideCode;
@@ -96,16 +106,6 @@ public class PerDecisionSheet  implements java.io.Serializable {
     
     public void setPerDesicionSideCode(PerDesicionSideCode perDesicionSideCode) {
         this.perDesicionSideCode = perDesicionSideCode;
-    }
-
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="LOCATION_CODE", nullable=false, insertable=false, updatable=false)
-    public BudLocation getBudLocation() {
-        return this.budLocation;
-    }
-    
-    public void setBudLocation(BudLocation budLocation) {
-        this.budLocation = budLocation;
     }
 
     
@@ -148,7 +148,7 @@ public class PerDecisionSheet  implements java.io.Serializable {
         this.decisionSummary = decisionSummary;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perDecisionSheet")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perDecisionSheet")
     public Set<PerEmpDecisionSheet> getPerEmpDecisionSheets() {
         return this.perEmpDecisionSheets;
     }
@@ -157,7 +157,7 @@ public class PerDecisionSheet  implements java.io.Serializable {
         this.perEmpDecisionSheets = perEmpDecisionSheets;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perDecisionSheet")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perDecisionSheet")
     public Set<PerDecisionSheetImageDtl> getPerDecisionSheetImageDtls() {
         return this.perDecisionSheetImageDtls;
     }

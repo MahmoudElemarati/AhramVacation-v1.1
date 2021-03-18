@@ -73,7 +73,7 @@ public class PayDeserveEmpFileDtlRuf  implements java.io.Serializable {
         this.accessSp = accessSp;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="OPEN_MM", referencedColumnName="OPEN_MM", nullable=false), 
         @JoinColumn(name="OPEN_YYYY", referencedColumnName="OPEN_YYYY", nullable=false), 
@@ -89,7 +89,7 @@ public class PayDeserveEmpFileDtlRuf  implements java.io.Serializable {
         this.payDeserveEmpFile = payDeserveEmpFile;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false)
     public PayEmployeeMaster getPayEmployeeMaster() {
         return this.payEmployeeMaster;
@@ -99,7 +99,7 @@ public class PayDeserveEmpFileDtlRuf  implements java.io.Serializable {
         this.payEmployeeMaster = payEmployeeMaster;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="USER_ID")
     public NvUsers getNvUsers() {
         return this.nvUsers;

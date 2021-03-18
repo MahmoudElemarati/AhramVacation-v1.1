@@ -117,7 +117,7 @@ public class PayExecutionDate  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="OPEN_MM", referencedColumnName="OPEN_MM"), 
         @JoinColumn(name="OPEN_YYYY", referencedColumnName="OPEN_YYYY") } )
@@ -129,7 +129,7 @@ public class PayExecutionDate  implements java.io.Serializable {
         this.payExecutionOpen = payExecutionOpen;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="METHOD_TYPE", nullable=false, insertable=false, updatable=false)
     public PayMethodType getPayMethodType() {
         return this.payMethodType;
@@ -399,7 +399,7 @@ public class PayExecutionDate  implements java.io.Serializable {
         this.insMaxVarLaw = insMaxVarLaw;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payExecutionDate")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payExecutionDate")
     public Set<PayExecutionSpecificEmp> getPayExecutionSpecificEmps() {
         return this.payExecutionSpecificEmps;
     }

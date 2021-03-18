@@ -90,7 +90,7 @@ public class PerMosqueCode  implements java.io.Serializable {
         this.mosqueCode = mosqueCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false), 
         @JoinColumn(name="LOC_CODE", referencedColumnName="LOC_CODE", nullable=false), 
@@ -103,7 +103,7 @@ public class PerMosqueCode  implements java.io.Serializable {
         this.perLocationCodeDepartment = perLocationCodeDepartment;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GEHA_CODE")
     public PerMosqueGehaCode getPerMosqueGehaCode() {
         return this.perMosqueGehaCode;
@@ -113,7 +113,7 @@ public class PerMosqueCode  implements java.io.Serializable {
         this.perMosqueGehaCode = perMosqueGehaCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="KIND_CODE", nullable=false)
     public PerMosqueKindCode getPerMosqueKindCode() {
         return this.perMosqueKindCode;
@@ -243,7 +243,7 @@ public class PerMosqueCode  implements java.io.Serializable {
         this.decisionDate = decisionDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perMosqueCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perMosqueCode")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }
@@ -252,7 +252,7 @@ public class PerMosqueCode  implements java.io.Serializable {
         this.perEmploymentMasterses = perEmploymentMasterses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perMosqueCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perMosqueCode")
     public Set<PerEmpHistory> getPerEmpHistories() {
         return this.perEmpHistories;
     }

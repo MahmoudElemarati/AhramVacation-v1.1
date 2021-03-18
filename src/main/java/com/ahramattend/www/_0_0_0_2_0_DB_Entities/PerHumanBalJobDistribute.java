@@ -93,7 +93,7 @@ public class PerHumanBalJobDistribute  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="GROUP_TYPE_CODE", referencedColumnName="GROUP_TYPE_CODE", nullable=false), 
         @JoinColumn(name="FISCAL_DEGREE_CODE", referencedColumnName="FISCAL_DEGREE_CODE", nullable=false) } )
@@ -105,7 +105,7 @@ public class PerHumanBalJobDistribute  implements java.io.Serializable {
         this.perGroupDegree = perGroupDegree;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="HUMAN_BAL_ID", referencedColumnName="HUMAN_BAL_ID", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false) } )
@@ -117,7 +117,7 @@ public class PerHumanBalJobDistribute  implements java.io.Serializable {
         this.perHumanBalYear = perHumanBalYear;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="JOB_CODE", nullable=false)
     public PerJobCode getPerJobCode() {
         return this.perJobCode;
@@ -127,7 +127,7 @@ public class PerHumanBalJobDistribute  implements java.io.Serializable {
         this.perJobCode = perJobCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORG_ID_MINUS")
     public PerOrganizationStructure getPerOrganizationStructureByOrgIdMinus() {
         return this.perOrganizationStructureByOrgIdMinus;
@@ -137,7 +137,7 @@ public class PerHumanBalJobDistribute  implements java.io.Serializable {
         this.perOrganizationStructureByOrgIdMinus = perOrganizationStructureByOrgIdMinus;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORG_ID", nullable=false)
     public PerOrganizationStructure getPerOrganizationStructureByOrgId() {
         return this.perOrganizationStructureByOrgId;
@@ -147,7 +147,7 @@ public class PerHumanBalJobDistribute  implements java.io.Serializable {
         this.perOrganizationStructureByOrgId = perOrganizationStructureByOrgId;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORGUNIT_CODE_MINUS")
     public PerOrgunitCode getPerOrgunitCodeByOrgunitCodeMinus() {
         return this.perOrgunitCodeByOrgunitCodeMinus;
@@ -157,7 +157,7 @@ public class PerHumanBalJobDistribute  implements java.io.Serializable {
         this.perOrgunitCodeByOrgunitCodeMinus = perOrgunitCodeByOrgunitCodeMinus;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORGUNIT_CODE", nullable=false)
     public PerOrgunitCode getPerOrgunitCodeByOrgunitCode() {
         return this.perOrgunitCodeByOrgunitCode;

@@ -1,5 +1,5 @@
 package com.ahramattend.www._0_0_0_2_0_DB_Entities;
-// Generated Mar 9, 2021 2:52:01 PM by Hibernate Tools 4.3.1
+// Generated Feb 23, 2021 6:24:44 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -14,25 +14,13 @@ public class AppTabsId  implements java.io.Serializable {
 
      private short applicationId;
      private int tabId;
-     private String tabName;
-     private String tabFafaIcon;
-     private Integer tabIndex;
 
     public AppTabsId() {
     }
 
-	
-    public AppTabsId(short applicationId, int tabId, String tabName) {
-        this.applicationId = applicationId;
-        this.tabId = tabId;
-        this.tabName = tabName;
-    }
-    public AppTabsId(short applicationId, int tabId, String tabName, String tabFafaIcon, Integer tabIndex) {
+    public AppTabsId(short applicationId, int tabId) {
        this.applicationId = applicationId;
        this.tabId = tabId;
-       this.tabName = tabName;
-       this.tabFafaIcon = tabFafaIcon;
-       this.tabIndex = tabIndex;
     }
    
 
@@ -57,36 +45,6 @@ public class AppTabsId  implements java.io.Serializable {
     }
 
 
-    @Column(name="TAB_NAME", nullable=false, length=50)
-    public String getTabName() {
-        return this.tabName;
-    }
-    
-    public void setTabName(String tabName) {
-        this.tabName = tabName;
-    }
-
-
-    @Column(name="TAB_FAFA_ICON", length=50)
-    public String getTabFafaIcon() {
-        return this.tabFafaIcon;
-    }
-    
-    public void setTabFafaIcon(String tabFafaIcon) {
-        this.tabFafaIcon = tabFafaIcon;
-    }
-
-
-    @Column(name="TAB_INDEX", precision=5, scale=0)
-    public Integer getTabIndex() {
-        return this.tabIndex;
-    }
-    
-    public void setTabIndex(Integer tabIndex) {
-        this.tabIndex = tabIndex;
-    }
-
-
    public boolean equals(Object other) {
          if ( (this == other ) ) return true;
 		 if ( (other == null ) ) return false;
@@ -94,10 +52,7 @@ public class AppTabsId  implements java.io.Serializable {
 		 AppTabsId castOther = ( AppTabsId ) other; 
          
 		 return (this.getApplicationId()==castOther.getApplicationId())
- && (this.getTabId()==castOther.getTabId())
- && ( (this.getTabName()==castOther.getTabName()) || ( this.getTabName()!=null && castOther.getTabName()!=null && this.getTabName().equals(castOther.getTabName()) ) )
- && ( (this.getTabFafaIcon()==castOther.getTabFafaIcon()) || ( this.getTabFafaIcon()!=null && castOther.getTabFafaIcon()!=null && this.getTabFafaIcon().equals(castOther.getTabFafaIcon()) ) )
- && ( (this.getTabIndex()==castOther.getTabIndex()) || ( this.getTabIndex()!=null && castOther.getTabIndex()!=null && this.getTabIndex().equals(castOther.getTabIndex()) ) );
+ && (this.getTabId()==castOther.getTabId());
    }
    
    public int hashCode() {
@@ -105,9 +60,6 @@ public class AppTabsId  implements java.io.Serializable {
          
          result = 37 * result + this.getApplicationId();
          result = 37 * result + this.getTabId();
-         result = 37 * result + ( getTabName() == null ? 0 : this.getTabName().hashCode() );
-         result = 37 * result + ( getTabFafaIcon() == null ? 0 : this.getTabFafaIcon().hashCode() );
-         result = 37 * result + ( getTabIndex() == null ? 0 : this.getTabIndex().hashCode() );
          return result;
    }   
 

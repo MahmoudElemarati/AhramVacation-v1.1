@@ -91,7 +91,7 @@ public class PerFiscalDegreeDetailNew  implements java.io.Serializable {
         this.fiscalDegreeCodeNew = fiscalDegreeCodeNew;
     }
 
-@OneToOne(fetch=FetchType.LAZY)@PrimaryKeyJoinColumn
+@OneToOne(fetch=FetchType.EAGER)@PrimaryKeyJoinColumn
     public PerFiscalDegreeCodeNew getPerFiscalDegreeCodeNew() {
         return this.perFiscalDegreeCodeNew;
     }

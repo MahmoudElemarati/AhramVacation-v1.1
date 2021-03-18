@@ -133,7 +133,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.jobCode = jobCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE_NEW")
     public PerFiscalDegreeCodeNew getPerFiscalDegreeCodeNew() {
         return this.perFiscalDegreeCodeNew;
@@ -143,7 +143,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perFiscalDegreeCodeNew = perFiscalDegreeCodeNew;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE")
     public PerFiscalDegreeCode getPerFiscalDegreeCode() {
         return this.perFiscalDegreeCode;
@@ -153,7 +153,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perFiscalDegreeCode = perFiscalDegreeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="GROUP_TYPE_CODE", referencedColumnName="GROUP_TYPE_CODE", insertable=false, updatable=false), 
         @JoinColumn(name="FISCAL_DEGREE_CODE", referencedColumnName="FISCAL_DEGREE_CODE", insertable=false, updatable=false) } )
@@ -165,7 +165,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perGroupDegree = perGroupDegree;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GROUP_TYPE_CODE", insertable=false, updatable=false)
     public PerGroupTypeCode getPerGroupTypeCode() {
         return this.perGroupTypeCode;
@@ -175,7 +175,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perGroupTypeCode = perGroupTypeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="JOB_TYPE_CODE", nullable=false)
     public PerJobTypeCode getPerJobTypeCode() {
         return this.perJobTypeCode;
@@ -305,7 +305,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.agz = agz;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCode")
     public Set<PerEmpPromotionRejectNew> getPerEmpPromotionRejectNews() {
         return this.perEmpPromotionRejectNews;
     }
@@ -314,7 +314,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perEmpPromotionRejectNews = perEmpPromotionRejectNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCode")
     public Set<PerJobDetail> getPerJobDetails() {
         return this.perJobDetails;
     }
@@ -323,7 +323,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perJobDetails = perJobDetails;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCode")
     public Set<PerHumanBalJobDistribute> getPerHumanBalJobDistributes() {
         return this.perHumanBalJobDistributes;
     }
@@ -332,7 +332,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perHumanBalJobDistributes = perHumanBalJobDistributes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCode")
     public Set<PerPromotionTrans> getPerPromotionTranses() {
         return this.perPromotionTranses;
     }
@@ -341,7 +341,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perPromotionTranses = perPromotionTranses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCode")
     public Set<PerAnnualEvalEmp> getPerAnnualEvalEmps() {
         return this.perAnnualEvalEmps;
     }
@@ -350,7 +350,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perAnnualEvalEmps = perAnnualEvalEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCode")
     public Set<PerAnnualEvalModelEmp> getPerAnnualEvalModelEmps() {
         return this.perAnnualEvalModelEmps;
     }
@@ -359,7 +359,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perAnnualEvalModelEmps = perAnnualEvalModelEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCode")
     public Set<PerHumanBalJobNew> getPerHumanBalJobNews() {
         return this.perHumanBalJobNews;
     }
@@ -368,7 +368,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perHumanBalJobNews = perHumanBalJobNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCodeByJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCodeByJobCode")
     public Set<PerEmpHistory> getPerEmpHistoriesForJobCode() {
         return this.perEmpHistoriesForJobCode;
     }
@@ -377,7 +377,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perEmpHistoriesForJobCode = perEmpHistoriesForJobCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCode")
     public Set<PerPromotionTransNew> getPerPromotionTransNews() {
         return this.perPromotionTransNews;
     }
@@ -386,7 +386,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perPromotionTransNews = perPromotionTransNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCode")
     public Set<PerHumanBalJobDistributeN> getPerHumanBalJobDistributeNs() {
         return this.perHumanBalJobDistributeNs;
     }
@@ -395,7 +395,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perHumanBalJobDistributeNs = perHumanBalJobDistributeNs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCodeByJobCodeTransfer")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCodeByJobCodeTransfer")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForJobCodeTransfer() {
         return this.perEmploymentMastersesForJobCodeTransfer;
     }
@@ -404,7 +404,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perEmploymentMastersesForJobCodeTransfer = perEmploymentMastersesForJobCodeTransfer;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCode")
     public Set<PerElawaTransaction> getPerElawaTransactions() {
         return this.perElawaTransactions;
     }
@@ -413,7 +413,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perElawaTransactions = perElawaTransactions;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCodeByJobCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCodeByJobCodeNew")
     public Set<PerEmpPromotion> getPerEmpPromotionsForJobCodeNew() {
         return this.perEmpPromotionsForJobCodeNew;
     }
@@ -422,7 +422,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perEmpPromotionsForJobCodeNew = perEmpPromotionsForJobCodeNew;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCode")
     public Set<PerHumanBalJob> getPerHumanBalJobs() {
         return this.perHumanBalJobs;
     }
@@ -431,7 +431,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perHumanBalJobs = perHumanBalJobs;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCodeByJobCodeNew")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCodeByJobCodeNew")
     public Set<PerEmpPromotionNew> getPerEmpPromotionNewsForJobCodeNew() {
         return this.perEmpPromotionNewsForJobCodeNew;
     }
@@ -440,7 +440,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perEmpPromotionNewsForJobCodeNew = perEmpPromotionNewsForJobCodeNew;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCodeByJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCodeByJobCode")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForJobCode() {
         return this.perEmploymentMastersesForJobCode;
     }
@@ -449,7 +449,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perEmploymentMastersesForJobCode = perEmploymentMastersesForJobCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCodeByJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCodeByJobCode")
     public Set<PerEmpPromotion> getPerEmpPromotionsForJobCode() {
         return this.perEmpPromotionsForJobCode;
     }
@@ -458,7 +458,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perEmpPromotionsForJobCode = perEmpPromotionsForJobCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCodeByJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCodeByJobCode")
     public Set<PerEmpPromotionNew> getPerEmpPromotionNewsForJobCode() {
         return this.perEmpPromotionNewsForJobCode;
     }
@@ -467,7 +467,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perEmpPromotionNewsForJobCode = perEmpPromotionNewsForJobCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCode")
     public Set<PerElawaTransactionReject> getPerElawaTransactionRejects() {
         return this.perElawaTransactionRejects;
     }
@@ -476,7 +476,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perElawaTransactionRejects = perElawaTransactionRejects;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCode")
     public Set<PerAnnualEvalModEmpTot> getPerAnnualEvalModEmpTots() {
         return this.perAnnualEvalModEmpTots;
     }
@@ -485,7 +485,7 @@ public class PerJobCode  implements java.io.Serializable {
         this.perAnnualEvalModEmpTots = perAnnualEvalModEmpTots;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobCodeByJobCodeTransfer")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobCodeByJobCodeTransfer")
     public Set<PerEmpHistory> getPerEmpHistoriesForJobCodeTransfer() {
         return this.perEmpHistoriesForJobCodeTransfer;
     }

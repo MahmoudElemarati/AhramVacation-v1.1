@@ -112,7 +112,7 @@ public class PerNationalCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perNationalCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perNationalCode")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }

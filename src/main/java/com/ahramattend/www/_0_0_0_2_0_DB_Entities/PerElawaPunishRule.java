@@ -68,7 +68,7 @@ public class PerElawaPunishRule  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="PUNISH_CODE", nullable=false, insertable=false, updatable=false)
     public PerPunishmentCode getPerPunishmentCode() {
         return this.perPunishmentCode;

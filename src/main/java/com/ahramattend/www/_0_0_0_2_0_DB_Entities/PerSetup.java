@@ -120,7 +120,7 @@ public class PerSetup  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="LOCATION_CODE", nullable=false, insertable=false, updatable=false)
     public BudLocation getBudLocation() {
         return this.budLocation;

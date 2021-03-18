@@ -78,7 +78,7 @@ public class PerHumanActivity  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="HUMAN_BAL_ID", referencedColumnName="HUMAN_BAL_ID", nullable=false, insertable=false, updatable=false), 
@@ -151,7 +151,7 @@ public class PerHumanActivity  implements java.io.Serializable {
         this.actNote = actNote;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perHumanActivity")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perHumanActivity")
     public Set<PerHumanActivityFollow> getPerHumanActivityFollows() {
         return this.perHumanActivityFollows;
     }

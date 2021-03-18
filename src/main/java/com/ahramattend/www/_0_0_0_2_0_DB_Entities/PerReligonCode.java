@@ -148,7 +148,7 @@ public class PerReligonCode  implements java.io.Serializable {
         this.delayHour = delayHour;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perReligonCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perReligonCode")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }

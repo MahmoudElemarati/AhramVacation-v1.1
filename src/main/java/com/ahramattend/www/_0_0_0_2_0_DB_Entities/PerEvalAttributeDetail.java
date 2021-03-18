@@ -64,7 +64,7 @@ public class PerEvalAttributeDetail  implements java.io.Serializable {
         this.serialNo = serialNo;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE_NEW")
     public PerFiscalDegreeCodeNew getPerFiscalDegreeCodeNew() {
         return this.perFiscalDegreeCodeNew;
@@ -74,7 +74,7 @@ public class PerEvalAttributeDetail  implements java.io.Serializable {
         this.perFiscalDegreeCodeNew = perFiscalDegreeCodeNew;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ATTRIBUTE_NO", nullable=false)
     public PerEvalAttribute getPerEvalAttribute() {
         return this.perEvalAttribute;
@@ -84,7 +84,7 @@ public class PerEvalAttributeDetail  implements java.io.Serializable {
         this.perEvalAttribute = perEvalAttribute;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FISCAL_DEGREE_CODE")
     public PerFiscalDegreeCode getPerFiscalDegreeCode() {
         return this.perFiscalDegreeCode;
@@ -94,7 +94,7 @@ public class PerEvalAttributeDetail  implements java.io.Serializable {
         this.perFiscalDegreeCode = perFiscalDegreeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GROUP_TYPE_CODE")
     public PerGroupTypeCode getPerGroupTypeCode() {
         return this.perGroupTypeCode;
@@ -104,7 +104,7 @@ public class PerEvalAttributeDetail  implements java.io.Serializable {
         this.perGroupTypeCode = perGroupTypeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="JOB_TYPE_CODE")
     public PerJobTypeCode getPerJobTypeCode() {
         return this.perJobTypeCode;
@@ -124,7 +124,7 @@ public class PerEvalAttributeDetail  implements java.io.Serializable {
         this.evalDegree = evalDegree;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalAttributeDetail")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalAttributeDetail")
     public Set<PerAnnualEvalEmpDetail> getPerAnnualEvalEmpDetails() {
         return this.perAnnualEvalEmpDetails;
     }

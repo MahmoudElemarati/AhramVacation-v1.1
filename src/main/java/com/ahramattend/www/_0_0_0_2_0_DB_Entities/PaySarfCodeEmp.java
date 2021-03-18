@@ -60,7 +60,7 @@ public class PaySarfCodeEmp  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false)
     public PayEmployeeMaster getPayEmployeeMaster() {
         return this.payEmployeeMaster;
@@ -70,7 +70,7 @@ public class PaySarfCodeEmp  implements java.io.Serializable {
         this.payEmployeeMaster = payEmployeeMaster;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="SARF_CODE", nullable=false, insertable=false, updatable=false)
     public PaySarfCode getPaySarfCode() {
         return this.paySarfCode;

@@ -80,7 +80,7 @@ public class PayExecutionOpen  implements java.io.Serializable {
         this.rmrk = rmrk;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payExecutionOpen")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payExecutionOpen")
     public Set<PayExecutionDate> getPayExecutionDates() {
         return this.payExecutionDates;
     }
@@ -89,7 +89,7 @@ public class PayExecutionOpen  implements java.io.Serializable {
         this.payExecutionDates = payExecutionDates;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payExecutionOpen")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payExecutionOpen")
     public Set<PayDeserveEmp> getPayDeserveEmps() {
         return this.payDeserveEmps;
     }
@@ -98,7 +98,7 @@ public class PayExecutionOpen  implements java.io.Serializable {
         this.payDeserveEmps = payDeserveEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payExecutionOpen")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payExecutionOpen")
     public Set<PayDeserveEmpFile> getPayDeserveEmpFiles() {
         return this.payDeserveEmpFiles;
     }

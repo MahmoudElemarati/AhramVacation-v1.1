@@ -80,7 +80,7 @@ public class PerExternalSideCode  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="COUNTRY_CODE", nullable=false, insertable=false, updatable=false)
     public PerCountryCode getPerCountryCode() {
         return this.perCountryCode;
@@ -150,7 +150,7 @@ public class PerExternalSideCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perExternalSideCodeByPerehPerescFk")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perExternalSideCodeByPerehPerescFk")
     public Set<PerEmpHistory> getPerEmpHistoriesForPerehPerescFk() {
         return this.perEmpHistoriesForPerehPerescFk;
     }
@@ -159,7 +159,7 @@ public class PerExternalSideCode  implements java.io.Serializable {
         this.perEmpHistoriesForPerehPerescFk = perEmpHistoriesForPerehPerescFk;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perExternalSideCodeByPerehPerescFromFk")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perExternalSideCodeByPerehPerescFromFk")
     public Set<PerEmpHistory> getPerEmpHistoriesForPerehPerescFromFk() {
         return this.perEmpHistoriesForPerehPerescFromFk;
     }
@@ -168,7 +168,7 @@ public class PerExternalSideCode  implements java.io.Serializable {
         this.perEmpHistoriesForPerehPerescFromFk = perEmpHistoriesForPerehPerescFromFk;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perExternalSideCodeByPeremPerescFromFk")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perExternalSideCodeByPeremPerescFromFk")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForPeremPerescFromFk() {
         return this.perEmploymentMastersesForPeremPerescFromFk;
     }
@@ -177,7 +177,7 @@ public class PerExternalSideCode  implements java.io.Serializable {
         this.perEmploymentMastersesForPeremPerescFromFk = perEmploymentMastersesForPeremPerescFromFk;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perExternalSideCodeByPeremPerescFk")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perExternalSideCodeByPeremPerescFk")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForPeremPerescFk() {
         return this.perEmploymentMastersesForPeremPerescFk;
     }

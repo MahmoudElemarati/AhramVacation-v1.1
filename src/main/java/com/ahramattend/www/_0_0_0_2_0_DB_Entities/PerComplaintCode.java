@@ -112,7 +112,7 @@ public class PerComplaintCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perComplaintCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perComplaintCode")
     public Set<PerComplaintData> getPerComplaintDatas() {
         return this.perComplaintDatas;
     }

@@ -75,7 +75,7 @@ public class PerQualSpecialist  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="SPECIALIST_CODE", nullable=false, insertable=false, updatable=false)
     public PerSpecialistCode getPerSpecialistCode() {
         return this.perSpecialistCode;
@@ -85,7 +85,7 @@ public class PerQualSpecialist  implements java.io.Serializable {
         this.perSpecialistCode = perSpecialistCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="QUAL_CODE", nullable=false, insertable=false, updatable=false)
     public PerQualCode getPerQualCode() {
         return this.perQualCode;
@@ -145,7 +145,7 @@ public class PerQualSpecialist  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perQualSpecialist")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perQualSpecialist")
     public Set<PerJobDetail> getPerJobDetails() {
         return this.perJobDetails;
     }
@@ -154,7 +154,7 @@ public class PerQualSpecialist  implements java.io.Serializable {
         this.perJobDetails = perJobDetails;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perQualSpecialist")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perQualSpecialist")
     public Set<PerEmpQualification> getPerEmpQualifications() {
         return this.perEmpQualifications;
     }

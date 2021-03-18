@@ -103,7 +103,7 @@ public class PerJobLaw  implements java.io.Serializable {
         this.lawKindSal = lawKindSal;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobLaw")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobLaw")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }
@@ -112,7 +112,7 @@ public class PerJobLaw  implements java.io.Serializable {
         this.perEmploymentMasterses = perEmploymentMasterses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobLaw")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobLaw")
     public Set<PerFiscalDegreeCodeNew> getPerFiscalDegreeCodeNews() {
         return this.perFiscalDegreeCodeNews;
     }
@@ -121,7 +121,7 @@ public class PerJobLaw  implements java.io.Serializable {
         this.perFiscalDegreeCodeNews = perFiscalDegreeCodeNews;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobLaw")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobLaw")
     public Set<PerEmpHistory> getPerEmpHistories() {
         return this.perEmpHistories;
     }

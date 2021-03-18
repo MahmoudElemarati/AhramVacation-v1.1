@@ -61,7 +61,7 @@ public class PayFinancialCode  implements java.io.Serializable {
         this.financialName = financialName;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payFinancialCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payFinancialCode")
     public Set<PayBandCode> getPayBandCodes() {
         return this.payBandCodes;
     }

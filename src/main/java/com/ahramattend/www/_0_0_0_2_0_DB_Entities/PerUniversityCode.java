@@ -114,7 +114,7 @@ public class PerUniversityCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perUniversityCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perUniversityCode")
     public Set<PerFacultyUniversity> getPerFacultyUniversities() {
         return this.perFacultyUniversities;
     }
@@ -123,7 +123,7 @@ public class PerUniversityCode  implements java.io.Serializable {
         this.perFacultyUniversities = perFacultyUniversities;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perUniversityCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perUniversityCode")
     public Set<PerEmpQualification> getPerEmpQualifications() {
         return this.perEmpQualifications;
     }

@@ -93,7 +93,7 @@ public class BudProjectSub  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="PROJECT_CODE", nullable=false, insertable=false, updatable=false)
     public BudProject getBudProject() {
         return this.budProject;
@@ -213,7 +213,7 @@ public class BudProjectSub  implements java.io.Serializable {
         this.lastUpdateTransaction = lastUpdateTransaction;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budProjectSubByPeremBudProjSFromFk")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budProjectSubByPeremBudProjSFromFk")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForPeremBudProjSFromFk() {
         return this.perEmploymentMastersesForPeremBudProjSFromFk;
     }
@@ -222,7 +222,7 @@ public class BudProjectSub  implements java.io.Serializable {
         this.perEmploymentMastersesForPeremBudProjSFromFk = perEmploymentMastersesForPeremBudProjSFromFk;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budProjectSub")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budProjectSub")
     public Set<PerAnnualEvalModel> getPerAnnualEvalModels() {
         return this.perAnnualEvalModels;
     }
@@ -231,7 +231,7 @@ public class BudProjectSub  implements java.io.Serializable {
         this.perAnnualEvalModels = perAnnualEvalModels;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budProjectSubByPerehBudProjSFromFk")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budProjectSubByPerehBudProjSFromFk")
     public Set<PerEmpHistory> getPerEmpHistoriesForPerehBudProjSFromFk() {
         return this.perEmpHistoriesForPerehBudProjSFromFk;
     }
@@ -240,7 +240,7 @@ public class BudProjectSub  implements java.io.Serializable {
         this.perEmpHistoriesForPerehBudProjSFromFk = perEmpHistoriesForPerehBudProjSFromFk;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budProjectSub")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budProjectSub")
     public Set<PerAnnualEval> getPerAnnualEvals() {
         return this.perAnnualEvals;
     }
@@ -249,7 +249,7 @@ public class BudProjectSub  implements java.io.Serializable {
         this.perAnnualEvals = perAnnualEvals;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budProjectSubByPeremBudProjSFk")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budProjectSubByPeremBudProjSFk")
     public Set<PerEmploymentMasters> getPerEmploymentMastersesForPeremBudProjSFk() {
         return this.perEmploymentMastersesForPeremBudProjSFk;
     }
@@ -258,7 +258,7 @@ public class BudProjectSub  implements java.io.Serializable {
         this.perEmploymentMastersesForPeremBudProjSFk = perEmploymentMastersesForPeremBudProjSFk;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budProjectSubByPerehBudProjSFk")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budProjectSubByPerehBudProjSFk")
     public Set<PerEmpHistory> getPerEmpHistoriesForPerehBudProjSFk() {
         return this.perEmpHistoriesForPerehBudProjSFk;
     }

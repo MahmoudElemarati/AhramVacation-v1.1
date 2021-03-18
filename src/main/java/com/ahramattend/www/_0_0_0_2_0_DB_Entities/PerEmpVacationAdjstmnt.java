@@ -88,7 +88,7 @@ public class PerEmpVacationAdjstmnt  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="EMPLOYEE_ID", referencedColumnName="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="VACATION_CODE", referencedColumnName="VACATION_CODE", nullable=false, insertable=false, updatable=false), 

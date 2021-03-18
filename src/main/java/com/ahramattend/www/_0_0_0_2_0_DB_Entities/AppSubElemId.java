@@ -1,5 +1,5 @@
 package com.ahramattend.www._0_0_0_2_0_DB_Entities;
-// Generated Mar 9, 2021 2:52:01 PM by Hibernate Tools 4.3.1
+// Generated Feb 23, 2021 6:24:44 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -16,27 +16,15 @@ public class AppSubElemId  implements java.io.Serializable {
      private int tabId;
      private int subTabId;
      private int elementId;
-     private String elementName;
-     private String elementType;
 
     public AppSubElemId() {
     }
 
-	
-    public AppSubElemId(short applicationId, int tabId, int subTabId, int elementId, String elementName) {
-        this.applicationId = applicationId;
-        this.tabId = tabId;
-        this.subTabId = subTabId;
-        this.elementId = elementId;
-        this.elementName = elementName;
-    }
-    public AppSubElemId(short applicationId, int tabId, int subTabId, int elementId, String elementName, String elementType) {
+    public AppSubElemId(short applicationId, int tabId, int subTabId, int elementId) {
        this.applicationId = applicationId;
        this.tabId = tabId;
        this.subTabId = subTabId;
        this.elementId = elementId;
-       this.elementName = elementName;
-       this.elementType = elementType;
     }
    
 
@@ -81,26 +69,6 @@ public class AppSubElemId  implements java.io.Serializable {
     }
 
 
-    @Column(name="ELEMENT_NAME", nullable=false, length=20)
-    public String getElementName() {
-        return this.elementName;
-    }
-    
-    public void setElementName(String elementName) {
-        this.elementName = elementName;
-    }
-
-
-    @Column(name="ELEMENT_TYPE", length=10)
-    public String getElementType() {
-        return this.elementType;
-    }
-    
-    public void setElementType(String elementType) {
-        this.elementType = elementType;
-    }
-
-
    public boolean equals(Object other) {
          if ( (this == other ) ) return true;
 		 if ( (other == null ) ) return false;
@@ -110,9 +78,7 @@ public class AppSubElemId  implements java.io.Serializable {
 		 return (this.getApplicationId()==castOther.getApplicationId())
  && (this.getTabId()==castOther.getTabId())
  && (this.getSubTabId()==castOther.getSubTabId())
- && (this.getElementId()==castOther.getElementId())
- && ( (this.getElementName()==castOther.getElementName()) || ( this.getElementName()!=null && castOther.getElementName()!=null && this.getElementName().equals(castOther.getElementName()) ) )
- && ( (this.getElementType()==castOther.getElementType()) || ( this.getElementType()!=null && castOther.getElementType()!=null && this.getElementType().equals(castOther.getElementType()) ) );
+ && (this.getElementId()==castOther.getElementId());
    }
    
    public int hashCode() {
@@ -122,8 +88,6 @@ public class AppSubElemId  implements java.io.Serializable {
          result = 37 * result + this.getTabId();
          result = 37 * result + this.getSubTabId();
          result = 37 * result + this.getElementId();
-         result = 37 * result + ( getElementName() == null ? 0 : this.getElementName().hashCode() );
-         result = 37 * result + ( getElementType() == null ? 0 : this.getElementType().hashCode() );
          return result;
    }   
 

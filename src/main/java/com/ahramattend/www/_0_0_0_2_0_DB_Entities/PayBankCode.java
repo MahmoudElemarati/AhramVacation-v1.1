@@ -125,7 +125,7 @@ public class PayBankCode  implements java.io.Serializable {
         this.chkSide = chkSide;
     }
 
-@ManyToMany(fetch=FetchType.LAZY, mappedBy="payBankCodes")
+@ManyToMany(fetch=FetchType.EAGER, mappedBy="payBankCodes")
     public Set<PaySarfCode> getPaySarfCodes() {
         return this.paySarfCodes;
     }
@@ -134,7 +134,7 @@ public class PayBankCode  implements java.io.Serializable {
         this.paySarfCodes = paySarfCodes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payBankCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payBankCode")
     public Set<PayExecutionSpecificEmp> getPayExecutionSpecificEmps() {
         return this.payExecutionSpecificEmps;
     }

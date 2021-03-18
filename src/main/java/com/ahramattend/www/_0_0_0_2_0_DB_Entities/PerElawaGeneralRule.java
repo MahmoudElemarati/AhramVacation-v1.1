@@ -49,7 +49,7 @@ public class PerElawaGeneralRule  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GENERAL_CODE", nullable=false, insertable=false, updatable=false)
     public PerGeneralCode getPerGeneralCode() {
         return this.perGeneralCode;

@@ -74,7 +74,7 @@ public class PayMethodFile  implements java.io.Serializable {
         this.fileNameEng = fileNameEng;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payMethodFile")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payMethodFile")
     public Set<PayMethodFileType> getPayMethodFileTypes() {
         return this.payMethodFileTypes;
     }
@@ -83,7 +83,7 @@ public class PayMethodFile  implements java.io.Serializable {
         this.payMethodFileTypes = payMethodFileTypes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payMethodFile")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payMethodFile")
     public Set<PayMethodFileDtl> getPayMethodFileDtls() {
         return this.payMethodFileDtls;
     }

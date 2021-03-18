@@ -75,7 +75,7 @@ public class PayFinancialStatusCode  implements java.io.Serializable {
         this.statusType = statusType;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payFinancialStatusCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payFinancialStatusCode")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }
@@ -84,7 +84,7 @@ public class PayFinancialStatusCode  implements java.io.Serializable {
         this.perEmploymentMasterses = perEmploymentMasterses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payFinancialStatusCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payFinancialStatusCode")
     public Set<PayFinancialGroupType> getPayFinancialGroupTypes() {
         return this.payFinancialGroupTypes;
     }

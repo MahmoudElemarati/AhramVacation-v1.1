@@ -114,7 +114,7 @@ public class PerJobTypeCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobTypeCode")
     public Set<PerJobCode> getPerJobCodes() {
         return this.perJobCodes;
     }
@@ -123,7 +123,7 @@ public class PerJobTypeCode  implements java.io.Serializable {
         this.perJobCodes = perJobCodes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perJobTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perJobTypeCode")
     public Set<PerEvalAttributeDetail> getPerEvalAttributeDetails() {
         return this.perEvalAttributeDetails;
     }

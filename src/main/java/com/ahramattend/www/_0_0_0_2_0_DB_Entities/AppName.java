@@ -1,5 +1,5 @@
 package com.ahramattend.www._0_0_0_2_0_DB_Entities;
-// Generated Mar 9, 2021 2:52:01 PM by Hibernate Tools 4.3.1
+// Generated Feb 23, 2021 6:24:44 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -25,6 +25,7 @@ public class AppName  implements java.io.Serializable {
      private String applicationName;
      private Short applicationIndex;
      private Set<AppReqTypeJ111> appReqTypeJ111s = new HashSet<AppReqTypeJ111>(0);
+     private Set<AppTabs> appTabses = new HashSet<AppTabs>(0);
 
     public AppName() {
     }
@@ -34,11 +35,12 @@ public class AppName  implements java.io.Serializable {
         this.applicationId = applicationId;
         this.applicationName = applicationName;
     }
-    public AppName(short applicationId, String applicationName, Short applicationIndex, Set<AppReqTypeJ111> appReqTypeJ111s) {
+    public AppName(short applicationId, String applicationName, Short applicationIndex, Set<AppReqTypeJ111> appReqTypeJ111s, Set<AppTabs> appTabses) {
        this.applicationId = applicationId;
        this.applicationName = applicationName;
        this.applicationIndex = applicationIndex;
        this.appReqTypeJ111s = appReqTypeJ111s;
+       this.appTabses = appTabses;
     }
    
      @Id 
@@ -73,13 +75,22 @@ public class AppName  implements java.io.Serializable {
         this.applicationIndex = applicationIndex;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="appName")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="appName")
     public Set<AppReqTypeJ111> getAppReqTypeJ111s() {
         return this.appReqTypeJ111s;
     }
     
     public void setAppReqTypeJ111s(Set<AppReqTypeJ111> appReqTypeJ111s) {
         this.appReqTypeJ111s = appReqTypeJ111s;
+    }
+
+@OneToMany(fetch=FetchType.EAGER, mappedBy="appName")
+    public Set<AppTabs> getAppTabses() {
+        return this.appTabses;
+    }
+    
+    public void setAppTabses(Set<AppTabs> appTabses) {
+        this.appTabses = appTabses;
     }
 
 

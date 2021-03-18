@@ -1,5 +1,5 @@
 package com.ahramattend.www._0_0_0_2_0_DB_Entities;
-// Generated Mar 9, 2021 2:52:01 PM by Hibernate Tools 4.3.1
+// Generated Feb 23, 2021 6:24:44 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -97,7 +97,7 @@ public class PerDecisionTypeCode  implements java.io.Serializable {
         this.decisionKind = decisionKind;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perDecisionTypeCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perDecisionTypeCode")
     public Set<PerDecisionSheet> getPerDecisionSheets() {
         return this.perDecisionSheets;
     }

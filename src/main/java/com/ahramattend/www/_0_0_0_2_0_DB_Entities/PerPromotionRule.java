@@ -83,7 +83,7 @@ public class PerPromotionRule  implements java.io.Serializable {
         this.promotionType = promotionType;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GENERAL_CODE", nullable=false)
     public PerGeneralCode getPerGeneralCode() {
         return this.perGeneralCode;
@@ -193,7 +193,7 @@ public class PerPromotionRule  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perPromotionRule")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perPromotionRule")
     public Set<PerPromotionTrans> getPerPromotionTranses() {
         return this.perPromotionTranses;
     }
@@ -202,7 +202,7 @@ public class PerPromotionRule  implements java.io.Serializable {
         this.perPromotionTranses = perPromotionTranses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perPromotionRule")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perPromotionRule")
     public Set<PerPromotionTransNew> getPerPromotionTransNews() {
         return this.perPromotionTransNews;
     }

@@ -83,7 +83,7 @@ public class PerEmpQualification  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="SPECIALIST_CODE")
     public PerSpecialistCode getPerSpecialistCode() {
         return this.perSpecialistCode;
@@ -93,7 +93,7 @@ public class PerEmpQualification  implements java.io.Serializable {
         this.perSpecialistCode = perSpecialistCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="UNIVERSITY_CODE")
     public PerUniversityCode getPerUniversityCode() {
         return this.perUniversityCode;
@@ -103,7 +103,7 @@ public class PerEmpQualification  implements java.io.Serializable {
         this.perUniversityCode = perUniversityCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false)
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
@@ -113,7 +113,7 @@ public class PerEmpQualification  implements java.io.Serializable {
         this.perEmploymentMasters = perEmploymentMasters;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FACULTY_CODE")
     public PerFacultyCode getPerFacultyCode() {
         return this.perFacultyCode;
@@ -123,7 +123,7 @@ public class PerEmpQualification  implements java.io.Serializable {
         this.perFacultyCode = perFacultyCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="FACULTY_CODE", referencedColumnName="FACULTY_CODE", insertable=false, updatable=false), 
         @JoinColumn(name="UNIVERSITY_CODE", referencedColumnName="UNIVERSITY_CODE", insertable=false, updatable=false) } )
@@ -135,7 +135,7 @@ public class PerEmpQualification  implements java.io.Serializable {
         this.perFacultyUniversity = perFacultyUniversity;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="QUAL_CODE", nullable=false)
     public PerQualCode getPerQualCode() {
         return this.perQualCode;
@@ -145,7 +145,7 @@ public class PerEmpQualification  implements java.io.Serializable {
         this.perQualCode = perQualCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="QUAL_CODE", referencedColumnName="QUAL_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="FACULTY_CODE", referencedColumnName="FACULTY_CODE", insertable=false, updatable=false) } )
@@ -157,7 +157,7 @@ public class PerEmpQualification  implements java.io.Serializable {
         this.perQualFaculty = perQualFaculty;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="QUAL_CODE", referencedColumnName="QUAL_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="SPECIALIST_CODE", referencedColumnName="SPECIALIST_CODE", insertable=false, updatable=false) } )

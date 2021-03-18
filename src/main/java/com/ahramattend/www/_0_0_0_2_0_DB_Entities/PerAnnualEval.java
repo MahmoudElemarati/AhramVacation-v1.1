@@ -77,7 +77,7 @@ public class PerAnnualEval  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="LOCATION_CODE", referencedColumnName="LOCATION_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="ANNUAL_ID", referencedColumnName="ANNUAL_ID", nullable=false, insertable=false, updatable=false) } )
@@ -89,7 +89,7 @@ public class PerAnnualEval  implements java.io.Serializable {
         this.perAnnualEvalYear = perAnnualEvalYear;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORG_ID")
     public PerOrganizationStructure getPerOrganizationStructure() {
         return this.perOrganizationStructure;
@@ -99,7 +99,7 @@ public class PerAnnualEval  implements java.io.Serializable {
         this.perOrganizationStructure = perOrganizationStructure;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ORGUNIT_CODE")
     public PerOrgunitCode getPerOrgunitCode() {
         return this.perOrgunitCode;
@@ -109,7 +109,7 @@ public class PerAnnualEval  implements java.io.Serializable {
         this.perOrgunitCode = perOrgunitCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="PROJECT_CODE", referencedColumnName="PROJECT_CODE"), 
         @JoinColumn(name="PROJECT_SUB_CODE", referencedColumnName="PROJECT_SUB_CODE") } )
@@ -161,7 +161,7 @@ public class PerAnnualEval  implements java.io.Serializable {
         this.commityNo = commityNo;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perAnnualEval")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perAnnualEval")
     public Set<PerAnnualEvalEmp> getPerAnnualEvalEmps() {
         return this.perAnnualEvalEmps;
     }

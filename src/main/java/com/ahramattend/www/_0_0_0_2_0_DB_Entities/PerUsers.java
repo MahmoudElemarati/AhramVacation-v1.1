@@ -57,7 +57,7 @@ public class PerUsers  implements java.io.Serializable {
         this.employeeId = employeeId;
     }
 
-@OneToOne(fetch=FetchType.LAZY)@PrimaryKeyJoinColumn
+@OneToOne(fetch=FetchType.EAGER)@PrimaryKeyJoinColumn
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
     }

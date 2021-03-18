@@ -87,7 +87,7 @@ public class PerEmpVacationReqJava  implements java.io.Serializable {
         this.vacTransSp = vacTransSp;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="VACATION_CODE", nullable=false)
     public PerVacationCode getPerVacationCode() {
         return this.perVacationCode;
@@ -97,7 +97,7 @@ public class PerEmpVacationReqJava  implements java.io.Serializable {
         this.perVacationCode = perVacationCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID_BOSS")
     public PerEmploymentMasters getPerEmploymentMastersByEmployeeIdBoss() {
         return this.perEmploymentMastersByEmployeeIdBoss;
@@ -107,7 +107,7 @@ public class PerEmpVacationReqJava  implements java.io.Serializable {
         this.perEmploymentMastersByEmployeeIdBoss = perEmploymentMastersByEmployeeIdBoss;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false)
     public PerEmploymentMasters getPerEmploymentMastersByEmployeeId() {
         return this.perEmploymentMastersByEmployeeId;

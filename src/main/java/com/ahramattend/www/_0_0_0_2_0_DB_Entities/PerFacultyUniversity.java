@@ -73,7 +73,7 @@ public class PerFacultyUniversity  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="UNIVERSITY_CODE", nullable=false, insertable=false, updatable=false)
     public PerUniversityCode getPerUniversityCode() {
         return this.perUniversityCode;
@@ -83,7 +83,7 @@ public class PerFacultyUniversity  implements java.io.Serializable {
         this.perUniversityCode = perUniversityCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="FACULTY_CODE", nullable=false, insertable=false, updatable=false)
     public PerFacultyCode getPerFacultyCode() {
         return this.perFacultyCode;
@@ -143,7 +143,7 @@ public class PerFacultyUniversity  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perFacultyUniversity")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perFacultyUniversity")
     public Set<PerEmpQualification> getPerEmpQualifications() {
         return this.perEmpQualifications;
     }

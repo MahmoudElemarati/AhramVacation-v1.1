@@ -57,7 +57,7 @@ public class PerVacationRuleDoc  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="VACATION_CODE", nullable=false, insertable=false, updatable=false)
     public PerVacationCode getPerVacationCode() {
         return this.perVacationCode;
@@ -67,7 +67,7 @@ public class PerVacationRuleDoc  implements java.io.Serializable {
         this.perVacationCode = perVacationCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="VAC_DOC_CODE", nullable=false, insertable=false, updatable=false)
     public PerVacDocCode getPerVacDocCode() {
         return this.perVacDocCode;

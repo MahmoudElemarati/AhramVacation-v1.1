@@ -64,7 +64,7 @@ public class PayFinancialGroupBand  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="BAND_TYPE", referencedColumnName="BAND_TYPE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="BAND_CODE", referencedColumnName="BAND_CODE", nullable=false, insertable=false, updatable=false) } )
@@ -76,7 +76,7 @@ public class PayFinancialGroupBand  implements java.io.Serializable {
         this.payBandCode = payBandCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="STATUS_CODE", referencedColumnName="STATUS_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="STATUS_GROUP", referencedColumnName="STATUS_GROUP", nullable=false, insertable=false, updatable=false) } )
@@ -88,7 +88,7 @@ public class PayFinancialGroupBand  implements java.io.Serializable {
         this.payFinancialGroupType = payFinancialGroupType;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="METHOD_TYPE", nullable=false, insertable=false, updatable=false)
     public PayMethodType getPayMethodType() {
         return this.payMethodType;

@@ -1,5 +1,5 @@
 package com.ahramattend.www._0_0_0_2_0_DB_Entities;
-// Generated Mar 9, 2021 2:52:01 PM by Hibernate Tools 4.3.1
+// Generated Feb 23, 2021 6:24:44 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -30,7 +30,7 @@ public class PerAttendanceWrkTypeDetail  implements java.io.Serializable {
      private PerAttendanceWrkTypeCode perAttendanceWrkTypeCode;
      private String remark;
      private byte workDays;
-     private boolean workDaysType;
+     private Byte workDaysType;
      private BigDecimal salaryRatio;
      private byte attendanceMin;
      private byte attendanceHour;
@@ -48,7 +48,7 @@ public class PerAttendanceWrkTypeDetail  implements java.io.Serializable {
     }
 
 	
-    public PerAttendanceWrkTypeDetail(PerAttendanceWrkTypeDetailId id, PerAttendanceWrkTypeCode perAttendanceWrkTypeCode, byte workDays, boolean workDaysType, byte attendanceMin, byte attendanceHour, byte dismissMin, byte dismissHour) {
+    public PerAttendanceWrkTypeDetail(PerAttendanceWrkTypeDetailId id, PerAttendanceWrkTypeCode perAttendanceWrkTypeCode, byte workDays, Byte workDaysType, byte attendanceMin, byte attendanceHour, byte dismissMin, byte dismissHour) {
         this.id = id;
         this.perAttendanceWrkTypeCode = perAttendanceWrkTypeCode;
         this.workDays = workDays;
@@ -58,7 +58,7 @@ public class PerAttendanceWrkTypeDetail  implements java.io.Serializable {
         this.dismissMin = dismissMin;
         this.dismissHour = dismissHour;
     }
-    public PerAttendanceWrkTypeDetail(PerAttendanceWrkTypeDetailId id, PerAttendanceWrkTypeCode perAttendanceWrkTypeCode, String remark, byte workDays, boolean workDaysType, BigDecimal salaryRatio, byte attendanceMin, byte attendanceHour, Byte attendanceDelayMin, Byte attendanceDelayHour, byte dismissMin, byte dismissHour, Byte dismissEarlyMin, Byte dismissEarlyHour, BigDecimal vacationRatio, Set<PerEmpHistory> perEmpHistories, Set<PerEmploymentMasters> perEmploymentMasterses) {
+    public PerAttendanceWrkTypeDetail(PerAttendanceWrkTypeDetailId id, PerAttendanceWrkTypeCode perAttendanceWrkTypeCode, String remark, byte workDays, Byte workDaysType, BigDecimal salaryRatio, byte attendanceMin, byte attendanceHour, Byte attendanceDelayMin, Byte attendanceDelayHour, byte dismissMin, byte dismissHour, Byte dismissEarlyMin, Byte dismissEarlyHour, BigDecimal vacationRatio, Set<PerEmpHistory> perEmpHistories, Set<PerEmploymentMasters> perEmploymentMasterses) {
        this.id = id;
        this.perAttendanceWrkTypeCode = perAttendanceWrkTypeCode;
        this.remark = remark;
@@ -92,7 +92,7 @@ public class PerAttendanceWrkTypeDetail  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="WORK_TYPE_CODE", nullable=false, insertable=false, updatable=false)
     public PerAttendanceWrkTypeCode getPerAttendanceWrkTypeCode() {
         return this.perAttendanceWrkTypeCode;
@@ -124,11 +124,11 @@ public class PerAttendanceWrkTypeDetail  implements java.io.Serializable {
 
     
     @Column(name="WORK_DAYS_TYPE", nullable=false, precision=1, scale=0)
-    public boolean isWorkDaysType() {
+    public Byte getWorkDaysType() {
         return this.workDaysType;
     }
     
-    public void setWorkDaysType(boolean workDaysType) {
+    public void setWorkDaysType(Byte workDaysType) {
         this.workDaysType = workDaysType;
     }
 
@@ -232,7 +232,7 @@ public class PerAttendanceWrkTypeDetail  implements java.io.Serializable {
         this.vacationRatio = vacationRatio;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perAttendanceWrkTypeDetail")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perAttendanceWrkTypeDetail")
     public Set<PerEmpHistory> getPerEmpHistories() {
         return this.perEmpHistories;
     }
@@ -241,7 +241,7 @@ public class PerAttendanceWrkTypeDetail  implements java.io.Serializable {
         this.perEmpHistories = perEmpHistories;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perAttendanceWrkTypeDetail")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perAttendanceWrkTypeDetail")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }

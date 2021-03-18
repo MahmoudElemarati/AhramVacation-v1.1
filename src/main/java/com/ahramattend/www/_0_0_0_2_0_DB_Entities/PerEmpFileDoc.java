@@ -64,7 +64,7 @@ public class PerEmpFileDoc  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="EMPLOYEE_ID", referencedColumnName="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="FILE_SERIAL", referencedColumnName="FILE_SERIAL", nullable=false, insertable=false, updatable=false) } )

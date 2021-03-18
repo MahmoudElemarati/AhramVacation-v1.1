@@ -1,5 +1,5 @@
 package com.ahramattend.www._0_0_0_2_0_DB_Entities;
-// Generated Mar 9, 2021 2:52:01 PM by Hibernate Tools 4.3.1
+// Generated Feb 23, 2021 6:24:44 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -12,40 +12,30 @@ import javax.persistence.Embeddable;
 public class PerDeptCodeId  implements java.io.Serializable {
 
 
-     private short deptCode;
-     private short secCode;
-     private String locCode;
      private String locationCode;
+     private String locCode;
+     private short secCode;
+     private short deptCode;
 
     public PerDeptCodeId() {
     }
 
-    public PerDeptCodeId(short deptCode, short secCode, String locCode, String locationCode) {
-       this.deptCode = deptCode;
-       this.secCode = secCode;
-       this.locCode = locCode;
+    public PerDeptCodeId(String locationCode, String locCode, short secCode, short deptCode) {
        this.locationCode = locationCode;
+       this.locCode = locCode;
+       this.secCode = secCode;
+       this.deptCode = deptCode;
     }
    
 
 
-    @Column(name="DEPT_CODE", nullable=false, precision=3, scale=0)
-    public short getDeptCode() {
-        return this.deptCode;
+    @Column(name="LOCATION_CODE", nullable=false, length=3)
+    public String getLocationCode() {
+        return this.locationCode;
     }
     
-    public void setDeptCode(short deptCode) {
-        this.deptCode = deptCode;
-    }
-
-
-    @Column(name="SEC_CODE", nullable=false, precision=3, scale=0)
-    public short getSecCode() {
-        return this.secCode;
-    }
-    
-    public void setSecCode(short secCode) {
-        this.secCode = secCode;
+    public void setLocationCode(String locationCode) {
+        this.locationCode = locationCode;
     }
 
 
@@ -59,13 +49,23 @@ public class PerDeptCodeId  implements java.io.Serializable {
     }
 
 
-    @Column(name="LOCATION_CODE", nullable=false, length=3)
-    public String getLocationCode() {
-        return this.locationCode;
+    @Column(name="SEC_CODE", nullable=false, precision=3, scale=0)
+    public short getSecCode() {
+        return this.secCode;
     }
     
-    public void setLocationCode(String locationCode) {
-        this.locationCode = locationCode;
+    public void setSecCode(short secCode) {
+        this.secCode = secCode;
+    }
+
+
+    @Column(name="DEPT_CODE", nullable=false, precision=3, scale=0)
+    public short getDeptCode() {
+        return this.deptCode;
+    }
+    
+    public void setDeptCode(short deptCode) {
+        this.deptCode = deptCode;
     }
 
 
@@ -75,19 +75,19 @@ public class PerDeptCodeId  implements java.io.Serializable {
 		 if ( !(other instanceof PerDeptCodeId) ) return false;
 		 PerDeptCodeId castOther = ( PerDeptCodeId ) other; 
          
-		 return (this.getDeptCode()==castOther.getDeptCode())
- && (this.getSecCode()==castOther.getSecCode())
+		 return ( (this.getLocationCode()==castOther.getLocationCode()) || ( this.getLocationCode()!=null && castOther.getLocationCode()!=null && this.getLocationCode().equals(castOther.getLocationCode()) ) )
  && ( (this.getLocCode()==castOther.getLocCode()) || ( this.getLocCode()!=null && castOther.getLocCode()!=null && this.getLocCode().equals(castOther.getLocCode()) ) )
- && ( (this.getLocationCode()==castOther.getLocationCode()) || ( this.getLocationCode()!=null && castOther.getLocationCode()!=null && this.getLocationCode().equals(castOther.getLocationCode()) ) );
+ && (this.getSecCode()==castOther.getSecCode())
+ && (this.getDeptCode()==castOther.getDeptCode());
    }
    
    public int hashCode() {
          int result = 17;
          
-         result = 37 * result + this.getDeptCode();
-         result = 37 * result + this.getSecCode();
-         result = 37 * result + ( getLocCode() == null ? 0 : this.getLocCode().hashCode() );
          result = 37 * result + ( getLocationCode() == null ? 0 : this.getLocationCode().hashCode() );
+         result = 37 * result + ( getLocCode() == null ? 0 : this.getLocCode().hashCode() );
+         result = 37 * result + this.getSecCode();
+         result = 37 * result + this.getDeptCode();
          return result;
    }   
 

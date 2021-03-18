@@ -72,7 +72,7 @@ public class PayDeserveEmpFileStop  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false)
     public PayEmployeeMaster getPayEmployeeMaster() {
         return this.payEmployeeMaster;
@@ -142,7 +142,7 @@ public class PayDeserveEmpFileStop  implements java.io.Serializable {
         this.rmrk = rmrk;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payDeserveEmpFileStop")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payDeserveEmpFileStop")
     public Set<PayDeserveEmpFileStopDtl> getPayDeserveEmpFileStopDtls() {
         return this.payDeserveEmpFileStopDtls;
     }

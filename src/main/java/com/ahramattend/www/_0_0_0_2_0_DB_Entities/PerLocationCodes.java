@@ -95,7 +95,7 @@ public class PerLocationCodes  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="COUNTRY_CODE", referencedColumnName="COUNTRY_CODE", nullable=false), 
         @JoinColumn(name="GOV_CODE", referencedColumnName="GOV_CODE", nullable=false) } )
@@ -107,7 +107,7 @@ public class PerLocationCodes  implements java.io.Serializable {
         this.perGovernorateCode = perGovernorateCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="LOCATION_CODE", nullable=false, insertable=false, updatable=false)
     public BudLocation getBudLocation() {
         return this.budLocation;
@@ -197,7 +197,7 @@ public class PerLocationCodes  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perLocationCodes")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perLocationCodes")
     public Set<PayLocationBandFile> getPayLocationBandFiles() {
         return this.payLocationBandFiles;
     }
@@ -206,7 +206,7 @@ public class PerLocationCodes  implements java.io.Serializable {
         this.payLocationBandFiles = payLocationBandFiles;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perLocationCodes")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perLocationCodes")
     public Set<PayDeserveEmp> getPayDeserveEmps() {
         return this.payDeserveEmps;
     }
@@ -215,7 +215,7 @@ public class PerLocationCodes  implements java.io.Serializable {
         this.payDeserveEmps = payDeserveEmps;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perLocationCodes")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perLocationCodes")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }
@@ -224,7 +224,7 @@ public class PerLocationCodes  implements java.io.Serializable {
         this.perEmploymentMasterses = perEmploymentMasterses;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perLocationCodesByPerehPerlcFromFk")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perLocationCodesByPerehPerlcFromFk")
     public Set<PerEmpHistory> getPerEmpHistoriesForPerehPerlcFromFk() {
         return this.perEmpHistoriesForPerehPerlcFromFk;
     }
@@ -233,7 +233,7 @@ public class PerLocationCodes  implements java.io.Serializable {
         this.perEmpHistoriesForPerehPerlcFromFk = perEmpHistoriesForPerehPerlcFromFk;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perLocationCodes")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perLocationCodes")
     public Set<PerLocationCodeDepartment> getPerLocationCodeDepartments() {
         return this.perLocationCodeDepartments;
     }
@@ -242,7 +242,7 @@ public class PerLocationCodes  implements java.io.Serializable {
         this.perLocationCodeDepartments = perLocationCodeDepartments;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perLocationCodes")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perLocationCodes")
     public Set<PerElawaTransaction> getPerElawaTransactions() {
         return this.perElawaTransactions;
     }
@@ -251,7 +251,7 @@ public class PerLocationCodes  implements java.io.Serializable {
         this.perElawaTransactions = perElawaTransactions;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perLocationCodesByPerehPerlcFk")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perLocationCodesByPerehPerlcFk")
     public Set<PerEmpHistory> getPerEmpHistoriesForPerehPerlcFk() {
         return this.perEmpHistoriesForPerehPerlcFk;
     }
@@ -260,7 +260,7 @@ public class PerLocationCodes  implements java.io.Serializable {
         this.perEmpHistoriesForPerehPerlcFk = perEmpHistoriesForPerehPerlcFk;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perLocationCodes")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perLocationCodes")
     public Set<PerSectionCode> getPerSectionCodes() {
         return this.perSectionCodes;
     }

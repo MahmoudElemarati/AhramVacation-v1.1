@@ -78,7 +78,7 @@ public class PerCityCode  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="COUNTRY_CODE", referencedColumnName="COUNTRY_CODE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="GOV_CODE", referencedColumnName="GOV_CODE", nullable=false, insertable=false, updatable=false) } )
@@ -160,7 +160,7 @@ public class PerCityCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perCityCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perCityCode")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }

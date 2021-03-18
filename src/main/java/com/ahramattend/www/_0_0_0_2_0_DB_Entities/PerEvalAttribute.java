@@ -72,7 +72,7 @@ public class PerEvalAttribute  implements java.io.Serializable {
         this.attributeNo = attributeNo;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="MAIN_ATTRIBUTE_NO", nullable=false)
     public PerEvalMainAttribute getPerEvalMainAttribute() {
         return this.perEvalMainAttribute;
@@ -132,7 +132,7 @@ public class PerEvalAttribute  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@ManyToMany(fetch=FetchType.LAZY, mappedBy="perEvalAttributes")
+@ManyToMany(fetch=FetchType.EAGER, mappedBy="perEvalAttributes")
     public Set<PerAnnualEvalType> getPerAnnualEvalTypes() {
         return this.perAnnualEvalTypes;
     }
@@ -141,7 +141,7 @@ public class PerEvalAttribute  implements java.io.Serializable {
         this.perAnnualEvalTypes = perAnnualEvalTypes;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalAttribute")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalAttribute")
     public Set<PerEvalAttributeSpecialDtl> getPerEvalAttributeSpecialDtls() {
         return this.perEvalAttributeSpecialDtls;
     }
@@ -150,7 +150,7 @@ public class PerEvalAttribute  implements java.io.Serializable {
         this.perEvalAttributeSpecialDtls = perEvalAttributeSpecialDtls;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalAttribute")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalAttribute")
     public Set<PerEvalAttributeDetail> getPerEvalAttributeDetails() {
         return this.perEvalAttributeDetails;
     }

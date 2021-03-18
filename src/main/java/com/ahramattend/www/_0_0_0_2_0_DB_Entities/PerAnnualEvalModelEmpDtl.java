@@ -77,7 +77,7 @@ public class PerAnnualEvalModelEmpDtl  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="ANNUAL_ID", referencedColumnName="ANNUAL_ID", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="SERIAL_NO", referencedColumnName="SERIAL_NO", nullable=false, insertable=false, updatable=false), 
@@ -91,7 +91,7 @@ public class PerAnnualEvalModelEmpDtl  implements java.io.Serializable {
         this.perAnnualEvalModelEmp = perAnnualEvalModelEmp;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GRADE_CODE_DIRECTBOSS")
     public PerEvalPercentage getPerEvalPercentageByGradeCodeDirectboss() {
         return this.perEvalPercentageByGradeCodeDirectboss;
@@ -101,7 +101,7 @@ public class PerAnnualEvalModelEmpDtl  implements java.io.Serializable {
         this.perEvalPercentageByGradeCodeDirectboss = perEvalPercentageByGradeCodeDirectboss;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GRADE_CODE_BIGBOSS")
     public PerEvalPercentage getPerEvalPercentageByGradeCodeBigboss() {
         return this.perEvalPercentageByGradeCodeBigboss;
@@ -111,7 +111,7 @@ public class PerAnnualEvalModelEmpDtl  implements java.io.Serializable {
         this.perEvalPercentageByGradeCodeBigboss = perEvalPercentageByGradeCodeBigboss;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="GRADE_CODE")
     public PerEvalPercentage getPerEvalPercentageByGradeCode() {
         return this.perEvalPercentageByGradeCode;

@@ -153,7 +153,7 @@ public class _0_0_0_4_5_0_Employees_Rewards_Ajax_4_saveTo_AjaxServlet extends Ht
 
                         int accessSp = new PayDeserveEmpFileDtl_DAO().getMaxID(openMm, openYyyy, bandCode, bandType, LocationCode, LocCode);
                         PayDeserveEmpFileDtlId pdefdid = new PayDeserveEmpFileDtlId(Short.parseShort(openYyyy), Byte.parseByte(openMm), Byte.parseByte(bandType), LocationCode, LocCode, Short.parseShort(bandCode), accessSp);
-                        PayDeserveEmpFileDtl pdefd = new PayDeserveEmpFileDtl(pdefdid, p, pdef, p.getEmployeeNo());
+                        PayDeserveEmpFileDtl pdefd = new PayDeserveEmpFileDtl(pdefdid, pdef, p, p.getEmployeeNo());
 
                         /**
                          * منفذ العملية
@@ -254,7 +254,7 @@ public class _0_0_0_4_5_0_Employees_Rewards_Ajax_4_saveTo_AjaxServlet extends Ht
             throw new Exception();
         }
         PayLocationBandFile plbf = plbfList.get(0);
-        PayDeserveEmpFile pdef = new PayDeserveEmpFile(id, peo, plbf);
+        PayDeserveEmpFile pdef = new PayDeserveEmpFile(id, plbf, peo);
         pdef.setChkStatus(Byte.parseByte("0"));
         pdef.setCurrDate(new DateOp().getSysDate());
         pdef.setCurrTime(new DateOp().getCustomSysDate("yyyy-MM-dd HH:mm:ss"));

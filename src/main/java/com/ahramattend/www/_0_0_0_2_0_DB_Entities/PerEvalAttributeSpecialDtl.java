@@ -57,7 +57,7 @@ public class PerEvalAttributeSpecialDtl  implements java.io.Serializable {
         this.serial = serial;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="ATTRIBUTE_NO", nullable=false)
     public PerEvalAttribute getPerEvalAttribute() {
         return this.perEvalAttribute;
@@ -87,7 +87,7 @@ public class PerEvalAttributeSpecialDtl  implements java.io.Serializable {
         this.evalDegree2 = evalDegree2;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perEvalAttributeSpecialDtl")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perEvalAttributeSpecialDtl")
     public Set<PerAnnualEvalEmpDetail> getPerAnnualEvalEmpDetails() {
         return this.perAnnualEvalEmpDetails;
     }

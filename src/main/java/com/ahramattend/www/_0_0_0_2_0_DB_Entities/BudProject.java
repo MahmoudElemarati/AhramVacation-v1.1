@@ -208,7 +208,7 @@ public class BudProject  implements java.io.Serializable {
         this.mainProj = mainProj;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="budProject")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="budProject")
     public Set<BudProjectSub> getBudProjectSubs() {
         return this.budProjectSubs;
     }

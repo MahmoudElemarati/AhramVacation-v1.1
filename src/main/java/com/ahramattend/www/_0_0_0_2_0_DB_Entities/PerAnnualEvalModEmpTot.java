@@ -62,7 +62,7 @@ public class PerAnnualEvalModEmpTot  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EMPLOYEE_ID", nullable=false, insertable=false, updatable=false)
     public PerEmploymentMasters getPerEmploymentMasters() {
         return this.perEmploymentMasters;
@@ -72,7 +72,7 @@ public class PerAnnualEvalModEmpTot  implements java.io.Serializable {
         this.perEmploymentMasters = perEmploymentMasters;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="GROUP_TYPE_CODE", referencedColumnName="GROUP_TYPE_CODE"), 
         @JoinColumn(name="FISCAL_DEGREE_CODE", referencedColumnName="FISCAL_DEGREE_CODE") } )
@@ -84,7 +84,7 @@ public class PerAnnualEvalModEmpTot  implements java.io.Serializable {
         this.perGroupDegree = perGroupDegree;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="JOB_CODE")
     public PerJobCode getPerJobCode() {
         return this.perJobCode;
@@ -94,7 +94,7 @@ public class PerAnnualEvalModEmpTot  implements java.io.Serializable {
         this.perJobCode = perJobCode;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perAnnualEvalModEmpTot")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perAnnualEvalModEmpTot")
     public Set<PerAnnualEvaModEmpTotDtl> getPerAnnualEvaModEmpTotDtls() {
         return this.perAnnualEvaModEmpTotDtls;
     }

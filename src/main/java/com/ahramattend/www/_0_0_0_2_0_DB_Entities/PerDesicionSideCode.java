@@ -127,7 +127,7 @@ public class PerDesicionSideCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perDesicionSideCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perDesicionSideCode")
     public Set<PerComplaintData> getPerComplaintDatas() {
         return this.perComplaintDatas;
     }
@@ -136,7 +136,7 @@ public class PerDesicionSideCode  implements java.io.Serializable {
         this.perComplaintDatas = perComplaintDatas;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perDesicionSideCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perDesicionSideCode")
     public Set<PerDecisionSheet> getPerDecisionSheets() {
         return this.perDecisionSheets;
     }

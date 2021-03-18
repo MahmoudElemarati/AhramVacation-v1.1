@@ -68,7 +68,7 @@ public class PerAnnualEvalYear  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="LOCATION_CODE", nullable=false, insertable=false, updatable=false)
     public BudLocation getBudLocation() {
         return this.budLocation;
@@ -98,7 +98,7 @@ public class PerAnnualEvalYear  implements java.io.Serializable {
         this.annualToDate = annualToDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perAnnualEvalYear")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perAnnualEvalYear")
     public Set<PerAnnualEval> getPerAnnualEvals() {
         return this.perAnnualEvals;
     }
@@ -107,7 +107,7 @@ public class PerAnnualEvalYear  implements java.io.Serializable {
         this.perAnnualEvals = perAnnualEvals;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perAnnualEvalYear")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perAnnualEvalYear")
     public Set<PerAnnualEvalModel> getPerAnnualEvalModels() {
         return this.perAnnualEvalModels;
     }

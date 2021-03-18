@@ -60,7 +60,7 @@ public class PayBandType  implements java.io.Serializable {
         this.typeName = typeName;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="payBandType")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="payBandType")
     public Set<PayBandCode> getPayBandCodes() {
         return this.payBandCodes;
     }

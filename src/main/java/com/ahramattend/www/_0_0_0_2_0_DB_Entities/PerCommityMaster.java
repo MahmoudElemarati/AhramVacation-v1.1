@@ -71,7 +71,7 @@ public class PerCommityMaster  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="COMM_TYPE_CODE", nullable=false)
     public PerCommTypeCode getPerCommTypeCode() {
         return this.perCommTypeCode;
@@ -81,7 +81,7 @@ public class PerCommityMaster  implements java.io.Serializable {
         this.perCommTypeCode = perCommTypeCode;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="LOCATION_CODE", nullable=false, insertable=false, updatable=false)
     public BudLocation getBudLocation() {
         return this.budLocation;
@@ -131,7 +131,7 @@ public class PerCommityMaster  implements java.io.Serializable {
         this.remarks = remarks;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perCommityMaster")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perCommityMaster")
     public Set<PerPromotionTrans> getPerPromotionTranses() {
         return this.perPromotionTranses;
     }

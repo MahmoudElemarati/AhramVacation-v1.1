@@ -151,7 +151,7 @@ public class PerMilitaryCode  implements java.io.Serializable {
         this.recordUpdateDate = recordUpdateDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="perMilitaryCode")
+@OneToMany(fetch=FetchType.EAGER, mappedBy="perMilitaryCode")
     public Set<PerEmploymentMasters> getPerEmploymentMasterses() {
         return this.perEmploymentMasterses;
     }

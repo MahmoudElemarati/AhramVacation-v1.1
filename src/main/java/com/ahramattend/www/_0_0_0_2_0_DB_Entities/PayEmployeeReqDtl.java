@@ -97,7 +97,7 @@ public class PayEmployeeReqDtl  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="REQ_SP", nullable=false, insertable=false, updatable=false)
     public PayEmployeeReq getPayEmployeeReq() {
         return this.payEmployeeReq;
@@ -107,7 +107,7 @@ public class PayEmployeeReqDtl  implements java.io.Serializable {
         this.payEmployeeReq = payEmployeeReq;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( { 
         @JoinColumn(name="BAND_TYPE", referencedColumnName="BAND_TYPE", nullable=false, insertable=false, updatable=false), 
         @JoinColumn(name="BAND_CODE", referencedColumnName="BAND_CODE", nullable=false, insertable=false, updatable=false) } )
